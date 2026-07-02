@@ -1,0 +1,882 @@
+=== PRUEBA DE RENDIMIENTO: nodo_linea ===
+Fecha: Thu Jun 25 12:05:12 CEST 2026
+Duración: 60s
+
+=== Temperatura inicial ===
+temp=60.4'C
+=== Throttling inicial ===
+throttled=0x0
+
+=== Procesos relacionados antes de medir ===
+   4139    1718  2.9  0.3 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 run matias_control nodo_linea --ros-args -p h_low:=0 -p h_high:=180 -p s_low:=0 -p s_high:=255 -p v_low:=0 -p v_high:=100 -p h2_low:=0 -p h2_high:=0 -p s2_low:=0 -p s2_high:=0 -p v2_low:=0 -p v2_high:=0 -p kp:=2.5 -p ki:=0.0 -p kd:=0.0 -p integral_max:=1.0 -p v_max:=0.3 -p roi_frac:=0.50 -p area_min:=300 -p frames_gracia:=10
+   4142    4139 20.4  1.1 /usr/bin/python3 /home/matias/ros2_ws/install/matias_control/lib/matias_control/nodo_linea --ros-args -p h_low:=0 -p h_high:=180 -p s_low:=0 -p s_high:=255 -p v_low:=0 -p v_high:=100 -p h2_low:=0 -p h2_high:=0 -p s2_low:=0 -p s2_high:=0 -p v2_low:=0 -p v2_high:=0 -p kp:=2.5 -p ki:=0.0 -p kd:=0.0 -p integral_max:=1.0 -p v_max:=0.3 -p roi_frac:=0.50 -p area_min:=300 -p frames_gracia:=10
+   4163    4142 18.0  0.3 rpicam-vid -t 0 --nopreview --width 320 --height 240 --framerate 30 --codec mjpeg --inline -o -
+   4181    3043  1.6  0.0 /bin/bash ./medir_rendimiento.sh nodo_linea 60
+   4222    4181  0.0  0.0 tee -a rendimiento_nodo_linea_20260625_120512.txt
+
+=== PIDs medidos ===
+PIDS=4139,4142,4163,4181,4223
+
+=== CPU y RAM durante 60s ===
+Linux 6.8.0-1057-raspi (MATIAS) 	06/25/26 	_aarch64_	(4 CPU)
+
+=== Frecuencia de /cmd_vel durante 60s ===
+
+12:05:12      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:13     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:13     1000      4142    8.00    1.00    0.00    0.00    9.00     3  nodo_linea
+12:05:13     1000      4163   14.00    3.00    0.00    0.00   17.00     1  rpicam-vid
+12:05:13     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:12      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:13     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:13     1000      4142    604.00      0.00 1371796   97264   1.20  nodo_linea
+12:05:13     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:13     1000      4181    149.00      0.00    4592    3072   0.04  medir_rendimien
+
+12:05:13      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:14     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:14     1000      4142    8.00    1.00    0.00    0.00    9.00     0  nodo_linea
+12:05:14     1000      4163   16.00    2.00    0.00    0.00   18.00     2  rpicam-vid
+12:05:14     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:13      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:14     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:14     1000      4142     57.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:14     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:14     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 19.999
+	min: 0.048s max: 0.052s std dev: 0.00075s window: 22
+
+12:05:14      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:15     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:15     1000      4142    9.00    0.00    0.00    0.00    9.00     1  nodo_linea
+12:05:15     1000      4163   16.00    2.00    0.00    0.00   18.00     0  rpicam-vid
+12:05:15     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:14      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:15     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:15     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:15     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:15     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 19.999
+	min: 0.048s max: 0.052s std dev: 0.00087s window: 42
+
+12:05:15      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:16     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:16     1000      4142    8.00    1.00    0.00    0.00    9.00     1  nodo_linea
+12:05:16     1000      4163   15.00    2.00    0.00    0.00   17.00     3  rpicam-vid
+12:05:16     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:15      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:16     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:16     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:16     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:16     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00079s window: 63
+
+12:05:16      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:17     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:17     1000      4142    9.00    0.00    0.00    0.00    9.00     2  nodo_linea
+12:05:17     1000      4163   14.00    2.00    0.00    0.00   16.00     2  rpicam-vid
+12:05:17     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:16      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:17     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:17     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:17     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:17     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 19.996
+	min: 0.048s max: 0.052s std dev: 0.00072s window: 84
+
+12:05:17      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:18     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:18     1000      4142    9.00    0.00    0.00    0.00    9.00     1  nodo_linea
+12:05:18     1000      4163   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:05:18     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:17      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:18     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:18     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:18     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:18     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00066s window: 105
+
+12:05:18      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:19     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:19     1000      4142    9.00    1.00    0.00    1.00   10.00     2  nodo_linea
+12:05:19     1000      4163   16.00    3.00    0.00    0.00   19.00     1  rpicam-vid
+12:05:19     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:18      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:19     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:19     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:19     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:19     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00066s window: 125
+
+12:05:19      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:20     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:20     1000      4142    8.00    0.00    0.00    0.00    8.00     3  nodo_linea
+12:05:20     1000      4163   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:05:20     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:19      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:20     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:20     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:20     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:20     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00065s window: 146
+
+12:05:20      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:21     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:21     1000      4142    9.00    1.00    0.00    0.00   10.00     0  nodo_linea
+12:05:21     1000      4163   15.00    1.00    0.00    0.00   16.00     2  rpicam-vid
+12:05:21     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:20      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:21     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:21     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:21     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:21     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00064s window: 166
+
+12:05:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:22     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:22     1000      4142    9.00    0.00    0.00    0.00    9.00     3  nodo_linea
+12:05:22     1000      4163   16.00    3.00    0.00    0.00   19.00     1  rpicam-vid
+12:05:22     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:22     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:22     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:22     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:22     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00064s window: 186
+
+12:05:22      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:23     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:23     1000      4142    9.00    0.00    0.00    0.00    9.00     0  nodo_linea
+12:05:23     1000      4163   14.00    2.00    0.00    1.00   16.00     3  rpicam-vid
+12:05:23     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:22      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:23     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:23     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:23     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:23     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 19.999
+	min: 0.048s max: 0.052s std dev: 0.00061s window: 207
+
+12:05:23      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:24     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:24     1000      4142    8.00    1.00    0.00    0.00    9.00     0  nodo_linea
+12:05:24     1000      4163   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:05:24     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:23      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:24     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:24     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:24     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:24     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00063s window: 228
+
+12:05:24      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:25     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:25     1000      4142    9.00    1.00    0.00    0.00   10.00     3  nodo_linea
+12:05:25     1000      4163   15.00    2.00    0.00    0.00   17.00     0  rpicam-vid
+12:05:25     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:24      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:25     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:25     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:25     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:25     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00061s window: 249
+
+12:05:25      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:26     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:26     1000      4142    8.00    0.00    0.00    0.00    8.00     0  nodo_linea
+12:05:26     1000      4163   16.00    2.00    0.00    0.00   18.00     2  rpicam-vid
+12:05:26     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:25      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:26     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:26     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:26     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:26     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00068s window: 269
+
+12:05:26      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:27     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:27     1000      4142    9.00    1.00    0.00    0.00   10.00     0  nodo_linea
+12:05:27     1000      4163   16.00    1.00    0.00    0.00   17.00     1  rpicam-vid
+12:05:27     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:26      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:27     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:27     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:27     1000      4163      2.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:27     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 19.999
+	min: 0.048s max: 0.052s std dev: 0.00066s window: 289
+
+12:05:27      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:28     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:28     1000      4142    9.00    0.00    0.00    0.00    9.00     0  nodo_linea
+12:05:28     1000      4163   14.00    3.00    0.00    0.00   17.00     1  rpicam-vid
+12:05:28     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:27      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:28     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:28     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:28     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:28     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00064s window: 310
+
+12:05:28      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:29     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:29     1000      4142    9.00    1.00    0.00    0.00   10.00     2  nodo_linea
+12:05:29     1000      4163   15.00    2.00    0.00    0.00   17.00     3  rpicam-vid
+12:05:29     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:28      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:29     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:29     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:29     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:29     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00065s window: 331
+
+12:05:29      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:30     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:30     1000      4142    8.00    0.00    0.00    0.00    8.00     0  nodo_linea
+12:05:30     1000      4163   16.00    2.00    0.00    0.00   18.00     1  rpicam-vid
+12:05:30     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:29      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:30     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:30     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:30     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:30     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00065s window: 352
+
+12:05:30      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:31     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:31     1000      4142    9.00    0.00    0.00    0.00    9.00     3  nodo_linea
+12:05:31     1000      4163   14.00    2.00    0.00    0.00   16.00     1  rpicam-vid
+12:05:31     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:30      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:31     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:31     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:31     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:31     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00063s window: 373
+
+12:05:31      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:32     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:32     1000      4142    9.00    1.00    0.00    0.00   10.00     0  nodo_linea
+12:05:32     1000      4163   15.00    3.00    0.00    0.00   18.00     1  rpicam-vid
+12:05:32     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:31      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:32     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:32     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:32     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:32     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00062s window: 393
+
+12:05:32      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:33     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:33     1000      4142    8.00    0.00    0.00    1.00    8.00     0  nodo_linea
+12:05:33     1000      4163   16.00    1.00    0.00    0.00   17.00     1  rpicam-vid
+12:05:33     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:32      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:33     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:33     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:33     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:33     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00061s window: 413
+
+12:05:33      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:34     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:34     1000      4142    9.00    1.00    0.00    0.00   10.00     3  nodo_linea
+12:05:34     1000      4163   15.00    1.00    0.00    0.00   16.00     2  rpicam-vid
+12:05:34     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:33      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:34     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:34     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:34     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:34     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+
+12:05:34      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:35     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:35     1000      4142    8.00    1.00    0.00    0.00    9.00     3  nodo_linea
+12:05:35     1000      4163   17.00    2.00    0.00    0.00   19.00     2  rpicam-vid
+12:05:35     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:34      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:35     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:35     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:35     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:35     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00061s window: 434
+
+12:05:35      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:36     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:36     1000      4142    9.00    0.00    0.00    0.00    9.00     2  nodo_linea
+12:05:36     1000      4163   15.00    2.00    0.00    0.00   17.00     3  rpicam-vid
+12:05:36     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:35      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:36     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:36     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:36     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:36     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00060s window: 454
+
+12:05:36      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:37     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:37     1000      4142    9.00    1.00    0.00    0.00   10.00     3  nodo_linea
+12:05:37     1000      4163   14.00    2.00    0.00    0.00   16.00     3  rpicam-vid
+12:05:37     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:36      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:37     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:37     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:37     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:37     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00059s window: 474
+
+12:05:37      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:38     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:38     1000      4142    8.00    0.00    0.00    0.00    8.00     3  nodo_linea
+12:05:38     1000      4163   14.00    3.00    0.00    0.00   17.00     3  rpicam-vid
+12:05:38     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:37      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:38     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:38     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:38     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:38     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00058s window: 494
+
+12:05:38      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:39     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:39     1000      4142    8.00    1.00    0.00    0.00    9.00     3  nodo_linea
+12:05:39     1000      4163   16.00    2.00    0.00    0.00   18.00     1  rpicam-vid
+12:05:39     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:38      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:39     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:39     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:39     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:39     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00057s window: 515
+
+12:05:39      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:40     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:40     1000      4142    9.00    0.00    0.00    0.00    9.00     3  nodo_linea
+12:05:40     1000      4163   14.00    2.00    0.00    0.00   16.00     1  rpicam-vid
+12:05:40     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:39      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:40     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:40     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:40     1000      4163      4.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:40     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00057s window: 535
+
+12:05:40      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:41     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:41     1000      4142    9.00    1.00    0.00    0.00   10.00     1  nodo_linea
+12:05:41     1000      4163   16.00    3.00    0.00    0.00   19.00     3  rpicam-vid
+12:05:41     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:40      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:41     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:41     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:41     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:41     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00058s window: 556
+
+12:05:41      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:42     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:42     1000      4142    8.00    0.00    0.00    0.00    8.00     0  nodo_linea
+12:05:42     1000      4163   15.00    2.00    0.00    0.00   17.00     0  rpicam-vid
+12:05:42     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:41      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:42     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:42     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:42     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:42     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00057s window: 576
+
+12:05:42      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:43     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:43     1000      4142   10.00    0.00    0.00    0.00   10.00     0  nodo_linea
+12:05:43     1000      4163   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:05:43     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:42      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:43     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:43     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:43     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:43     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00058s window: 596
+
+12:05:43      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:44     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:44     1000      4142    9.00    0.00    0.00    0.00    9.00     0  nodo_linea
+12:05:44     1000      4163   14.00    3.00    0.00    0.00   17.00     2  rpicam-vid
+12:05:44     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:43      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:44     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:44     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:44     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:44     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00058s window: 617
+
+12:05:44      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:45     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:45     1000      4142    8.00    1.00    0.00    0.00    9.00     2  nodo_linea
+12:05:45     1000      4163   15.00    2.00    0.00    0.00   17.00     1  rpicam-vid
+12:05:45     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:44      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:45     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:45     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:45     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:45     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00058s window: 638
+
+12:05:45      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:46     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:46     1000      4142    9.00    0.00    0.00    0.00    9.00     0  nodo_linea
+12:05:46     1000      4163   16.00    2.00    0.00    0.00   18.00     1  rpicam-vid
+12:05:46     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:45      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:46     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:46     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:46     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:46     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00059s window: 658
+
+12:05:46      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:47     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:47     1000      4142    8.00    1.00    0.00    0.00    9.00     3  nodo_linea
+12:05:47     1000      4163   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:05:47     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:46      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:47     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:47     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:47     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:47     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00058s window: 678
+
+12:05:47      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:48     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:48     1000      4142    9.00    0.00    0.00    0.00    9.00     1  nodo_linea
+12:05:48     1000      4163   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:05:48     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:47      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:48     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:48     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:48     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:48     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00059s window: 699
+
+12:05:48      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:49     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:49     1000      4142    9.00    1.00    0.00    0.00   10.00     0  nodo_linea
+12:05:49     1000      4163   14.00    3.00    0.00    0.00   17.00     3  rpicam-vid
+12:05:49     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:48      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:49     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:49     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:49     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:49     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00058s window: 720
+
+12:05:49      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:50     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:50     1000      4142    9.00    0.00    0.00    1.00    9.00     1  nodo_linea
+12:05:50     1000      4163   15.00    3.00    0.00    0.00   18.00     0  rpicam-vid
+12:05:50     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:49      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:50     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:50     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:50     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:50     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00058s window: 741
+
+12:05:50      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:51     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:51     1000      4142    9.00    0.00    0.00    0.00    9.00     1  nodo_linea
+12:05:51     1000      4163   14.00    2.00    0.00    1.00   16.00     3  rpicam-vid
+12:05:51     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:50      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:51     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:51     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:51     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:51     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00057s window: 761
+
+12:05:51      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:52     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:52     1000      4142    9.00    0.00    0.00    0.00    9.00     1  nodo_linea
+12:05:52     1000      4163   15.00    3.00    0.00    0.00   18.00     3  rpicam-vid
+12:05:52     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:51      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:52     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:52     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:52     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:52     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 19.999
+	min: 0.048s max: 0.052s std dev: 0.00057s window: 781
+
+12:05:52      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:53     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:53     1000      4142    8.00    1.00    0.00    0.00    9.00     1  nodo_linea
+12:05:53     1000      4163   16.00    1.00    0.00    0.00   17.00     0  rpicam-vid
+12:05:53     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:52      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:53     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:53     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:53     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:53     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00057s window: 802
+
+12:05:53      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:54     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:54     1000      4142    9.00    0.00    0.00    0.00    9.00     3  nodo_linea
+12:05:54     1000      4163   14.00    2.00    0.00    0.00   16.00     2  rpicam-vid
+12:05:54     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:53      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:54     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:54     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:54     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:54     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00057s window: 822
+
+12:05:54      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:55     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:55     1000      4142    8.00    1.00    0.00    0.00    9.00     2  nodo_linea
+12:05:55     1000      4163   15.00    3.00    0.00    0.00   18.00     1  rpicam-vid
+12:05:55     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:54      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:55     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:55     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:55     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:55     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 19.999
+	min: 0.048s max: 0.052s std dev: 0.00057s window: 842
+
+12:05:55      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:56     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:56     1000      4142    9.00    0.00    0.00    0.00    9.00     2  nodo_linea
+12:05:56     1000      4163   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:05:56     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:55      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:56     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:56     1000      4142      1.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:56     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:56     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.048s max: 0.052s std dev: 0.00057s window: 863
+
+12:05:56      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:57     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:57     1000      4142    8.00    1.00    0.00    0.00    9.00     2  nodo_linea
+12:05:57     1000      4163   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:05:57     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:56      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:57     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:57     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:57     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:57     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00058s window: 884
+
+12:05:57      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:58     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:58     1000      4142    9.00    1.00    0.00    0.00   10.00     1  nodo_linea
+12:05:58     1000      4163   16.00    2.00    0.00    0.00   18.00     3  rpicam-vid
+12:05:58     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:57      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:58     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:58     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:58     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:58     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00059s window: 905
+
+12:05:58      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:05:59     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:05:59     1000      4142    8.00    0.00    0.00    0.00    8.00     1  nodo_linea
+12:05:59     1000      4163   15.00    2.00    0.00    0.00   17.00     0  rpicam-vid
+12:05:59     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:58      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:05:59     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:05:59     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:05:59     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:05:59     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00059s window: 925
+
+12:05:59      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:00     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:00     1000      4142    9.00    1.00    0.00    0.00   10.00     1  nodo_linea
+12:06:00     1000      4163   14.00    3.00    0.00    0.00   17.00     0  rpicam-vid
+12:06:00     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:05:59      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:00     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:00     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:00     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:00     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00059s window: 945
+
+12:06:00      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:01     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:01     1000      4142    8.00    0.00    0.00    0.00    8.00     2  nodo_linea
+12:06:01     1000      4163   16.00    2.00    0.00    0.00   18.00     1  rpicam-vid
+12:06:01     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:00      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:01     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:01     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:01     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:01     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00058s window: 965
+
+12:06:01      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:02     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:02     1000      4142    9.00    1.00    0.00    0.00   10.00     2  nodo_linea
+12:06:02     1000      4163   16.00    2.00    0.00    0.00   18.00     0  rpicam-vid
+12:06:02     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:01      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:02     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:02     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:02     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:02     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00058s window: 986
+
+12:06:02      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:03     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:03     1000      4142    8.00    0.00    0.00    0.00    8.00     1  nodo_linea
+12:06:03     1000      4163   14.00    2.00    0.00    0.00   16.00     0  rpicam-vid
+12:06:03     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:02      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:03     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:03     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:03     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:03     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00058s window: 1006
+
+12:06:03      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:04     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:04     1000      4142    9.00    1.00    0.00    0.00   10.00     2  nodo_linea
+12:06:04     1000      4163   16.00    1.00    0.00    0.00   17.00     3  rpicam-vid
+12:06:04     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:03      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:04     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:04     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:04     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:04     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00057s window: 1027
+
+12:06:04      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:05     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:05     1000      4142    8.00    0.00    0.00    1.00    8.00     3  nodo_linea
+12:06:05     1000      4163   15.00    3.00    0.00    0.00   18.00     3  rpicam-vid
+12:06:05     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:04      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:05     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:05     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:05     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:05     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00057s window: 1048
+
+12:06:05      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:06     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:06     1000      4142    9.00    1.00    0.00    0.00   10.00     2  nodo_linea
+12:06:06     1000      4163   14.00    3.00    0.00    0.00   17.00     0  rpicam-vid
+12:06:06     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:05      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:06     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:06     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:06     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:06     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00057s window: 1068
+
+12:06:06      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:07     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:07     1000      4142    9.00    0.00    0.00    0.00    9.00     3  nodo_linea
+12:06:07     1000      4163   15.00    3.00    0.00    0.00   18.00     1  rpicam-vid
+12:06:07     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:06      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:07     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:07     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:07     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:07     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00057s window: 1089
+
+12:06:07      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:08     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:08     1000      4142    8.00    1.00    0.00    0.00    9.00     2  nodo_linea
+12:06:08     1000      4163   16.00    1.00    0.00    0.00   17.00     0  rpicam-vid
+12:06:08     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:07      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:08     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:08     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:08     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:08     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00056s window: 1109
+
+12:06:08      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:09     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:09     1000      4142    9.00    0.00    0.00    0.00    9.00     1  nodo_linea
+12:06:09     1000      4163   15.00    2.00    0.00    0.00   17.00     3  rpicam-vid
+12:06:09     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:08      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:09     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:09     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:09     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:09     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00056s window: 1130
+
+12:06:09      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:10     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:10     1000      4142    8.00    1.00    0.00    0.00    9.00     3  nodo_linea
+12:06:10     1000      4163   15.00    2.00    0.00    0.00   17.00     3  rpicam-vid
+12:06:10     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:09      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:10     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:10     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:10     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:10     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00057s window: 1151
+
+12:06:10      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:11     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:11     1000      4142    9.00    0.00    0.00    0.00    9.00     0  nodo_linea
+12:06:11     1000      4163   16.00    2.00    0.00    1.00   18.00     2  rpicam-vid
+12:06:11     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:10      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:11     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:11     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:11     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:11     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 20.000
+	min: 0.047s max: 0.053s std dev: 0.00058s window: 1171
+
+12:06:11      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:06:12     1000      4139    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:06:12     1000      4142    9.00    0.00    0.00    0.00    9.00     3  nodo_linea
+12:06:12     1000      4163   15.00    2.00    0.00    0.00   17.00     0  rpicam-vid
+12:06:12     1000      4181    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:06:11      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:06:12     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+12:06:12     1000      4142      0.00      0.00 1371796   97520   1.20  nodo_linea
+12:06:12     1000      4163      0.00      0.00  869892   25476   0.31  rpicam-vid
+12:06:12     1000      4181      0.00      0.00    4592    3072   0.04  medir_rendimien
+
+Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+Average:     1000      4139    0.00    0.00    0.00    0.00    0.00     -  ros2
+Average:     1000      4142    8.63    0.47    0.00    0.07    9.10     -  nodo_linea
+Average:     1000      4163   15.08    2.15    0.00    0.05   17.23     -  rpicam-vid
+Average:     1000      4181    0.00    0.00    0.00    0.00    0.00     -  medir_rendimien
+
+Average:      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+Average:     1000      4139      0.00      0.00  185608   27520   0.34  ros2
+Average:     1000      4142     11.03      0.00 1371796   97516   1.20  nodo_linea
+Average:     1000      4163      0.10      0.00  869892   25476   0.31  rpicam-vid
+Average:     1000      4181      2.48      0.00    4592    3072   0.04  medir_rendimien
+
+=== Procesos relacionados después de medir ===
+   4139    1718  0.3  0.3 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 run matias_control nodo_linea --ros-args -p h_low:=0 -p h_high:=180 -p s_low:=0 -p s_high:=255 -p v_low:=0 -p v_high:=100 -p h2_low:=0 -p h2_high:=0 -p s2_low:=0 -p s2_high:=0 -p v2_low:=0 -p v2_high:=0 -p kp:=2.5 -p ki:=0.0 -p kd:=0.0 -p integral_max:=1.0 -p v_max:=0.3 -p roi_frac:=0.50 -p area_min:=300 -p frames_gracia:=10
+   4142    4139 10.5  1.2 /usr/bin/python3 /home/matias/ros2_ws/install/matias_control/lib/matias_control/nodo_linea --ros-args -p h_low:=0 -p h_high:=180 -p s_low:=0 -p s_high:=255 -p v_low:=0 -p v_high:=100 -p h2_low:=0 -p h2_high:=0 -p s2_low:=0 -p s2_high:=0 -p v2_low:=0 -p v2_high:=0 -p kp:=2.5 -p ki:=0.0 -p kd:=0.0 -p integral_max:=1.0 -p v_max:=0.3 -p roi_frac:=0.50 -p area_min:=300 -p frames_gracia:=10
+   4163    4142 17.3  0.3 rpicam-vid -t 0 --nopreview --width 320 --height 240 --framerate 30 --codec mjpeg --inline -o -
+   4181    3043  0.0  0.0 /bin/bash ./medir_rendimiento.sh nodo_linea 60
+   4273    4181  0.0  0.0 tee -a rendimiento_nodo_linea_20260625_120512.txt
+
+=== Temperatura final ===
+temp=62.0'C
+=== Throttling final ===
+throttled=0x0
+

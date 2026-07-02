@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-Nodo de seguimiento de línea por detección de bordes (Canny).
-A diferencia de nodo_linea, que detecta la cinta por su color en el
-espacio HSV, este nodo detecta los bordes de contraste entre la cinta y
-el suelo mediante el algoritmo de Canny. Esto lo hace independiente del
-color real o percibido de la cinta, resolviendo la limitación de
-variabilidad cromática del sensor OV5647 documentada en la Prueba 6.
+Nodo de seguimiento de línea por rectas dominantes (Canny + Hough).
+Extiende a nodo_canny: en lugar de calcular el centroide de TODOS los
+píxeles de borde, aplica la Transformada de Hough sobre la salida de
+Canny para quedarse solo con los segmentos rectos que reciben suficientes
+"votos" de píxeles alineados.
 """
+import math
+
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
@@ -27,30 +28,32 @@ except ImportError:                                        # [STREAM]
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-class NodoCanny(Node):
+class NodoHough(Node):
     def __init__(self):
-        super().__init__("nodo_canny")
+        super().__init__("nodo_hough")
 
-        # Umbrales de histéresis de Canny.
-        # canny_high marca bordes seguros; canny_low descarta directamente.
-        # Los puntos intermedios solo se conservan si están conectados a
-        # un borde seguro (histéresis). Regla práctica: high ~= 2-3 x low.
+        # Umbrales de histéresis de Canny (mismo criterio que nodo_canny:
+        # canny_high ~= 2-3 x canny_low).
         self.declare_parameter("canny_low",  50)
         self.declare_parameter("canny_high", 150)
 
-        # Tamaño del kernel de blur gaussiano previo a Canny (debe ser impar).
-        # Difumina el ruido de textura del suelo conservando el contraste
-        # fuerte y sostenido del borde real cinta-suelo.
+        # Kernel de blur gaussiano previo a Canny (debe ser impar).
         self.declare_parameter("blur_kernel", 5)
 
-        # Tamaño del kernel de dilatación tras Canny.
-        # Los bordes de Canny tienen 1 px de grosor; dilatar los engorda
-        # ligeramente para que cv2.moments calcule un centroide más estable
-        # y para conectar fragmentos de borde interrumpidos por el blur.
-        self.declare_parameter("dilate_kernel", 3)
+        # Parámetros de la Transformada de Hough probabilística
+        # (cv2.HoughLinesP). hough_threshold es el número mínimo de votos
+        # (píxeles de borde alineados) para aceptar una recta candidata.
+        self.declare_parameter("hough_threshold",   20)
+        self.declare_parameter("hough_min_len",      15)  # px, longitud mínima del segmento
+        self.declare_parameter("hough_max_gap",      10)  # px, hueco máximo entre puntos de la misma recta
 
-        # Ganancias del PID (mismos nombres que nodo_linea para
-        # comparabilidad directa entre algoritmos)
+        # Filtro angular: descarta segmentos casi horizontales, que en
+        # esta ROI corresponden casi siempre a ruido de textura del suelo
+        # o al horizonte, nunca a la cinta vista de frente.
+        self.declare_parameter("angulo_min_deg", 25.0)
+
+        # Ganancias del PID (mismos nombres que nodo_linea/nodo_canny
+        # para comparabilidad directa entre los tres algoritmos)
         self.declare_parameter("kp", 0.9)   # término proporcional: reacciona al error actual
         self.declare_parameter("ki", 0.0)   # término integral: corrige sesgos sistemáticos
         self.declare_parameter("kd", 0.0)   # término derivativo: amortigua oscilaciones
@@ -62,12 +65,10 @@ class NodoCanny(Node):
 
         self.declare_parameter("v_max",  0.3)
 
-        # roi_frac: fracción inferior de la imagen que se analiza.
         self.declare_parameter("roi_frac",      0.50)
-        # area_min: a diferencia de nodo_linea (área rellena), aquí mide
-        # píxeles de borde (líneas finas), por lo que su valor típico es
-        # considerablemente menor.
-        self.declare_parameter("area_min",      80)
+        # min_votos: suma mínima de longitudes de los segmentos válidos
+        # para considerar que hay una recta detectada de verdad.
+        self.declare_parameter("min_votos",     40)
         self.declare_parameter("frames_gracia", 10)
         self.declare_parameter("debug", False)
 
@@ -97,7 +98,7 @@ class NodoCanny(Node):
         # tengan unidades consistentes.
         self.dt = 1.0 / 30.0
         self.timer = self.create_timer(self.dt, self.ciclo)
-        self.get_logger().info("Nodo de seguimiento por bordes (Canny) iniciado")
+        self.get_logger().info("Nodo de seguimiento por rectas (Hough) iniciado")
 
     def ciclo(self):
         frame = self.cam.leer_frame()
@@ -107,37 +108,36 @@ class NodoCanny(Node):
             return
 
         h, w = frame.shape[:2]
-        # Recortamos la parte inferior de la imagen (ROI), igual que en
-        # nodo_linea: ignorar el fondo reduce el ruido y el coste computacional
+        # ROI inferior, igual que en nodo_linea y nodo_canny
         roi_frac = self.get_parameter("roi_frac").value
         y0  = int(h * (1.0 - roi_frac))
         roi = frame[y0:, :]
 
-        # Paso 1: escala de grises. Canny trabaja sobre intensidad, no color.
+        # Pasos 1-3: idénticos a nodo_canny (gris -> blur -> Canny)
         gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-
-        # Paso 2: blur gaussiano. Elimina el ruido de textura del suelo
-        # (alta frecuencia) conservando el borde real cinta-suelo (baja
-        # frecuencia, transición sostenida). El kernel debe ser impar.
         k = int(self.get_parameter("blur_kernel").value)
         if k % 2 == 0:
             k += 1
         blurred = cv2.GaussianBlur(gray, (k, k), 0)
 
-        # Paso 3: Canny. Devuelve una máscara binaria de 1 px de grosor
-        # donde los píxeles blancos son los bordes detectados.
         canny_low  = int(self.get_parameter("canny_low").value)
         canny_high = int(self.get_parameter("canny_high").value)
         edges = cv2.Canny(blurred, canny_low, canny_high)
 
-        # Paso 4: dilatación. Engorda los bordes finos para estabilizar el
-        # cálculo del centroide y conectar fragmentos interrumpidos.
-        dk = int(self.get_parameter("dilate_kernel").value)
-        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (dk, dk))
-        mask = cv2.dilate(edges, kernel)
+        # Paso 4: Hough probabilística sobre los bordes. Cada línea
+        # devuelta es un segmento [x1, y1, x2, y2] que ya superó el
+        # umbral de votos: suficientes píxeles de borde alineados en la
+        # misma recta dentro de la tolerancia angular de 1 grado
+        # (np.pi/180) y de posición de 1 px.
+        threshold = int(self.get_parameter("hough_threshold").value)
+        min_len   = int(self.get_parameter("hough_min_len").value)
+        max_gap   = int(self.get_parameter("hough_max_gap").value)
+        lineas = cv2.HoughLinesP(
+            edges, 1, np.pi / 180, threshold,
+            minLineLength=min_len, maxLineGap=max_gap,
+        )
 
-        area     = cv2.countNonZero(mask)
-        area_min = self.get_parameter("area_min").value
+        angulo_min = self.get_parameter("angulo_min_deg").value
 
         # Variables de telemetría inicializadas para el stream [STREAM]
         cx    = None  # [STREAM]
@@ -145,13 +145,37 @@ class NodoCanny(Node):
         giro  = 0.0   # [STREAM]
         v     = 0.0   # [STREAM]
 
-        if area > area_min:
-            # binaryImage=True: sin él, moments pondera por el valor del
-            # píxel (0 ó 255) y el área calculada queda distorsionada
-            M  = cv2.moments(mask, binaryImage=True)
-            cx = M["m10"] / M["m00"]
+        votos_validos = 0.0
+        suma_cx_ponderada = 0.0
 
-            # Error normalizado en [-1, 1]: negativo = bordes a la izquierda
+        if lineas is not None:
+            for (x1, y1, x2, y2) in lineas[:, 0]:
+                # Ángulo del segmento respecto a la horizontal. Una cinta
+                # vista de frente es casi vertical en la imagen (cerca de
+                # 90 grados); el ruido de textura tiende a ser casi
+                # horizontal o aleatorio.
+                angulo = math.degrees(math.atan2(y2 - y1, x2 - x1))
+                angulo = abs(angulo) % 180
+                if angulo > 90:
+                    angulo = 180 - angulo
+
+                if angulo < angulo_min:
+                    continue  # descartado: demasiado horizontal, es ruido
+
+                longitud = math.hypot(x2 - x1, y2 - y1)
+                cx_segmento = (x1 + x2) / 2.0
+
+                # Cada segmento "vota" con un peso igual a su longitud:
+                # los segmentos largos son evidencia más fiable de la
+                # recta real que los fragmentos cortos.
+                votos_validos      += longitud
+                suma_cx_ponderada  += cx_segmento * longitud
+
+        min_votos = self.get_parameter("min_votos").value
+
+        if votos_validos > min_votos:
+            cx = suma_cx_ponderada / votos_validos
+
             error = (cx - w / 2.0) / (w / 2.0)
             kp = self.get_parameter("kp").value
             ki = self.get_parameter("ki").value
@@ -186,9 +210,9 @@ class NodoCanny(Node):
             self.publicar(v, giro)
 
             self.get_logger().info(
-                f"Bordes cx={cx:.0f} err={error:+.2f} "
-                f"P={termino_p:+.2f} I={termino_i:+.2f} D={termino_d:+.2f} "
-                f"-> v={v:.2f} w={giro:+.2f}"
+                f"Hough cx={cx:.0f} votos={votos_validos:.0f} "
+                f"err={error:+.2f} P={termino_p:+.2f} I={termino_i:+.2f} "
+                f"D={termino_d:+.2f} -> v={v:.2f} w={giro:+.2f}"
             )
         else:
             self.frames_sin_linea += 1
@@ -197,7 +221,7 @@ class NodoCanny(Node):
                 self.publicar(0.15, self.ultimo_giro)
             else:
                 self.publicar(0.0, 0.0)
-                self.get_logger().warn("Bordes perdidos: vehiculo detenido")
+                self.get_logger().warn("Rectas perdidas: vehiculo detenido")
                 # Reiniciamos el estado del PID al perder la línea: si no,
                 # el integral seguiría acumulando error nulo (sin efecto)
                 # pero la derivada al recuperar la línea compararía contra
@@ -208,14 +232,18 @@ class NodoCanny(Node):
         if self.get_parameter("debug").value:
             self.contador_debug += 1
             if self.contador_debug % 20 == 0:
-                cv2.imwrite("/tmp/canny_frame.jpg", roi)
-                cv2.imwrite("/tmp/canny_edges.jpg", edges)
-                cv2.imwrite("/tmp/canny_mask.jpg",  mask)
+                debug_img = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
+                if lineas is not None:
+                    for (x1, y1, x2, y2) in lineas[:, 0]:
+                        cv2.line(debug_img, (x1, y1), (x2, y2), (0, 0, 255), 2)
+                cv2.imwrite("/tmp/hough_frame.jpg", roi)
+                cv2.imwrite("/tmp/hough_edges.jpg", edges)
+                cv2.imwrite("/tmp/hough_lineas.jpg", debug_img)
 
         # ── Stream en tiempo real [STREAM] ────────────────────────────────────
         if self.stream:                                             # [STREAM]
             self.stream.update(                                     # [STREAM]
-                roi, mask,                                          # [STREAM]
+                roi, edges,                                         # [STREAM]
                 cx=cx, error=error if cx is not None else None,     # [STREAM]
                 v=v, w=giro,                                        # [STREAM]
             )                                                       # [STREAM]
@@ -237,7 +265,7 @@ class NodoCanny(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    nodo = NodoCanny()
+    nodo = NodoHough()
     try:
         rclpy.spin(nodo)
     except KeyboardInterrupt:

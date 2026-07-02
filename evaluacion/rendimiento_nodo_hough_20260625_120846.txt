@@ -1,0 +1,882 @@
+=== PRUEBA DE RENDIMIENTO: nodo_hough ===
+Fecha: Thu Jun 25 12:08:47 CEST 2026
+Duración: 60s
+
+=== Temperatura inicial ===
+temp=63.7'C
+=== Throttling inicial ===
+throttled=0x0
+
+=== Procesos relacionados antes de medir ===
+   4434    1718  5.2  0.3 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 run matias_control nodo_hough --ros-args -p canny_low:=50 -p canny_high:=150 -p blur_kernel:=10 -p hough_threshold:=20 -p hough_min_len:=15 -p hough_max_gap:=10 -p angulo_min_deg:=25.0 -p kp:=2.5 -p ki:=0.0 -p kd:=0.0 -p integral_max:=1.0 -p v_max:=0.3 -p roi_frac:=0.50 -p min_votos:=50 -p frames_gracia:=10
+   4437    4434 48.5  1.2 /usr/bin/python3 /home/matias/ros2_ws/install/matias_control/lib/matias_control/nodo_hough --ros-args -p canny_low:=50 -p canny_high:=150 -p blur_kernel:=10 -p hough_threshold:=20 -p hough_min_len:=15 -p hough_max_gap:=10 -p angulo_min_deg:=25.0 -p kp:=2.5 -p ki:=0.0 -p kd:=0.0 -p integral_max:=1.0 -p v_max:=0.3 -p roi_frac:=0.50 -p min_votos:=50 -p frames_gracia:=10
+   4458    4437 19.0  0.3 rpicam-vid -t 0 --nopreview --width 320 --height 240 --framerate 30 --codec mjpeg --inline -o -
+   4476    3043  1.6  0.0 /bin/bash ./medir_rendimiento.sh nodo_hough 60
+   4517    4476  0.0  0.0 tee -a rendimiento_nodo_hough_20260625_120846.txt
+
+=== PIDs medidos ===
+PIDS=4434,4437,4458,4476,4518
+
+=== CPU y RAM durante 60s ===
+Linux 6.8.0-1057-raspi (MATIAS) 	06/25/26 	_aarch64_	(4 CPU)
+
+=== Frecuencia de /cmd_vel durante 60s ===
+
+12:08:47      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:48     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:48     1000      4437   18.00   14.00    0.00    2.00   32.00     2  nodo_hough
+12:08:48     1000      4458   14.00    2.00    0.00    0.00   16.00     0  rpicam-vid
+12:08:48     1000      4476    1.00    0.00    0.00    0.00    1.00     3  medir_rendimien
+
+12:08:47      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:48     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:48     1000      4437     29.00      0.00 1592932   97704   1.20  nodo_hough
+12:08:48     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:48     1000      4476    147.00      0.00    4592    3072   0.04  medir_rendimien
+
+12:08:48      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:49     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:49     1000      4437   20.00   15.00    0.00    1.00   35.00     0  nodo_hough
+12:08:49     1000      4458   16.00    3.00    0.00    0.00   19.00     0  rpicam-vid
+12:08:49     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:48      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:49     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:49     1000      4437      3.00      0.00 1593472   97832   1.20  nodo_hough
+12:08:49     1000      4458      1.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:49     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.988
+	min: 0.031s max: 0.035s std dev: 0.00075s window: 31
+
+12:08:49      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:50     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:50     1000      4437   20.00   16.00    0.00    0.00   36.00     3  nodo_hough
+12:08:50     1000      4458   15.00    1.00    0.00    0.00   16.00     1  rpicam-vid
+12:08:50     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:49      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:50     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:50     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:08:50     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:50     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.998
+	min: 0.031s max: 0.035s std dev: 0.00059s window: 62
+
+12:08:50      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:51     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:51     1000      4437   20.00   16.00    0.00    0.00   36.00     2  nodo_hough
+12:08:51     1000      4458   16.00    3.00    0.00    0.00   19.00     2  rpicam-vid
+12:08:51     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:50      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:51     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:51     1000      4437      2.00      0.00 1593472   97832   1.20  nodo_hough
+12:08:51     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:51     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.997
+	min: 0.031s max: 0.036s std dev: 0.00065s window: 92
+
+12:08:51      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:52     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:52     1000      4437   19.00   15.00    0.00    1.00   34.00     3  nodo_hough
+12:08:52     1000      4458   15.00    1.00    0.00    0.00   16.00     1  rpicam-vid
+12:08:52     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:51      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:52     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:52     1000      4437      4.00      0.00 1593472   97832   1.20  nodo_hough
+12:08:52     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:52     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.993
+	min: 0.031s max: 0.036s std dev: 0.00065s window: 123
+
+12:08:52      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:53     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:53     1000      4437   19.00   16.00    0.00    0.00   35.00     1  nodo_hough
+12:08:53     1000      4458   15.00    3.00    0.00    0.00   18.00     2  rpicam-vid
+12:08:53     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:52      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:53     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:53     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:08:53     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:53     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00068s window: 154
+
+12:08:53      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:54     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:54     1000      4437   18.00   17.00    0.00    1.00   35.00     0  nodo_hough
+12:08:54     1000      4458   15.00    2.00    0.00    1.00   17.00     3  rpicam-vid
+12:08:54     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:53      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:54     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:54     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:08:54     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:54     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.031s max: 0.036s std dev: 0.00067s window: 184
+
+12:08:54      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:55     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:55     1000      4437   18.00   15.00    0.00    2.00   33.00     1  nodo_hough
+12:08:55     1000      4458   14.00    3.00    0.00    0.00   17.00     1  rpicam-vid
+12:08:55     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:54      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:55     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:55     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:08:55     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:55     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.998
+	min: 0.031s max: 0.036s std dev: 0.00069s window: 214
+
+12:08:55      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:56     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:56     1000      4437   19.00   16.00    0.00    1.00   35.00     3  nodo_hough
+12:08:56     1000      4458   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:08:56     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:55      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:56     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:56     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:08:56     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:56     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.997
+	min: 0.031s max: 0.036s std dev: 0.00071s window: 245
+
+12:08:56      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:57     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:57     1000      4437   17.00   16.00    0.00    1.00   33.00     3  nodo_hough
+12:08:57     1000      4458   15.00    2.00    0.00    0.00   17.00     3  rpicam-vid
+12:08:57     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:56      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:57     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:57     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:08:57     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:57     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.998
+	min: 0.031s max: 0.036s std dev: 0.00074s window: 276
+
+12:08:57      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:58     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:58     1000      4437   20.00   15.00    0.00    1.00   35.00     3  nodo_hough
+12:08:58     1000      4458   14.00    3.00    0.00    0.00   17.00     0  rpicam-vid
+12:08:58     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:57      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:58     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:58     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:08:58     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:58     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00078s window: 307
+
+12:08:58      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:08:59     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:08:59     1000      4437   18.00   17.00    0.00    1.00   35.00     1  nodo_hough
+12:08:59     1000      4458   15.00    2.00    0.00    0.00   17.00     0  rpicam-vid
+12:08:59     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:58      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:08:59     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:08:59     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:08:59     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:08:59     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00077s window: 337
+
+12:08:59      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:00     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:00     1000      4437   17.00   17.00    0.00    1.00   34.00     2  nodo_hough
+12:09:00     1000      4458   15.00    2.00    0.00    0.00   17.00     1  rpicam-vid
+12:09:00     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:08:59      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:00     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:00     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:00     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:00     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.031s max: 0.036s std dev: 0.00078s window: 367
+
+12:09:00      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:01     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:01     1000      4437   20.00   16.00    0.00    1.00   36.00     2  nodo_hough
+12:09:01     1000      4458   15.00    1.00    0.00    0.00   16.00     0  rpicam-vid
+12:09:01     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:00      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:01     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:01     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:01     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:01     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.031s max: 0.036s std dev: 0.00084s window: 398
+
+12:09:01      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:02     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:02     1000      4437   19.00   16.00    0.00    1.00   35.00     0  nodo_hough
+12:09:02     1000      4458   15.00    3.00    0.00    0.00   18.00     0  rpicam-vid
+12:09:02     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:01      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:02     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:02     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:02     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:02     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 428
+
+12:09:02      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:03     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:03     1000      4437   18.00   18.00    0.00    1.00   36.00     0  nodo_hough
+12:09:03     1000      4458   14.00    3.00    0.00    0.00   17.00     1  rpicam-vid
+12:09:03     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:02      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:03     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:03     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:03     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:03     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.997
+	min: 0.031s max: 0.036s std dev: 0.00084s window: 458
+
+12:09:03      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:04     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:04     1000      4437   19.00   15.00    0.00    1.00   34.00     2  nodo_hough
+12:09:04     1000      4458   15.00    3.00    0.00    0.00   18.00     3  rpicam-vid
+12:09:04     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:03      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:04     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:04     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:04     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:04     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 489
+
+12:09:04      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:05     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:05     1000      4437   20.00   15.00    0.00    1.00   35.00     0  nodo_hough
+12:09:05     1000      4458   14.00    2.00    0.00    0.00   16.00     0  rpicam-vid
+12:09:05     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:04      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:05     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:05     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:05     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:05     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 519
+
+12:09:05      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:06     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:06     1000      4437   17.00   18.00    0.00    1.00   35.00     1  nodo_hough
+12:09:06     1000      4458   15.00    2.00    0.00    0.00   17.00     3  rpicam-vid
+12:09:06     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:05      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:06     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:06     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:06     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:06     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00084s window: 550
+
+12:09:06      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:07     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:07     1000      4437   17.00   17.00    0.00    1.00   34.00     2  nodo_hough
+12:09:07     1000      4458   16.00    2.00    0.00    1.00   18.00     3  rpicam-vid
+12:09:07     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:06      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:07     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:07     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:07     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:07     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00083s window: 580
+
+12:09:07      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:08     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:08     1000      4437   19.00   16.00    0.00    1.00   35.00     1  nodo_hough
+12:09:08     1000      4458   14.00    2.00    0.00    0.00   16.00     0  rpicam-vid
+12:09:08     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:07      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:08     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:08     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:08     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:08     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00083s window: 611
+
+12:09:08      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:09     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:09     1000      4437   18.00   16.00    0.00    1.00   34.00     1  nodo_hough
+12:09:09     1000      4458   16.00    2.00    0.00    0.00   18.00     1  rpicam-vid
+12:09:09     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:08      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:09     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:09     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:09     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:09     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00084s window: 641
+
+12:09:09      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:10     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:10     1000      4437   19.00   16.00    0.00    1.00   35.00     1  nodo_hough
+12:09:10     1000      4458   14.00    2.00    0.00    0.00   16.00     1  rpicam-vid
+12:09:10     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:09      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:10     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:10     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:10     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:10     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 671
+
+12:09:10      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:11     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:11     1000      4437   18.00   17.00    0.00    0.00   35.00     3  nodo_hough
+12:09:11     1000      4458   14.00    4.00    0.00    0.00   18.00     3  rpicam-vid
+12:09:11     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:10      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:11     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:11     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:11     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:11     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.997
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 702
+
+12:09:11      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:12     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:12     1000      4437   18.00   16.00    0.00    1.00   34.00     0  nodo_hough
+12:09:12     1000      4458   15.00    1.00    0.00    0.00   16.00     2  rpicam-vid
+12:09:12     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:11      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:12     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:12     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:12     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:12     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00084s window: 733
+
+12:09:12      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:13     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:13     1000      4437   19.00   16.00    0.00    2.00   35.00     1  nodo_hough
+12:09:13     1000      4458   16.00    3.00    0.00    1.00   19.00     2  rpicam-vid
+12:09:13     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:12      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:13     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:13     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:13     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:13     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00084s window: 764
+
+12:09:13      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:14     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:14     1000      4437   18.00   16.00    0.00    1.00   34.00     1  nodo_hough
+12:09:14     1000      4458   14.00    2.00    0.00    0.00   16.00     0  rpicam-vid
+12:09:14     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:13      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:14     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:14     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:14     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:14     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00084s window: 794
+
+12:09:14      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:15     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:15     1000      4437   18.00   16.00    0.00    2.00   34.00     1  nodo_hough
+12:09:15     1000      4458   15.00    3.00    0.00    0.00   18.00     0  rpicam-vid
+12:09:15     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:14      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:15     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:15     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:15     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:15     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 824
+
+12:09:15      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:16     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:16     1000      4437   20.00   15.00    0.00    0.00   35.00     2  nodo_hough
+12:09:16     1000      4458   14.00    3.00    0.00    0.00   17.00     3  rpicam-vid
+12:09:16     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:15      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:16     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:16     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:16     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:16     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 855
+
+12:09:16      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:17     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:17     1000      4437   19.00   17.00    0.00    2.00   36.00     3  nodo_hough
+12:09:17     1000      4458   14.00    2.00    0.00    0.00   16.00     0  rpicam-vid
+12:09:17     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:16      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:17     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:17     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:17     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:17     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 885
+
+12:09:17      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:18     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:18     1000      4437   19.00   15.00    0.00    1.00   34.00     1  nodo_hough
+12:09:18     1000      4458   16.00    2.00    0.00    0.00   18.00     3  rpicam-vid
+12:09:18     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:17      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:18     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:18     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:18     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:18     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.031s max: 0.036s std dev: 0.00086s window: 916
+
+12:09:18      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:19     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:19     1000      4437   19.00   16.00    0.00    1.00   35.00     1  nodo_hough
+12:09:19     1000      4458   14.00    2.00    0.00    0.00   16.00     0  rpicam-vid
+12:09:19     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:18      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:19     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:19     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:19     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:19     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.997
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 946
+
+12:09:19      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:20     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:20     1000      4437   19.00   17.00    0.00    1.00   36.00     0  nodo_hough
+12:09:20     1000      4458   15.00    2.00    0.00    0.00   17.00     3  rpicam-vid
+12:09:20     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:19      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:20     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:20     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:20     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:20     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.998
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 977
+
+12:09:20      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:21     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:21     1000      4437   20.00   16.00    0.00    1.00   36.00     3  nodo_hough
+12:09:21     1000      4458   14.00    3.00    0.00    1.00   17.00     1  rpicam-vid
+12:09:21     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:20      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:21     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:21     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:21     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:21     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1008
+
+12:09:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:22     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:22     1000      4437   18.00   16.00    0.00    1.00   34.00     3  nodo_hough
+12:09:22     1000      4458   15.00    2.00    0.00    0.00   17.00     1  rpicam-vid
+12:09:22     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:22     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:22     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:22     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:22     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00086s window: 1039
+
+12:09:22      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:23     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:23     1000      4437   19.00   15.00    0.00    0.00   34.00     1  nodo_hough
+12:09:23     1000      4458   16.00    2.00    0.00    0.00   18.00     2  rpicam-vid
+12:09:23     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:22      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:23     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:23     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:23     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:23     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1070
+
+12:09:23      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:24     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:24     1000      4437   18.00   17.00    0.00    1.00   35.00     2  nodo_hough
+12:09:24     1000      4458   15.00    2.00    0.00    0.00   17.00     0  rpicam-vid
+12:09:24     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:23      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:24     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:24     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:24     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:24     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00086s window: 1100
+
+12:09:24      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:25     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:25     1000      4437   17.00   18.00    0.00    1.00   35.00     0  nodo_hough
+12:09:25     1000      4458   14.00    2.00    0.00    0.00   16.00     1  rpicam-vid
+12:09:25     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:24      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:25     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:25     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:25     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:25     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1131
+
+12:09:25      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:26     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:26     1000      4437   19.00   16.00    0.00    1.00   35.00     2  nodo_hough
+12:09:26     1000      4458   14.00    3.00    0.00    0.00   17.00     0  rpicam-vid
+12:09:26     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:25      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:26     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:26     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:26     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:26     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1161
+
+12:09:26      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:27     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:27     1000      4437   20.00   14.00    0.00    0.00   34.00     2  nodo_hough
+12:09:27     1000      4458   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:09:27     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:26      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:27     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:27     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:27     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:27     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+
+12:09:27      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:28     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:28     1000      4437   18.00   16.00    0.00    2.00   34.00     2  nodo_hough
+12:09:28     1000      4458   14.00    3.00    0.00    0.00   17.00     1  rpicam-vid
+12:09:28     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:27      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:28     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:28     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:28     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:28     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1192
+
+12:09:28      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:29     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:29     1000      4437   16.00   18.00    0.00    1.00   34.00     3  nodo_hough
+12:09:29     1000      4458   16.00    2.00    0.00    0.00   18.00     2  rpicam-vid
+12:09:29     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:28      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:29     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:29     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:29     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:29     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1223
+
+12:09:29      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:30     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:30     1000      4437   18.00   16.00    0.00    1.00   34.00     1  nodo_hough
+12:09:30     1000      4458   14.00    3.00    0.00    1.00   17.00     1  rpicam-vid
+12:09:30     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:29      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:30     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:30     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:30     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:30     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.998
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1253
+
+12:09:30      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:31     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:31     1000      4437   19.00   16.00    0.00    1.00   35.00     3  nodo_hough
+12:09:31     1000      4458   15.00    1.00    0.00    0.00   16.00     0  rpicam-vid
+12:09:31     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:30      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:31     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:31     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:31     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:31     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1284
+
+12:09:31      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:32     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:32     1000      4437   20.00   15.00    0.00    0.00   35.00     1  nodo_hough
+12:09:32     1000      4458   15.00    3.00    0.00    0.00   18.00     1  rpicam-vid
+12:09:32     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:31      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:32     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:32     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:32     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:32     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1314
+
+12:09:32      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:33     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:33     1000      4437   19.00   16.00    0.00    1.00   35.00     3  nodo_hough
+12:09:33     1000      4458   15.00    2.00    0.00    0.00   17.00     1  rpicam-vid
+12:09:33     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:32      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:33     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:33     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:33     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:33     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1345
+
+12:09:33      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:34     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:34     1000      4437   17.00   17.00    0.00    1.00   34.00     1  nodo_hough
+12:09:34     1000      4458   15.00    3.00    0.00    0.00   18.00     3  rpicam-vid
+12:09:34     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:33      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:34     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:34     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:34     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:34     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1376
+
+12:09:34      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:35     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:35     1000      4437   19.00   14.00    0.00    2.00   33.00     3  nodo_hough
+12:09:35     1000      4458   15.00    2.00    0.00    0.00   17.00     0  rpicam-vid
+12:09:35     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:34      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:35     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:35     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:35     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:35     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.031s max: 0.036s std dev: 0.00085s window: 1406
+
+12:09:35      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:36     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:36     1000      4437   18.00   17.00    0.00    1.00   35.00     2  nodo_hough
+12:09:36     1000      4458   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:09:36     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:35      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:36     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:36     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:36     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:36     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.031s max: 0.036s std dev: 0.00086s window: 1437
+
+12:09:36      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:37     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:37     1000      4437   20.00   16.00    0.00    2.00   36.00     3  nodo_hough
+12:09:37     1000      4458   15.00    1.00    0.00    0.00   16.00     0  rpicam-vid
+12:09:37     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:36      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:37     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:37     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:37     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:37     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.030s max: 0.037s std dev: 0.00086s window: 1467
+
+12:09:37      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:38     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:38     1000      4437   20.00   16.00    0.00    0.00   36.00     1  nodo_hough
+12:09:38     1000      4458   15.00    2.00    0.00    0.00   17.00     1  rpicam-vid
+12:09:38     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:37      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:38     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:38     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:38     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:38     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.030s max: 0.037s std dev: 0.00086s window: 1497
+
+12:09:38      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:39     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:39     1000      4437   20.00   16.00    0.00    1.00   36.00     3  nodo_hough
+12:09:39     1000      4458   14.00    3.00    0.00    1.00   17.00     3  rpicam-vid
+12:09:39     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:38      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:39     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:39     1000      4437      2.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:39     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:39     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.998
+	min: 0.030s max: 0.037s std dev: 0.00086s window: 1528
+
+12:09:39      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:40     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:40     1000      4437   19.00   16.00    0.00    1.00   35.00     2  nodo_hough
+12:09:40     1000      4458   15.00    3.00    0.00    0.00   18.00     2  rpicam-vid
+12:09:40     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:39      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:40     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:40     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:40     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:40     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.030s max: 0.037s std dev: 0.00086s window: 1559
+
+12:09:40      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:41     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:41     1000      4437   18.00   16.00    0.00    1.00   34.00     0  nodo_hough
+12:09:41     1000      4458   16.00    2.00    0.00    0.00   18.00     3  rpicam-vid
+12:09:41     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:40      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:41     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:41     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:41     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:41     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.030s max: 0.037s std dev: 0.00085s window: 1590
+
+12:09:41      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:42     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:42     1000      4437   18.00   15.00    0.00    1.00   33.00     2  nodo_hough
+12:09:42     1000      4458   15.00    2.00    0.00    0.00   17.00     2  rpicam-vid
+12:09:42     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:41      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:42     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:42     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:42     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:42     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.030s max: 0.037s std dev: 0.00085s window: 1620
+
+12:09:42      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:43     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:43     1000      4437   19.00   16.00    0.00    1.00   35.00     0  nodo_hough
+12:09:43     1000      4458   14.00    3.00    0.00    0.00   17.00     3  rpicam-vid
+12:09:43     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:42      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:43     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:43     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:43     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:43     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.030s max: 0.037s std dev: 0.00085s window: 1650
+
+12:09:43      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:44     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:44     1000      4437   19.00   16.00    0.00    1.00   35.00     2  nodo_hough
+12:09:44     1000      4458   16.00    1.00    0.00    0.00   17.00     3  rpicam-vid
+12:09:44     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:43      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:44     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:44     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:44     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:44     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.030s max: 0.037s std dev: 0.00085s window: 1681
+
+12:09:44      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:45     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:45     1000      4437   19.00   16.00    0.00    1.00   35.00     1  nodo_hough
+12:09:45     1000      4458   16.00    2.00    0.00    0.00   18.00     1  rpicam-vid
+12:09:45     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:44      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:45     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:45     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:45     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:45     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 29.999
+	min: 0.030s max: 0.037s std dev: 0.00085s window: 1711
+
+12:09:45      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:46     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:46     1000      4437   18.00   16.00    0.00    1.00   34.00     3  nodo_hough
+12:09:46     1000      4458   15.00    2.00    0.00    0.00   17.00     1  rpicam-vid
+12:09:46     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:45      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:46     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:46     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:46     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:46     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+average rate: 30.000
+	min: 0.030s max: 0.037s std dev: 0.00085s window: 1742
+
+12:09:46      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:09:47     1000      4434    0.00    0.00    0.00    0.00    0.00     3  ros2
+12:09:47     1000      4437   17.00   18.00    0.00    2.00   35.00     2  nodo_hough
+12:09:47     1000      4458   14.00    3.00    0.00    0.00   17.00     1  rpicam-vid
+12:09:47     1000      4476    0.00    0.00    0.00    0.00    0.00     3  medir_rendimien
+
+12:09:46      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:09:47     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+12:09:47     1000      4437      0.00      0.00 1593472   97832   1.20  nodo_hough
+12:09:47     1000      4458      0.00      0.00  869892   25640   0.32  rpicam-vid
+12:09:47     1000      4476      0.00      0.00    4592    3072   0.04  medir_rendimien
+
+Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+Average:     1000      4434    0.00    0.00    0.00    0.00    0.00     -  ros2
+Average:     1000      4437   18.63   16.05    0.00    1.00   34.68     -  nodo_hough
+Average:     1000      4458   14.85    2.27    0.00    0.10   17.12     -  rpicam-vid
+Average:     1000      4476    0.02    0.00    0.00    0.00    0.02     -  medir_rendimien
+
+Average:      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+Average:     1000      4434      0.00      0.00  185604   27520   0.34  ros2
+Average:     1000      4437      0.67      0.00 1593463   97830   1.20  nodo_hough
+Average:     1000      4458      0.02      0.00  869892   25640   0.32  rpicam-vid
+Average:     1000      4476      2.45      0.00    4592    3072   0.04  medir_rendimien
+
+=== Procesos relacionados después de medir ===
+   4434    1718  0.4  0.3 /usr/bin/python3 /opt/ros/jazzy/bin/ros2 run matias_control nodo_hough --ros-args -p canny_low:=50 -p canny_high:=150 -p blur_kernel:=10 -p hough_threshold:=20 -p hough_min_len:=15 -p hough_max_gap:=10 -p angulo_min_deg:=25.0 -p kp:=2.5 -p ki:=0.0 -p kd:=0.0 -p integral_max:=1.0 -p v_max:=0.3 -p roi_frac:=0.50 -p min_votos:=50 -p frames_gracia:=10
+   4437    4434 35.7  1.2 /usr/bin/python3 /home/matias/ros2_ws/install/matias_control/lib/matias_control/nodo_hough --ros-args -p canny_low:=50 -p canny_high:=150 -p blur_kernel:=10 -p hough_threshold:=20 -p hough_min_len:=15 -p hough_max_gap:=10 -p angulo_min_deg:=25.0 -p kp:=2.5 -p ki:=0.0 -p kd:=0.0 -p integral_max:=1.0 -p v_max:=0.3 -p roi_frac:=0.50 -p min_votos:=50 -p frames_gracia:=10
+   4458    4437 17.2  0.3 rpicam-vid -t 0 --nopreview --width 320 --height 240 --framerate 30 --codec mjpeg --inline -o -
+   4476    3043  0.0  0.0 /bin/bash ./medir_rendimiento.sh nodo_hough 60
+   4570    4476  0.0  0.0 tee -a rendimiento_nodo_hough_20260625_120846.txt
+
+=== Temperatura final ===
+temp=64.2'C
+=== Throttling final ===
+throttled=0x0
+

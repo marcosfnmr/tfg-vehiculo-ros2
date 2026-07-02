@@ -23,7 +23,7 @@ VELOCIDAD_AVANCE = 0.25
 GANANCIA_GIRO    = 1.4
 MIN_AREA         = 500      # área mínima para considerar que hay objeto
 MAX_AREA         = 25000    # área máxima: si se supera, el objeto está demasiado cerca
-DEBUG            = False
+DEBUG            = True
 
 
 class NodoVision(Node):

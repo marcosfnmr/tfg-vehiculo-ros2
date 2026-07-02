@@ -1,0 +1,33 @@
+=== PRUEBA DE RENDIMIENTO: nodo_hough ===
+Fecha: Thu Jun 25 12:20:21 CEST 2026
+Duración: 60s
+
+=== Temperatura inicial ===
+temp=61.5'C
+=== Throttling inicial ===
+throttled=0x0
+
+=== Procesos relacionados antes de medir ===
+   4917    3043  1.6  0.0 /bin/bash ./medir_rendimiento.sh nodo_hough 60
+   4958    4917  0.0  0.0 tee -a rendimiento_nodo_hough_20260625_122021.txt
+
+=== PIDs medidos ===
+PIDS=4917,4959
+
+=== CPU y RAM durante 60s ===
+Linux 6.8.0-1057-raspi (MATIAS) 	06/25/26 	_aarch64_	(4 CPU)
+
+=== Frecuencia de /cmd_vel durante 60s ===
+
+12:20:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+12:20:22     1000      4917    0.00    1.00    0.00    0.00    1.00     0  medir_rendimien
+
+12:20:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+12:20:22     1000      4917    157.00      0.00    4592    3072   0.04  medir_rendimien
+
+
+Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+Average:     1000      4917    0.00    1.00    0.00    0.00    1.00     -  medir_rendimien
+
+Average:      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+Average:     1000      4917    157.00      0.00    4592    3072   0.04  medir_rendimien

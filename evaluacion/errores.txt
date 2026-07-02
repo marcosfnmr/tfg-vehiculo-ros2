@@ -1,0 +1,1916 @@
+Jun 05 17:36:35 MATIAS kernel: Booting Linux on physical CPU 0x0000000000 [0x414fd0b1]
+Jun 05 17:36:35 MATIAS kernel: Linux version 6.8.0-1057-raspi (buildd@bos03-arm64-099) (aarch64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #61-Ubuntu SMP PREEMPT_DYNAMIC Tue May 26 22:12:44 UTC 2026 (Ubuntu 6.8.0-1057.61-raspi 6.8.12)
+Jun 05 17:36:35 MATIAS kernel: KASLR enabled
+Jun 05 17:36:35 MATIAS kernel: random: crng init done
+Jun 05 17:36:35 MATIAS kernel: Machine model: Raspberry Pi 5 Model B Rev 1.0
+Jun 05 17:36:35 MATIAS kernel: efi: UEFI not found.
+Jun 05 17:36:35 MATIAS kernel: Reserved memory: created CMA memory pool at 0x0000000002600000, size 320 MiB
+Jun 05 17:36:35 MATIAS kernel: OF: reserved mem: initialized node linux,cma, compatible id shared-dma-pool
+Jun 05 17:36:35 MATIAS kernel: OF: reserved mem: 0x0000000002600000..0x00000000165fffff (327680 KiB) map reusable linux,cma
+Jun 05 17:36:35 MATIAS kernel: OF: reserved mem: 0x0000000000000000..0x000000000007ffff (512 KiB) nomap non-reusable atf@0
+Jun 05 17:36:35 MATIAS kernel: OF: reserved mem: 0x000000003fd237a0..0x000000003fd237d7 (0 KiB) nomap non-reusable nvram@0
+Jun 05 17:36:35 MATIAS kernel: Zone ranges:
+Jun 05 17:36:35 MATIAS kernel:   DMA      [mem 0x0000000000000000-0x00000000ffffffff]
+Jun 05 17:36:35 MATIAS kernel:   DMA32    empty
+Jun 05 17:36:35 MATIAS kernel:   Normal   [mem 0x0000000100000000-0x00000001ffffffff]
+Jun 05 17:36:35 MATIAS kernel: Movable zone start for each node
+Jun 05 17:36:35 MATIAS kernel: Early memory node ranges
+Jun 05 17:36:35 MATIAS kernel:   node   0: [mem 0x0000000000000000-0x000000000007ffff]
+Jun 05 17:36:35 MATIAS kernel:   node   0: [mem 0x0000000000080000-0x000000003fbfffff]
+Jun 05 17:36:35 MATIAS kernel:   node   0: [mem 0x0000000040000000-0x00000001ffffffff]
+Jun 05 17:36:35 MATIAS kernel: Initmem setup node 0 [mem 0x0000000000000000-0x00000001ffffffff]
+Jun 05 17:36:35 MATIAS kernel: On node 0, zone DMA: 1024 pages in unavailable ranges
+Jun 05 17:36:35 MATIAS kernel: psci: probing for conduit method from DT.
+Jun 05 17:36:35 MATIAS kernel: psci: PSCIv1.1 detected in firmware.
+Jun 05 17:36:35 MATIAS kernel: psci: Using standard PSCI v0.2 function IDs
+Jun 05 17:36:35 MATIAS kernel: psci: MIGRATE_INFO_TYPE not supported.
+Jun 05 17:36:35 MATIAS kernel: psci: SMC Calling Convention v1.2
+Jun 05 17:36:35 MATIAS kernel: percpu: Embedded 52 pages/cpu s88104 r8192 d116696 u212992
+Jun 05 17:36:35 MATIAS kernel: pcpu-alloc: s88104 r8192 d116696 u212992 alloc=52*4096
+Jun 05 17:36:35 MATIAS kernel: pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+Jun 05 17:36:35 MATIAS kernel: Detected PIPT I-cache on CPU0
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: Virtualization Host Extensions
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: Spectre-v4
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: Spectre-BHB
+Jun 05 17:36:35 MATIAS kernel: CPU features: kernel page table isolation forced ON by KASLR
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: Kernel page table isolation (KPTI)
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: SSBS not fully self-synchronizing
+Jun 05 17:36:35 MATIAS kernel: alternatives: applying boot alternatives
+Jun 05 17:36:35 MATIAS kernel: Kernel command line: reboot=w coherent_pool=1M 8250.nr_uarts=1 pci=pcie_bus_safe  smsc95xx.macaddr=2C:CF:67:5C:A0:BA vc_mem.mem_base=0x3fc00000 vc_mem.mem_size=0x40000000  console=ttyAMA0,115200 multipath=off dwc_otg.lpm_enable=0 console=tty1 root=LABEL=writable rootfstype=ext4 rootwait fixrtc cfg80211.ieee80211_regdom=ES
+Jun 05 17:36:35 MATIAS kernel: Unknown kernel command line parameters "fixrtc multipath=off", will be passed to user space.
+Jun 05 17:36:35 MATIAS kernel: Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: Built 1 zonelists, mobility grouping on.  Total pages: 2063360
+Jun 05 17:36:35 MATIAS kernel: mem auto-init: stack:off, heap alloc:off, heap free:off
+Jun 05 17:36:35 MATIAS kernel: software IO TLB: area num 4.
+Jun 05 17:36:35 MATIAS kernel: software IO TLB: mapped [mem 0x00000000fbfff000-0x00000000fffff000] (64MB)
+Jun 05 17:36:35 MATIAS kernel: Memory: 7734500K/8384512K available (15296K kernel code, 2726K rwdata, 9708K rodata, 6656K init, 895K bss, 322332K reserved, 327680K cma-reserved)
+Jun 05 17:36:35 MATIAS kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+Jun 05 17:36:35 MATIAS kernel: ftrace: allocating 45386 entries in 178 pages
+Jun 05 17:36:35 MATIAS kernel: ftrace: allocated 178 pages with 4 groups
+Jun 05 17:36:35 MATIAS kernel: Dynamic Preempt: full
+Jun 05 17:36:35 MATIAS kernel: rcu: Preemptible hierarchical RCU implementation.
+Jun 05 17:36:35 MATIAS kernel: rcu:         RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=4.
+Jun 05 17:36:35 MATIAS kernel:         Trampoline variant of Tasks RCU enabled.
+Jun 05 17:36:35 MATIAS kernel:         Rude variant of Tasks RCU enabled.
+Jun 05 17:36:35 MATIAS kernel:         Tracing variant of Tasks RCU enabled.
+Jun 05 17:36:35 MATIAS kernel: rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+Jun 05 17:36:35 MATIAS kernel: rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+Jun 05 17:36:35 MATIAS kernel: RCU Tasks: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=4.
+Jun 05 17:36:35 MATIAS kernel: RCU Tasks Rude: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=4.
+Jun 05 17:36:35 MATIAS kernel: RCU Tasks Trace: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=4.
+Jun 05 17:36:35 MATIAS kernel: NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+Jun 05 17:36:35 MATIAS kernel: Root IRQ handler: gic_handle_irq
+Jun 05 17:36:35 MATIAS kernel: GIC: Using split EOI/Deactivate mode
+Jun 05 17:36:35 MATIAS kernel: rcu: srcu_init: Setting srcu_struct sizes based on contention.
+Jun 05 17:36:35 MATIAS kernel: arch_timer: cp15 timer(s) running at 54.00MHz (phys).
+Jun 05 17:36:35 MATIAS kernel: clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0xc743ce346, max_idle_ns: 440795203123 ns
+Jun 05 17:36:35 MATIAS kernel: sched_clock: 56 bits at 54MHz, resolution 18ns, wraps every 4398046511102ns
+Jun 05 17:36:35 MATIAS kernel: Console: colour dummy device 80x25
+Jun 05 17:36:35 MATIAS kernel: printk: legacy console [tty1] enabled
+Jun 05 17:36:35 MATIAS kernel: Calibrating delay loop (skipped), value calculated using timer frequency.. 108.00 BogoMIPS (lpj=54000)
+Jun 05 17:36:35 MATIAS kernel: pid_max: default: 32768 minimum: 301
+Jun 05 17:36:35 MATIAS kernel: LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,integrity
+Jun 05 17:36:35 MATIAS kernel: landlock: Up and running.
+Jun 05 17:36:35 MATIAS kernel: Yama: becoming mindful.
+Jun 05 17:36:35 MATIAS kernel: AppArmor: AppArmor initialized
+Jun 05 17:36:35 MATIAS kernel: Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: rcu: Hierarchical SRCU implementation.
+Jun 05 17:36:35 MATIAS kernel: rcu:         Max phase no-delay instances is 400.
+Jun 05 17:36:35 MATIAS kernel: EFI services will not be available.
+Jun 05 17:36:35 MATIAS kernel: smp: Bringing up secondary CPUs ...
+Jun 05 17:36:35 MATIAS kernel: Detected PIPT I-cache on CPU1
+Jun 05 17:36:35 MATIAS kernel: CPU1: Booted secondary processor 0x0000000100 [0x414fd0b1]
+Jun 05 17:36:35 MATIAS kernel: Detected PIPT I-cache on CPU2
+Jun 05 17:36:35 MATIAS kernel: CPU2: Booted secondary processor 0x0000000200 [0x414fd0b1]
+Jun 05 17:36:35 MATIAS kernel: Detected PIPT I-cache on CPU3
+Jun 05 17:36:35 MATIAS kernel: CPU3: Booted secondary processor 0x0000000300 [0x414fd0b1]
+Jun 05 17:36:35 MATIAS kernel: smp: Brought up 1 node, 4 CPUs
+Jun 05 17:36:35 MATIAS kernel: SMP: Total of 4 processors activated.
+Jun 05 17:36:35 MATIAS kernel: CPU: All CPU(s) started at EL2
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: 32-bit EL0 Support
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: Data cache clean to the PoU not required for I/D coherence
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: Common not Private translations
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: CRC32 instructions
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: Data cache clean to Point of Persistence
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: RCpc load-acquire (LDAPR)
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: LSE atomic instructions
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: Privileged Access Never
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: Speculative Store Bypassing Safe (SSBS)
+Jun 05 17:36:35 MATIAS kernel: alternatives: applying system-wide alternatives
+Jun 05 17:36:35 MATIAS kernel: CPU features: detected: Hardware dirty bit management on CPU0-3
+Jun 05 17:36:35 MATIAS kernel: devtmpfs: initialized
+Jun 05 17:36:35 MATIAS kernel: Enabled cp15_barrier support
+Jun 05 17:36:35 MATIAS kernel: Enabled setend support
+Jun 05 17:36:35 MATIAS kernel: clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+Jun 05 17:36:35 MATIAS kernel: futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: pinctrl core: initialized pinctrl subsystem
+Jun 05 17:36:35 MATIAS kernel: DMI not present or invalid.
+Jun 05 17:36:35 MATIAS kernel: NET: Registered PF_NETLINK/PF_ROUTE protocol family
+Jun 05 17:36:35 MATIAS kernel: DMA: preallocated 1024 KiB GFP_KERNEL pool for atomic allocations
+Jun 05 17:36:35 MATIAS kernel: DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+Jun 05 17:36:35 MATIAS kernel: DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+Jun 05 17:36:35 MATIAS kernel: audit: initializing netlink subsys (disabled)
+Jun 05 17:36:35 MATIAS kernel: audit: type=2000 audit(0.010:1): state=initialized audit_enabled=0 res=1
+Jun 05 17:36:35 MATIAS kernel: thermal_sys: Registered thermal governor 'fair_share'
+Jun 05 17:36:35 MATIAS kernel: thermal_sys: Registered thermal governor 'bang_bang'
+Jun 05 17:36:35 MATIAS kernel: thermal_sys: Registered thermal governor 'step_wise'
+Jun 05 17:36:35 MATIAS kernel: thermal_sys: Registered thermal governor 'user_space'
+Jun 05 17:36:35 MATIAS kernel: cpuidle: using governor ladder
+Jun 05 17:36:35 MATIAS kernel: cpuidle: using governor menu
+Jun 05 17:36:35 MATIAS kernel: hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+Jun 05 17:36:35 MATIAS kernel: ASID allocator initialised with 32768 entries
+Jun 05 17:36:35 MATIAS kernel: Serial: AMBA PL011 UART driver
+Jun 05 17:36:35 MATIAS kernel: bcm2835-mbox 107c013880.mailbox: mailbox enabled
+Jun 05 17:36:35 MATIAS kernel: 107d001000.serial: ttyAMA10 at MMIO 0x107d001000 (irq = 15, base_baud = 0) is a PL011 rev2
+Jun 05 17:36:35 MATIAS kernel: raspberrypi-firmware soc:firmware: Attached to firmware from 2025-11-05T17:37:18, variant start_cd
+Jun 05 17:36:35 MATIAS kernel: raspberrypi-firmware soc:firmware: Firmware hash is 57db150d00000000000000000000000000000000
+Jun 05 17:36:35 MATIAS kernel: /axi/pcie@120000/rp1/i2c@88000/ov5647@36: Fixed dependency cycle(s) with /axi/pcie@120000/rp1/csi@110000
+Jun 05 17:36:35 MATIAS kernel: /axi/pcie@120000/rp1/csi@110000: Fixed dependency cycle(s) with /axi/pcie@120000/rp1/i2c@88000/ov5647@36
+Jun 05 17:36:35 MATIAS kernel: /axi/interrupt-controller@7fff9000: Fixed dependency cycle(s) with /axi/interrupt-controller@7fff9000
+Jun 05 17:36:35 MATIAS kernel: /axi/pcie@120000/rp1/i2c@88000/ov5647@36: Fixed dependency cycle(s) with /axi/pcie@120000/rp1/csi@110000
+Jun 05 17:36:35 MATIAS kernel: /axi/pcie@120000/rp1/csi@110000: Fixed dependency cycle(s) with /axi/pcie@120000/rp1/i2c@88000/ov5647@36
+Jun 05 17:36:35 MATIAS kernel: Modules: 2G module region forced by RANDOMIZE_MODULE_REGION_FULL
+Jun 05 17:36:35 MATIAS kernel: Modules: 0 pages in range for non-PLT usage
+Jun 05 17:36:35 MATIAS kernel: Modules: 515424 pages in range for PLT usage
+Jun 05 17:36:35 MATIAS kernel: HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+Jun 05 17:36:35 MATIAS kernel: HugeTLB: 0 KiB vmemmap can be freed for a 1.00 GiB page
+Jun 05 17:36:35 MATIAS kernel: HugeTLB: registered 32.0 MiB page size, pre-allocated 0 pages
+Jun 05 17:36:35 MATIAS kernel: HugeTLB: 0 KiB vmemmap can be freed for a 32.0 MiB page
+Jun 05 17:36:35 MATIAS kernel: HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+Jun 05 17:36:35 MATIAS kernel: HugeTLB: 0 KiB vmemmap can be freed for a 2.00 MiB page
+Jun 05 17:36:35 MATIAS kernel: HugeTLB: registered 64.0 KiB page size, pre-allocated 0 pages
+Jun 05 17:36:35 MATIAS kernel: HugeTLB: 0 KiB vmemmap can be freed for a 64.0 KiB page
+Jun 05 17:36:35 MATIAS kernel: bcm2835-dma 1000010000.dma: DMA legacy API manager, dmachans=0x1
+Jun 05 17:36:35 MATIAS kernel: iommu: Default domain type: Translated
+Jun 05 17:36:35 MATIAS kernel: iommu: DMA domain TLB invalidation policy: strict mode
+Jun 05 17:36:35 MATIAS kernel: SCSI subsystem initialized
+Jun 05 17:36:35 MATIAS kernel: usbcore: registered new interface driver usbfs
+Jun 05 17:36:35 MATIAS kernel: usbcore: registered new interface driver hub
+Jun 05 17:36:35 MATIAS kernel: usbcore: registered new device driver usb
+Jun 05 17:36:35 MATIAS kernel: pps_core: LinuxPPS API ver. 1 registered
+Jun 05 17:36:35 MATIAS kernel: pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+Jun 05 17:36:35 MATIAS kernel: PTP clock support registered
+Jun 05 17:36:35 MATIAS kernel: EDAC MC: Ver: 3.0.0
+Jun 05 17:36:35 MATIAS kernel: NetLabel: Initializing
+Jun 05 17:36:35 MATIAS kernel: NetLabel:  domain hash size = 128
+Jun 05 17:36:35 MATIAS kernel: NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+Jun 05 17:36:35 MATIAS kernel: NetLabel:  unlabeled traffic allowed by default
+Jun 05 17:36:35 MATIAS kernel: clocksource: Switched to clocksource arch_sys_counter
+Jun 05 17:36:35 MATIAS kernel: VFS: Disk quotas dquot_6.6.0
+Jun 05 17:36:35 MATIAS kernel: VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Jun 05 17:36:35 MATIAS kernel: AppArmor: AppArmor Filesystem Enabled
+Jun 05 17:36:35 MATIAS kernel: NET: Registered PF_INET protocol family
+Jun 05 17:36:35 MATIAS kernel: IP idents hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: tcp_listen_portaddr_hash hash table entries: 4096 (order: 4, 65536 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: TCP: Hash tables configured (established 65536 bind 65536)
+Jun 05 17:36:35 MATIAS kernel: MPTCP token hash table entries: 8192 (order: 6, 196608 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: UDP hash table entries: 4096 (order: 5, 131072 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes, linear)
+Jun 05 17:36:35 MATIAS kernel: NET: Registered PF_UNIX/PF_LOCAL protocol family
+Jun 05 17:36:35 MATIAS kernel: NET: Registered PF_XDP protocol family
+Jun 05 17:36:35 MATIAS kernel: PCI: CLS 0 bytes, default 64
+Jun 05 17:36:35 MATIAS kernel: Trying to unpack rootfs image as initramfs...
+Jun 05 17:36:35 MATIAS kernel: kvm [1]: IPA Size Limit: 40 bits
+Jun 05 17:36:35 MATIAS kernel: kvm [1]: vgic interrupt IRQ9
+Jun 05 17:36:35 MATIAS kernel: kvm [1]: VHE mode initialized successfully
+Jun 05 17:36:35 MATIAS kernel: Initialise system trusted keyrings
+Jun 05 17:36:35 MATIAS kernel: Key type blacklist registered
+Jun 05 17:36:35 MATIAS kernel: workingset: timestamp_bits=46 max_order=21 bucket_order=0
+Jun 05 17:36:35 MATIAS kernel: zbud: loaded
+Jun 05 17:36:35 MATIAS kernel: squashfs: version 4.0 (2009/01/31) Phillip Lougher
+Jun 05 17:36:35 MATIAS kernel: Key type asymmetric registered
+Jun 05 17:36:35 MATIAS kernel: Asymmetric key parser 'x509' registered
+Jun 05 17:36:35 MATIAS kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+Jun 05 17:36:35 MATIAS kernel: io scheduler mq-deadline registered
+Jun 05 17:36:35 MATIAS kernel: irq_brcmstb_l2: registered L2 intc (/soc/interrupt-controller@7c502000, parent irq: 26)
+Jun 05 17:36:35 MATIAS kernel: irq_brcmstb_l2: registered L2 intc (/soc/intc@7d503000, parent irq: 27)
+Jun 05 17:36:35 MATIAS kernel: irq_brcmstb_l2: registered L2 intc (/soc/intc@7d508380, parent irq: 28)
+Jun 05 17:36:35 MATIAS kernel: irq_brcmstb_l2: registered L2 intc (/soc/intc@7d508400, parent irq: 29)
+Jun 05 17:36:35 MATIAS kernel: irq_brcmstb_l2: registered L2 intc (/soc/interrupt-controller@7d510600, parent irq: 30)
+Jun 05 17:36:35 MATIAS kernel: irq_brcmstb_l2: registered L2 intc (/soc/intc@7d517b00, parent irq: 31)
+Jun 05 17:36:35 MATIAS kernel: Serial: 8250/16550 driver, 1 ports, IRQ sharing enabled
+Jun 05 17:36:35 MATIAS kernel: iproc-rng200 107d208000.rng: hwrng registered
+Jun 05 17:36:35 MATIAS kernel: vc-mem: phys_addr:0x00000000 mem_base=0x3fc00000 mem_size:0x40000000(1024 MiB)
+Jun 05 17:36:35 MATIAS kernel: bcm2712-iommu-cache 1000005b00.iommuc: bcm2712_iommu_cache_probe
+Jun 05 17:36:35 MATIAS kernel: loop: module loaded
+Jun 05 17:36:35 MATIAS kernel: bcm2835-power bcm2835-power: Broadcom BCM2835 power domains driver
+Jun 05 17:36:35 MATIAS kernel: usbcore: registered new interface driver lan78xx
+Jun 05 17:36:35 MATIAS kernel: usbcore: registered new interface driver smsc95xx
+Jun 05 17:36:35 MATIAS kernel: mousedev: PS/2 mouse device common for all mice
+Jun 05 17:36:35 MATIAS kernel: i2c_dev: i2c /dev entries driver
+Jun 05 17:36:35 MATIAS kernel: bcm2835-wdt bcm2835-wdt: Poweroff handler already present!
+Jun 05 17:36:35 MATIAS kernel: bcm2835-wdt bcm2835-wdt: Broadcom BCM2835 watchdog timer
+Jun 05 17:36:35 MATIAS kernel: sdhci: Secure Digital Host Controller Interface driver
+Jun 05 17:36:35 MATIAS kernel: sdhci: Copyright(c) Pierre Ossman
+Jun 05 17:36:35 MATIAS kernel: sdhci-pltfm: SDHCI platform and OF driver helper
+Jun 05 17:36:35 MATIAS kernel: ledtrig-cpu: registered to indicate activity on CPUs
+Jun 05 17:36:35 MATIAS kernel: SMCCC: SOC_ID: ARCH_SOC_ID not implemented, skipping ....
+Jun 05 17:36:35 MATIAS kernel: hid: raw HID events driver (C) Jiri Kosina
+Jun 05 17:36:35 MATIAS kernel: hw perfevents: enabled with armv8_cortex_a76 PMU driver, 7 counters available
+Jun 05 17:36:35 MATIAS kernel: watchdog: Delayed init of the lockup detector failed: -19
+Jun 05 17:36:35 MATIAS kernel: watchdog: Hard watchdog permanently disabled
+Jun 05 17:36:35 MATIAS kernel: NET: Registered PF_INET6 protocol family
+Jun 05 17:36:35 MATIAS kernel: Freeing initrd memory: 58976K
+Jun 05 17:36:35 MATIAS kernel: Segment Routing with IPv6
+Jun 05 17:36:35 MATIAS kernel: In-situ OAM (IOAM) with IPv6
+Jun 05 17:36:35 MATIAS kernel: NET: Registered PF_PACKET protocol family
+Jun 05 17:36:35 MATIAS kernel: Key type dns_resolver registered
+Jun 05 17:36:35 MATIAS kernel: registered taskstats version 1
+Jun 05 17:36:35 MATIAS kernel: Loading compiled-in X.509 certificates
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Build time autogenerated kernel key: b24f1d1ca76d04dda70d3f265ae533faf634eca7'
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Live Patch Signing 2025 Kmod: d541cef61dc7e793b7eb7e899970a2eef0b5dc8c'
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing 2025 Kmod: 4627603d2357a2a3f81006370894c221175893e9'
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+Jun 05 17:36:35 MATIAS kernel: blacklist: Loading compiled-in revocation X.509 certificates
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+Jun 05 17:36:35 MATIAS kernel: Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+Jun 05 17:36:35 MATIAS kernel: Key type .fscrypt registered
+Jun 05 17:36:35 MATIAS kernel: Key type fscrypt-provisioning registered
+Jun 05 17:36:35 MATIAS kernel: Key type encrypted registered
+Jun 05 17:36:35 MATIAS kernel: AppArmor: AppArmor sha256 policy hashing enabled
+Jun 05 17:36:35 MATIAS kernel: ima: No TPM chip found, activating TPM-bypass!
+Jun 05 17:36:35 MATIAS kernel: ima: Allocated hash algorithm: sha1
+Jun 05 17:36:35 MATIAS kernel: ima: No architecture policies found
+Jun 05 17:36:35 MATIAS kernel: evm: Initialising EVM extended attributes:
+Jun 05 17:36:35 MATIAS kernel: evm: security.selinux
+Jun 05 17:36:35 MATIAS kernel: evm: security.SMACK64
+Jun 05 17:36:35 MATIAS kernel: evm: security.SMACK64EXEC
+Jun 05 17:36:35 MATIAS kernel: evm: security.SMACK64TRANSMUTE
+Jun 05 17:36:35 MATIAS kernel: evm: security.SMACK64MMAP
+Jun 05 17:36:35 MATIAS kernel: evm: security.apparmor
+Jun 05 17:36:35 MATIAS kernel: evm: security.ima
+Jun 05 17:36:35 MATIAS kernel: evm: security.capability
+Jun 05 17:36:35 MATIAS kernel: evm: HMAC attrs: 0x1
+Jun 05 17:36:35 MATIAS kernel: bcm2712-iommu 1000005100.iommu: bcm2712_iommu_init: DEBUG_INFO = 0x20804774
+Jun 05 17:36:35 MATIAS kernel: bcm2712-iommu 1000005100.iommu: bcm2712_iommu_probe: Success
+Jun 05 17:36:35 MATIAS kernel: bcm2712-iommu 1000005200.iommu: bcm2712_iommu_init: DEBUG_INFO = 0x20804774
+Jun 05 17:36:35 MATIAS kernel: bcm2712-iommu 1000005200.iommu: bcm2712_iommu_probe: Success
+Jun 05 17:36:35 MATIAS kernel: bcm2712-iommu 1000005280.iommu: bcm2712_iommu_init: DEBUG_INFO = 0x20804774
+Jun 05 17:36:35 MATIAS kernel: bcm2712-iommu 1000005280.iommu: bcm2712_iommu_probe: Success
+Jun 05 17:36:35 MATIAS kernel: of_cfs_init
+Jun 05 17:36:35 MATIAS kernel: of_cfs_init: OK
+Jun 05 17:36:35 MATIAS kernel: clk: Disabling unused clocks
+Jun 05 17:36:35 MATIAS kernel: Freeing unused kernel memory: 6656K
+Jun 05 17:36:35 MATIAS kernel: Checked W+X mappings: passed, no W+X pages found
+Jun 05 17:36:35 MATIAS kernel: Run /init as init process
+Jun 05 17:36:35 MATIAS kernel:   with arguments:
+Jun 05 17:36:35 MATIAS kernel:     /init
+Jun 05 17:36:35 MATIAS kernel:     fixrtc
+Jun 05 17:36:35 MATIAS kernel:   with environment:
+Jun 05 17:36:35 MATIAS kernel:     HOME=/
+Jun 05 17:36:35 MATIAS kernel:     TERM=linux
+Jun 05 17:36:35 MATIAS kernel:     multipath=off
+Jun 05 17:36:35 MATIAS kernel: brcm-pcie 1000120000.pcie: host bridge /axi/pcie@120000 ranges:
+Jun 05 17:36:35 MATIAS kernel: brcm-pcie 1000120000.pcie:   No bus range found for /axi/pcie@120000, using [bus 00-ff]
+Jun 05 17:36:35 MATIAS kernel: brcm-pcie 1000120000.pcie:      MEM 0x1f00000000..0x1ffffffffb -> 0x0000000000
+Jun 05 17:36:35 MATIAS kernel: brcm-pcie 1000120000.pcie:      MEM 0x1c00000000..0x1effffffff -> 0x0400000000
+Jun 05 17:36:35 MATIAS kernel: brcm-pcie 1000120000.pcie:   IB MEM 0x1f00000000..0x1f003fffff -> 0x0000000000
+Jun 05 17:36:35 MATIAS kernel: brcm-pcie 1000120000.pcie:   IB MEM 0x0000000000..0x0fffffffff -> 0x1000000000
+Jun 05 17:36:35 MATIAS kernel: brcm-pcie 1000120000.pcie: Forcing gen 2
+Jun 05 17:36:35 MATIAS kernel: brcm-pcie 1000120000.pcie: PCI host bridge to bus 0000:00
+Jun 05 17:36:35 MATIAS kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+Jun 05 17:36:35 MATIAS kernel: pci_bus 0000:00: root bus resource [mem 0x1f00000000-0x1ffffffffb] (bus address [0x00000000-0xfffffffb])
+Jun 05 17:36:35 MATIAS kernel: pci_bus 0000:00: root bus resource [mem 0x1c00000000-0x1effffffff pref] (bus address [0x400000000-0x6ffffffff])
+Jun 05 17:36:35 MATIAS kernel: pci 0000:00:00.0: [14e4:2712] type 01 class 0x060400 PCIe Root Port
+Jun 05 17:36:35 MATIAS kernel: pci 0000:00:00.0: PCI bridge to [bus 00]
+Jun 05 17:36:35 MATIAS kernel: pci 0000:00:00.0:   bridge window [mem 0x1f80000000-0x1fbfffffff]
+Jun 05 17:36:35 MATIAS kernel: pci 0000:00:00.0: PME# supported from D0 D3hot
+Jun 05 17:36:35 MATIAS kernel: pci 0000:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+Jun 05 17:36:35 MATIAS kernel: brcmstb-i2c 107d508200.i2c:  @97500hz registered in interrupt mode
+Jun 05 17:36:35 MATIAS kernel: brcmstb-i2c 107d508280.i2c:  @97500hz registered in interrupt mode
+Jun 05 17:36:35 MATIAS kernel: 107d50c000.serial: ttyS0 at MMIO 0x107d50c000 (irq = 38, base_baud = 6000000) is a Broadcom BCM7271 UART
+Jun 05 17:36:35 MATIAS kernel: dwc2 1000480000.usb: supply vusb_d not found, using dummy regulator
+Jun 05 17:36:35 MATIAS kernel: dwc2 1000480000.usb: supply vusb_a not found, using dummy regulator
+Jun 05 17:36:35 MATIAS kernel: rpi-rtc soc:rpi_rtc: registered as rtc0
+Jun 05 17:36:35 MATIAS kernel: rpi-rtc soc:rpi_rtc: setting system clock to 1970-01-01T00:00:13 UTC (13)
+Jun 05 17:36:35 MATIAS kernel: serial serial0: tty port ttyS0 registered
+Jun 05 17:36:35 MATIAS kernel: brcm-pcie 1000120000.pcie: clkreq-mode set to default
+Jun 05 17:36:35 MATIAS kernel: brcm-pcie 1000120000.pcie: link up, 5.0 GT/s PCIe x4 (!SSC)
+Jun 05 17:36:35 MATIAS kernel: pci 0000:01:00.0: [1de4:0001] type 00 class 0x020000 PCIe Endpoint
+Jun 05 17:36:35 MATIAS kernel: pci 0000:01:00.0: BAR 0 [mem 0xffffc000-0xffffffff]
+Jun 05 17:36:35 MATIAS kernel: pci 0000:01:00.0: BAR 1 [mem 0xffc00000-0xffffffff]
+Jun 05 17:36:35 MATIAS kernel: pci 0000:01:00.0: BAR 2 [mem 0xffff0000-0xffffffff]
+Jun 05 17:36:35 MATIAS kernel: pci 0000:01:00.0: supports D1
+Jun 05 17:36:35 MATIAS kernel: pci 0000:01:00.0: PME# supported from D0 D1 D3hot D3cold
+Jun 05 17:36:35 MATIAS kernel: pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to 01
+Jun 05 17:36:35 MATIAS kernel: pci 0000:00:00.0: bridge window [mem 0x1f00000000-0x1f005fffff]: assigned
+Jun 05 17:36:35 MATIAS kernel: pci 0000:01:00.0: BAR 1 [mem 0x1f00000000-0x1f003fffff]: assigned
+Jun 05 17:36:35 MATIAS kernel: pci 0000:01:00.0: BAR 2 [mem 0x1f00400000-0x1f0040ffff]: assigned
+Jun 05 17:36:35 MATIAS kernel: pci 0000:01:00.0: BAR 0 [mem 0x1f00410000-0x1f00413fff]: assigned
+Jun 05 17:36:35 MATIAS kernel: pci 0000:00:00.0: PCI bridge to [bus 01]
+Jun 05 17:36:35 MATIAS kernel: pci 0000:00:00.0:   bridge window [mem 0x1f00000000-0x1f005fffff]
+Jun 05 17:36:35 MATIAS kernel: pci 0000:00:00.0: Max Payload Size set to  256/ 512 (was  128), Max Read Rq  512
+Jun 05 17:36:35 MATIAS kernel: pci 0000:01:00.0: Max Payload Size set to  256/ 256 (was  128), Max Read Rq  512
+Jun 05 17:36:35 MATIAS kernel: pcieport 0000:00:00.0: enabling device (0000 -> 0002)
+Jun 05 17:36:35 MATIAS kernel: pcieport 0000:00:00.0: PME: Signaling with IRQ 40
+Jun 05 17:36:35 MATIAS kernel: pcieport 0000:00:00.0: AER: enabled with IRQ 40
+Jun 05 17:36:35 MATIAS kernel: rp1 0000:01:00.0: bar0 len 0x4000, start 0x1f00410000, end 0x1f00413fff, flags, 0x40200
+Jun 05 17:36:35 MATIAS kernel: rp1 0000:01:00.0: bar1 len 0x400000, start 0x1f00000000, end 0x1f003fffff, flags, 0x40200
+Jun 05 17:36:35 MATIAS kernel: rp1 0000:01:00.0: enabling device (0000 -> 0002)
+Jun 05 17:36:35 MATIAS kernel: rp1 0000:01:00.0: chip_id 0x20001927
+Jun 05 17:36:35 MATIAS kernel: /axi/pcie@120000/rp1/i2c@88000/ov5647@36: Fixed dependency cycle(s) with /axi/pcie@120000/rp1/csi@110000
+Jun 05 17:36:35 MATIAS kernel: /axi/pcie@120000/rp1/i2c@88000/ov5647@36: Fixed dependency cycle(s) with /axi/pcie@120000/rp1/csi@110000
+Jun 05 17:36:35 MATIAS kernel: /axi/pcie@120000/rp1/csi@110000: Fixed dependency cycle(s) with /axi/pcie@120000/rp1/i2c@88000/ov5647@36
+Jun 05 17:36:35 MATIAS kernel: dw_axi_dmac_platform 1f00188000.dma: DesignWare AXI DMA Controller, 8 channels
+Jun 05 17:36:35 MATIAS kernel: input: pwr_button as /devices/platform/pwr_button/input/input2
+Jun 05 17:36:35 MATIAS kernel: sdhci-brcmstb 1000fff000.mmc: Got CD GPIO
+Jun 05 17:36:35 MATIAS kernel: mmc1: CQHCI version 5.10
+Jun 05 17:36:35 MATIAS kernel: pl011-axi 1f00030000.serial: cts_event_workaround enabled
+Jun 05 17:36:35 MATIAS kernel: 1f00030000.serial: ttyAMA0 at MMIO 0x1f00030000 (irq = 127, base_baud = 0) is a PL011 AXI
+Jun 05 17:36:35 MATIAS kernel: printk: legacy console [ttyAMA0] enabled
+Jun 05 17:36:35 MATIAS kernel: macb 1f00100000.ethernet eth0: Cadence GEM rev 0x00070109 at 0x1f00100000 irq 108 (2c:cf:67:5c:a0:ba)
+Jun 05 17:36:35 MATIAS kernel: dwc2 1000480000.usb: EPs: 8, dedicated fifos, 4080 entries in SPRAM
+Jun 05 17:36:35 MATIAS kernel: mmc1: SDHCI controller on 1001100000.mmc [1001100000.mmc] using ADMA 64-bit
+Jun 05 17:36:35 MATIAS kernel: dwc2 1000480000.usb: DWC OTG Controller
+Jun 05 17:36:35 MATIAS kernel: mmc1: cannot verify signal voltage switch
+Jun 05 17:36:35 MATIAS kernel: dwc2 1000480000.usb: new USB bus registered, assigned bus number 1
+Jun 05 17:36:35 MATIAS kernel: mmc1: new ultra high speed DDR50 SDIO card at address 0001
+Jun 05 17:36:35 MATIAS kernel: dwc2 1000480000.usb: irq 163, io mem 0x1000480000
+Jun 05 17:36:35 MATIAS kernel: usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.08
+Jun 05 17:36:35 MATIAS kernel: usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Jun 05 17:36:35 MATIAS kernel: usb usb1: Product: DWC OTG Controller
+Jun 05 17:36:35 MATIAS kernel: usb usb1: Manufacturer: Linux 6.8.0-1057-raspi dwc2_hsotg
+Jun 05 17:36:35 MATIAS kernel: usb usb1: SerialNumber: 1000480000.usb
+Jun 05 17:36:35 MATIAS kernel: hub 1-0:1.0: USB hub found
+Jun 05 17:36:35 MATIAS kernel: hub 1-0:1.0: 1 port detected
+Jun 05 17:36:35 MATIAS kernel: mmc0: SDHCI controller on 1000fff000.mmc [1000fff000.mmc] using ADMA 64-bit
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.0: xHCI Host Controller
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.0: new USB bus registered, assigned bus number 2
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.0: hcc params 0x0240fe6d hci version 0x110 quirks 0x0000008000000810
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.0: irq 133, io mem 0x1f00200000
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.0: xHCI Host Controller
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.0: new USB bus registered, assigned bus number 3
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.0: Host supports USB 3.0 SuperSpeed
+Jun 05 17:36:35 MATIAS kernel: usb usb2: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.08
+Jun 05 17:36:35 MATIAS kernel: usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Jun 05 17:36:35 MATIAS kernel: usb usb2: Product: xHCI Host Controller
+Jun 05 17:36:35 MATIAS kernel: mmc0: cannot verify signal voltage switch
+Jun 05 17:36:35 MATIAS kernel: usb usb2: Manufacturer: Linux 6.8.0-1057-raspi xhci-hcd
+Jun 05 17:36:35 MATIAS kernel: usb usb2: SerialNumber: xhci-hcd.0
+Jun 05 17:36:35 MATIAS kernel: hub 2-0:1.0: USB hub found
+Jun 05 17:36:35 MATIAS kernel: hub 2-0:1.0: 2 ports detected
+Jun 05 17:36:35 MATIAS kernel: usb usb3: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.08
+Jun 05 17:36:35 MATIAS kernel: usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Jun 05 17:36:35 MATIAS kernel: usb usb3: Product: xHCI Host Controller
+Jun 05 17:36:35 MATIAS kernel: usb usb3: Manufacturer: Linux 6.8.0-1057-raspi xhci-hcd
+Jun 05 17:36:35 MATIAS kernel: usb usb3: SerialNumber: xhci-hcd.0
+Jun 05 17:36:35 MATIAS kernel: hub 3-0:1.0: USB hub found
+Jun 05 17:36:35 MATIAS kernel: hub 3-0:1.0: 1 port detected
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.1: xHCI Host Controller
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.1: new USB bus registered, assigned bus number 4
+Jun 05 17:36:35 MATIAS kernel: mmc0: new ultra high speed SDR104 SDXC card at address 5048
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.1: hcc params 0x0240fe6d hci version 0x110 quirks 0x0000008000000810
+Jun 05 17:36:35 MATIAS kernel: mmcblk0: mmc0:5048 SK128 119 GiB
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.1: irq 138, io mem 0x1f00300000
+Jun 05 17:36:35 MATIAS kernel:  mmcblk0: p1 p2
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.1: xHCI Host Controller
+Jun 05 17:36:35 MATIAS kernel: mmcblk0: mmc0:5048 SK128 119 GiB (quirks 0x00004000)
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.1: new USB bus registered, assigned bus number 5
+Jun 05 17:36:35 MATIAS kernel: xhci-hcd xhci-hcd.1: Host supports USB 3.0 SuperSpeed
+Jun 05 17:36:35 MATIAS kernel: usb usb4: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.08
+Jun 05 17:36:35 MATIAS kernel: usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Jun 05 17:36:35 MATIAS kernel: usb usb4: Product: xHCI Host Controller
+Jun 05 17:36:35 MATIAS kernel: usb usb4: Manufacturer: Linux 6.8.0-1057-raspi xhci-hcd
+Jun 05 17:36:35 MATIAS kernel: usb usb4: SerialNumber: xhci-hcd.1
+Jun 05 17:36:35 MATIAS kernel: hub 4-0:1.0: USB hub found
+Jun 05 17:36:35 MATIAS kernel: hub 4-0:1.0: 2 ports detected
+Jun 05 17:36:35 MATIAS kernel: usb usb5: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.08
+Jun 05 17:36:35 MATIAS kernel: usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Jun 05 17:36:35 MATIAS kernel: usb usb5: Product: xHCI Host Controller
+Jun 05 17:36:35 MATIAS kernel: usb usb5: Manufacturer: Linux 6.8.0-1057-raspi xhci-hcd
+Jun 05 17:36:35 MATIAS kernel: usb usb5: SerialNumber: xhci-hcd.1
+Jun 05 17:36:35 MATIAS kernel: hub 5-0:1.0: USB hub found
+Jun 05 17:36:35 MATIAS kernel: hub 5-0:1.0: 1 port detected
+Jun 05 17:36:35 MATIAS kernel: raid6: neonx8   gen() 11556 MB/s
+Jun 05 17:36:35 MATIAS kernel: raid6: neonx4   gen() 11475 MB/s
+Jun 05 17:36:35 MATIAS kernel: raid6: neonx2   gen()  9829 MB/s
+Jun 05 17:36:35 MATIAS kernel: raid6: neonx1   gen()  7910 MB/s
+Jun 05 17:36:35 MATIAS kernel: raid6: int64x8  gen()  5617 MB/s
+Jun 05 17:36:35 MATIAS kernel: raid6: int64x4  gen()  5890 MB/s
+Jun 05 17:36:35 MATIAS kernel: raid6: int64x2  gen()  4916 MB/s
+Jun 05 17:36:35 MATIAS kernel: raid6: int64x1  gen()  4059 MB/s
+Jun 05 17:36:35 MATIAS kernel: raid6: using algorithm neonx8 gen() 11556 MB/s
+Jun 05 17:36:35 MATIAS kernel: raid6: .... xor() 8381 MB/s, rmw enabled
+Jun 05 17:36:35 MATIAS kernel: raid6: using neon recovery algorithm
+Jun 05 17:36:35 MATIAS kernel: xor: measuring software checksum speed
+Jun 05 17:36:35 MATIAS kernel:    8regs           : 15781 MB/sec
+Jun 05 17:36:35 MATIAS kernel:    32regs          : 15597 MB/sec
+Jun 05 17:36:35 MATIAS kernel:    arm64_neon      : 11239 MB/sec
+Jun 05 17:36:35 MATIAS kernel: xor: using function: 8regs (15781 MB/sec)
+Jun 05 17:36:35 MATIAS kernel: async_tx: api initialized (async)
+Jun 05 17:36:35 MATIAS kernel: Btrfs loaded, zoned=yes, fsverity=no
+Jun 05 17:36:35 MATIAS kernel: EXT4-fs (mmcblk0p2): mounted filesystem 9276ecfd-6dd5-4e22-9a91-2afafd0a53a3 ro with ordered data mode. Quota mode: none.
+Jun 05 17:36:35 MATIAS systemd[1]: Inserted module 'autofs4'
+Jun 05 17:36:35 MATIAS systemd[1]: systemd 255.4-1ubuntu8.16 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+Jun 05 17:36:35 MATIAS systemd[1]: Detected architecture arm64.
+Jun 05 17:36:35 MATIAS systemd[1]: Hostname set to <MATIAS>.
+Jun 05 17:36:35 MATIAS kernel: pl011-axi 1f00030000.serial: DMA channel TX dma2chan2
+Jun 05 17:36:35 MATIAS kernel: pl011-axi 1f00030000.serial: DMA channel RX dma2chan3
+Jun 05 17:36:35 MATIAS systemd[1]: Queued start job for default target graphical.target.
+Jun 05 17:36:35 MATIAS systemd[1]: Created slice system-modprobe.slice - Slice /system/modprobe.
+Jun 05 17:36:35 MATIAS systemd[1]: Created slice system-serial\x2dgetty.slice - Slice /system/serial-getty.
+Jun 05 17:36:35 MATIAS systemd[1]: Created slice system-systemd\x2dfsck.slice - Slice /system/systemd-fsck.
+Jun 05 17:36:35 MATIAS systemd[1]: Created slice user.slice - User and Session Slice.
+Jun 05 17:36:35 MATIAS systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+Jun 05 17:36:35 MATIAS systemd[1]: Set up automount proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point.
+Jun 05 17:36:35 MATIAS systemd[1]: Expecting device dev-disk-by\x2dlabel-system\x2dboot.device - /dev/disk/by-label/system-boot...
+Jun 05 17:36:35 MATIAS systemd[1]: Expecting device dev-ttyAMA0.device - /dev/ttyAMA0...
+Jun 05 17:36:35 MATIAS systemd[1]: Reached target integritysetup.target - Local Integrity Protected Volumes.
+Jun 05 17:36:35 MATIAS systemd[1]: Reached target slices.target - Slice Units.
+Jun 05 17:36:35 MATIAS systemd[1]: Reached target snapd.mounts-pre.target - Mounting snaps.
+Jun 05 17:36:35 MATIAS systemd[1]: Reached target swap.target - Swaps.
+Jun 05 17:36:35 MATIAS systemd[1]: Reached target veritysetup.target - Local Verity Protected Volumes.
+Jun 05 17:36:35 MATIAS systemd[1]: Listening on dm-event.socket - Device-mapper event daemon FIFOs.
+Jun 05 17:36:35 MATIAS systemd[1]: Listening on lvm2-lvmpolld.socket - LVM2 poll daemon socket.
+Jun 05 17:36:35 MATIAS systemd[1]: multipathd.socket - multipathd control socket was skipped because of an unmet condition check (ConditionKernelCommandLine=!multipath=off).
+Jun 05 17:36:35 MATIAS systemd[1]: Listening on syslog.socket - Syslog Socket.
+Jun 05 17:36:35 MATIAS systemd[1]: Listening on systemd-fsckd.socket - fsck to fsckd communication Socket.
+Jun 05 17:36:35 MATIAS systemd[1]: Listening on systemd-initctl.socket - initctl Compatibility Named Pipe.
+Jun 05 17:36:35 MATIAS systemd[1]: Listening on systemd-journald-dev-log.socket - Journal Socket (/dev/log).
+Jun 05 17:36:35 MATIAS systemd[1]: Listening on systemd-journald.socket - Journal Socket.
+Jun 05 17:36:35 MATIAS systemd[1]: systemd-pcrextend.socket - TPM2 PCR Extension (Varlink) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+Jun 05 17:36:35 MATIAS systemd[1]: Listening on systemd-udevd-control.socket - udev Control Socket.
+Jun 05 17:36:35 MATIAS systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+Jun 05 17:36:35 MATIAS systemd[1]: Mounting dev-hugepages.mount - Huge Pages File System...
+Jun 05 17:36:35 MATIAS systemd[1]: Mounting dev-mqueue.mount - POSIX Message Queue File System...
+Jun 05 17:36:35 MATIAS systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+Jun 05 17:36:35 MATIAS systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+Jun 05 17:36:35 MATIAS systemd[1]: Starting systemd-journald.service - Journal Service...
+Jun 05 17:36:35 MATIAS systemd[1]: Starting keyboard-setup.service - Set the console keyboard layout...
+Jun 05 17:36:35 MATIAS systemd[1]: Starting kmod-static-nodes.service - Create List of Static Device Nodes...
+Jun 05 17:36:35 MATIAS systemd[1]: Starting lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+Jun 05 17:36:35 MATIAS systemd-journald[494]: Collecting audit messages is disabled.
+Jun 05 17:36:35 MATIAS systemd[1]: Starting modprobe@configfs.service - Load Kernel Module configfs...
+Jun 05 17:36:35 MATIAS systemd[1]: Starting modprobe@dm_mod.service - Load Kernel Module dm_mod...
+Jun 05 17:36:35 MATIAS systemd[1]: Starting modprobe@drm.service - Load Kernel Module drm...
+Jun 05 17:36:35 MATIAS systemd[1]: Starting modprobe@efi_pstore.service - Load Kernel Module efi_pstore...
+Jun 05 17:36:35 MATIAS systemd-journald[494]: Journal started
+Jun 05 17:36:35 MATIAS systemd-journald[494]: Runtime Journal (/run/log/journal/aff1ae4007d7428283f0e8f3e411e76d) is 8.0M, max 79.3M, 71.3M free.
+Jun 05 17:36:35 MATIAS systemd[1]: Starting modprobe@fuse.service - Load Kernel Module fuse...
+Jun 05 17:36:35 MATIAS systemd[1]: Starting modprobe@loop.service - Load Kernel Module loop...
+Jun 05 17:36:35 MATIAS systemd[1]: systemd-fsck-root.service - File System Check on Root Device was skipped because of an unmet condition check (ConditionPathExists=!/run/initramfs/fsck-root).
+Jun 05 17:36:35 MATIAS kernel: device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+Jun 05 17:36:35 MATIAS kernel: device-mapper: uevent: version 1.0.3
+Jun 05 17:36:35 MATIAS kernel: device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@redhat.com
+Jun 05 17:36:35 MATIAS kernel: fuse: init (API version 7.39)
+Jun 05 17:36:35 MATIAS systemd[1]: Starting systemd-modules-load.service - Load Kernel Modules...
+Jun 05 17:36:35 MATIAS systemd[1]: systemd-pcrmachine.service - TPM2 PCR Machine ID Measurement was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+Jun 05 17:36:35 MATIAS systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems...
+Jun 05 17:36:35 MATIAS systemd[1]: systemd-tpm2-setup-early.service - TPM2 SRK Setup (Early) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+Jun 05 17:36:35 MATIAS systemd-modules-load[514]: Module 'i2c_dev' is built in
+Jun 05 17:36:35 MATIAS systemd[1]: Starting systemd-udev-trigger.service - Coldplug All udev Devices...
+Jun 05 17:36:35 MATIAS systemd[1]: Started systemd-journald.service - Journal Service.
+Jun 05 17:36:35 MATIAS systemd[1]: Mounted dev-hugepages.mount - Huge Pages File System.
+Jun 05 17:36:35 MATIAS systemd[1]: Mounted dev-mqueue.mount - POSIX Message Queue File System.
+Jun 05 17:36:35 MATIAS systemd[1]: Mounted sys-kernel-debug.mount - Kernel Debug File System.
+Jun 05 17:36:35 MATIAS systemd[1]: Mounted sys-kernel-tracing.mount - Kernel Trace File System.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished keyboard-setup.service - Set the console keyboard layout.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished kmod-static-nodes.service - Create List of Static Device Nodes.
+Jun 05 17:36:35 MATIAS systemd[1]: modprobe@configfs.service: Deactivated successfully.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished modprobe@configfs.service - Load Kernel Module configfs.
+Jun 05 17:36:35 MATIAS systemd[1]: modprobe@dm_mod.service: Deactivated successfully.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished modprobe@dm_mod.service - Load Kernel Module dm_mod.
+Jun 05 17:36:35 MATIAS systemd[1]: modprobe@drm.service: Deactivated successfully.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished modprobe@drm.service - Load Kernel Module drm.
+Jun 05 17:36:35 MATIAS systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished modprobe@efi_pstore.service - Load Kernel Module efi_pstore.
+Jun 05 17:36:35 MATIAS systemd[1]: modprobe@fuse.service: Deactivated successfully.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished modprobe@fuse.service - Load Kernel Module fuse.
+Jun 05 17:36:35 MATIAS kernel: EXT4-fs (mmcblk0p2): re-mounted 9276ecfd-6dd5-4e22-9a91-2afafd0a53a3 r/w.
+Jun 05 17:36:35 MATIAS systemd-modules-load[514]: Inserted module 'dm_multipath'
+Jun 05 17:36:35 MATIAS systemd[1]: modprobe@loop.service: Deactivated successfully.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished modprobe@loop.service - Load Kernel Module loop.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems.
+Jun 05 17:36:35 MATIAS systemd-modules-load[514]: Inserted module 'arp_tables'
+Jun 05 17:36:35 MATIAS systemd[1]: Mounting sys-fs-fuse-connections.mount - FUSE Control File System...
+Jun 05 17:36:35 MATIAS systemd[1]: Mounting sys-kernel-config.mount - Kernel Configuration File System...
+Jun 05 17:36:35 MATIAS systemd[1]: multipathd.service - Device-Mapper Multipath Device Controller was skipped because of an unmet condition check (ConditionKernelCommandLine=!multipath=off).
+Jun 05 17:36:35 MATIAS systemd[1]: systemd-hwdb-update.service - Rebuild Hardware Database was skipped because of an unmet condition check (ConditionNeedsUpdate=/etc).
+Jun 05 17:36:35 MATIAS systemd[1]: Starting systemd-journal-flush.service - Flush Journal to Persistent Storage...
+Jun 05 17:36:35 MATIAS systemd[1]: systemd-pstore.service - Platform Persistent Storage Archival was skipped because of an unmet condition check (ConditionDirectoryNotEmpty=/sys/fs/pstore).
+Jun 05 17:36:35 MATIAS systemd[1]: Starting systemd-random-seed.service - Load/Save OS Random Seed...
+Jun 05 17:36:35 MATIAS systemd[1]: systemd-repart.service - Repartition Root Disk was skipped because no trigger condition checks were met.
+Jun 05 17:36:35 MATIAS systemd[1]: Starting systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully...
+Jun 05 17:36:35 MATIAS systemd[1]: systemd-tpm2-setup.service - TPM2 SRK Setup was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+Jun 05 17:36:35 MATIAS systemd[1]: Mounted sys-fs-fuse-connections.mount - FUSE Control File System.
+Jun 05 17:36:35 MATIAS systemd[1]: Mounted sys-kernel-config.mount - Kernel Configuration File System.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling.
+Jun 05 17:36:35 MATIAS systemd-journald[494]: Time spent on flushing to /var/log/journal/aff1ae4007d7428283f0e8f3e411e76d is 277.119ms for 509 entries.
+Jun 05 17:36:35 MATIAS systemd-journald[494]: System Journal (/var/log/journal/aff1ae4007d7428283f0e8f3e411e76d) is 506.2M, max 4.0G, 3.5G free.
+Jun 05 17:36:36 MATIAS kernel: bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+Jun 05 17:36:36 MATIAS systemd-journald[494]: Received client request to flush runtime journal.
+Jun 05 17:36:36 MATIAS kernel: Bridge firewalling registered
+Jun 05 17:36:36 MATIAS kernel: PPP generic driver version 2.4.2
+Jun 05 17:36:36 MATIAS systemd-journald[494]: /var/log/journal/aff1ae4007d7428283f0e8f3e411e76d/system.journal: Realtime clock jumped backwards relative to last journal entry, rotating.
+Jun 05 17:36:36 MATIAS systemd-journald[494]: Rotating system journal.
+Jun 05 17:36:36 MATIAS kernel: loop0: detected capacity change from 0 to 9696
+Jun 05 17:36:36 MATIAS kernel: loop1: detected capacity change from 0 to 126688
+Jun 05 17:36:36 MATIAS kernel: loop2: detected capacity change from 0 to 85664
+Jun 05 17:36:36 MATIAS kernel: loop3: detected capacity change from 0 to 87312
+Jun 05 17:36:35 MATIAS systemd-modules-load[514]: Inserted module 'br_netfilter'
+Jun 05 17:36:35 MATIAS systemd-modules-load[514]: Inserted module 'ip6table_filter'
+Jun 05 17:36:35 MATIAS systemd-modules-load[514]: Inserted module 'iptable_filter'
+Jun 05 17:36:35 MATIAS systemd-modules-load[514]: Inserted module 'ppp_generic'
+Jun 05 17:36:35 MATIAS systemd[1]: Finished systemd-modules-load.service - Load Kernel Modules.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished systemd-random-seed.service - Load/Save OS Random Seed.
+Jun 05 17:36:35 MATIAS systemd[1]: Starting systemd-sysctl.service - Apply Kernel Variables...
+Jun 05 17:36:35 MATIAS systemd[1]: Finished systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully.
+Jun 05 17:36:35 MATIAS systemd[1]: systemd-sysusers.service - Create System Users was skipped because no trigger condition checks were met.
+Jun 05 17:36:35 MATIAS systemd[1]: Starting systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev...
+Jun 05 17:36:35 MATIAS systemd[1]: Finished systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev.
+Jun 05 17:36:35 MATIAS systemd[1]: Reached target local-fs-pre.target - Preparation for Local File Systems.
+Jun 05 17:36:35 MATIAS systemd[1]: Mounting snap-core24-1644.mount - Mount unit for core24, revision 1644...
+Jun 05 17:36:35 MATIAS systemd[1]: Mounting snap-network\x2dmanager-1024.mount - Mount unit for network-manager, revision 1024...
+Jun 05 17:36:35 MATIAS systemd[1]: Mounting snap-snapd-26383.mount - Mount unit for snapd, revision 26383...
+Jun 05 17:36:35 MATIAS systemd[1]: Mounting snap-snapd-26869.mount - Mount unit for snapd, revision 26869...
+Jun 05 17:36:35 MATIAS systemd[1]: Starting systemd-udevd.service - Rule-based Manager for Device Events and Files...
+Jun 05 17:36:35 MATIAS systemd[1]: Finished systemd-sysctl.service - Apply Kernel Variables.
+Jun 05 17:36:35 MATIAS systemd[1]: Mounted snap-network\x2dmanager-1024.mount - Mount unit for network-manager, revision 1024.
+Jun 05 17:36:35 MATIAS systemd[1]: Mounted snap-core24-1644.mount - Mount unit for core24, revision 1644.
+Jun 05 17:36:35 MATIAS systemd[1]: Mounted snap-snapd-26383.mount - Mount unit for snapd, revision 26383.
+Jun 05 17:36:35 MATIAS systemd[1]: Mounted snap-snapd-26869.mount - Mount unit for snapd, revision 26869.
+Jun 05 17:36:35 MATIAS systemd[1]: Reached target snapd.mounts.target - Mounted snaps.
+Jun 05 17:36:35 MATIAS systemd-udevd[556]: Using default interface naming scheme 'v255'.
+Jun 05 17:36:35 MATIAS systemd[1]: Finished systemd-udev-trigger.service - Coldplug All udev Devices.
+Jun 05 17:36:36 MATIAS systemd[1]: Finished systemd-journal-flush.service - Flush Journal to Persistent Storage.
+Jun 05 17:36:36 MATIAS systemd[1]: Started systemd-udevd.service - Rule-based Manager for Device Events and Files.
+Jun 05 17:36:36 MATIAS systemd[1]: plymouth-start.service - Show Plymouth Boot Screen was skipped because of an unmet condition check (ConditionKernelCommandLine=splash).
+Jun 05 17:36:36 MATIAS systemd[1]: Started systemd-ask-password-console.path - Dispatch Password Requests to Console Directory Watch.
+Jun 05 17:36:36 MATIAS systemd[1]: systemd-ask-password-plymouth.path - Forward Password Requests to Plymouth Directory Watch was skipped because of an unmet condition check (ConditionPathExists=/run/plymouth/pid).
+Jun 05 17:36:36 MATIAS systemd[1]: Reached target cryptsetup.target - Local Encrypted Volumes.
+Jun 05 17:36:36 MATIAS (udev-worker)[580]: eth0: Config file /usr/lib/systemd/network/10-raspi-eth0.link is applied to device based on potentially unpredictable interface name.
+Jun 05 17:36:36 MATIAS systemd[1]: Found device dev-ttyAMA0.device - /dev/ttyAMA0.
+Jun 05 17:36:36 MATIAS systemd[1]: Found device dev-disk-by\x2dlabel-system\x2dboot.device - /dev/disk/by-label/system-boot.
+Jun 05 17:36:36 MATIAS systemd[1]: Starting systemd-fsck@dev-disk-by\x2dlabel-system\x2dboot.service - File System Check on /dev/disk/by-label/system-boot...
+Jun 05 17:36:36 MATIAS systemd[1]: Started systemd-fsckd.service - File System Check Daemon to report status.
+Jun 05 17:36:36 MATIAS systemd[1]: Reached target usb-gadget.target - Hardware activated USB gadget.
+Jun 05 17:36:36 MATIAS kernel: rpi-gpiomem 107d508500.gpiomem: window base 0x107d508500 size 0x00000040
+Jun 05 17:36:36 MATIAS kernel: rpi-gpiomem 107d508500.gpiomem: initialised 1 regions as /dev/gpiomem1
+Jun 05 17:36:36 MATIAS kernel: rpi-gpiomem 107d517c00.gpiomem: window base 0x107d517c00 size 0x00000040
+Jun 05 17:36:36 MATIAS kernel: rpi-gpiomem 107d517c00.gpiomem: initialised 1 regions as /dev/gpiomem2
+Jun 05 17:36:36 MATIAS kernel: rpi-gpiomem 107d504100.gpiomem: window base 0x107d504100 size 0x00000020
+Jun 05 17:36:36 MATIAS kernel: rpi-gpiomem 107d504100.gpiomem: initialised 1 regions as /dev/gpiomem3
+Jun 05 17:36:36 MATIAS kernel: rpi-gpiomem 107d510700.gpiomem: window base 0x107d510700 size 0x00000020
+Jun 05 17:36:36 MATIAS kernel: rpi-gpiomem 107d510700.gpiomem: initialised 1 regions as /dev/gpiomem4
+Jun 05 17:36:36 MATIAS kernel: rpi-gpiomem 1f000d0000.gpiomem: window base 0x1f000d0000 size 0x00030000
+Jun 05 17:36:36 MATIAS kernel: rpi-gpiomem 1f000d0000.gpiomem: initialised 1 regions as /dev/gpiomem0
+Jun 05 17:36:36 MATIAS kernel: mc: Linux media interface: v0.10
+Jun 05 17:36:36 MATIAS kernel: [drm] Initialized v3d 1.0.0 20180419 for 1002000000.v3d on minor 0
+Jun 05 17:36:36 MATIAS kernel: videodev: Linux video capture interface: v2.00
+Jun 05 17:36:36 MATIAS systemd[1]: Listening on systemd-rfkill.socket - Load/Save RF Kill Switch Status /dev/rfkill Watch.
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: bcm2712_iommu_of_xlate: MMU 1000005280.iommu
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: bcm2712_iommu_probe_device: MMU 1000005280.iommu
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: bcm2712_iommu_device_group: MMU 1000005280.iommu
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: Adding to iommu group 2
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: bcm2712_iommu_attach_dev: MMU 1000005280.iommu
+Jun 05 17:36:36 MATIAS kernel: rpivid_hevc: module is from the staging directory, the quality is unknown, you have been warned.
+Jun 05 17:36:36 MATIAS kernel: rpivid_hevc: module verification failed: signature and/or required key missing - tainting kernel
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: Core ver 2.22
+Jun 05 17:36:36 MATIAS kernel: cfg80211: Loading compiled-in X.509 certificates for regulatory database
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: DW dphy Host HW v1.20
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: PiSP FE HW v0.1
+Jun 05 17:36:36 MATIAS kernel: Loaded X.509 cert 'benh@debian.org: 577e021cb980e0e820821ba7b54b4961b8b4fadf'
+Jun 05 17:36:36 MATIAS kernel: NET: Registered PF_BLUETOOTH protocol family
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI device and connection manager initialized
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI socket layer initialized
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: L2CAP socket layer initialized
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: SCO socket layer initialized
+Jun 05 17:36:36 MATIAS kernel: Loaded X.509 cert 'romain.perier@gmail.com: 3abbc6ec146e09d1b6016ab9d6cf71dd233f0328'
+Jun 05 17:36:36 MATIAS kernel: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+Jun 05 17:36:36 MATIAS kernel: Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db18c600'
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: found subdevice /axi/pcie@120000/rp1/i2c@88000/ov5647@36
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: bcm2712_iommu_of_xlate: MMU 1000005100.iommu
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: bcm2712_iommu_probe_device: MMU 1000005100.iommu
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: bcm2712_iommu_device_group: MMU 1000005100.iommu
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: Adding to iommu group 0
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: bcm2712_iommu_attach_dev: MMU 1000005100.iommu
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: pispbe_probe: HW version:  0x02252700
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: pispbe_probe: BatchStatus: 0x00000000
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: pispbe_probe: Status:      0x00000000
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: Register nodes for group 0
+Jun 05 17:36:36 MATIAS kernel: rpivid 1000800000.codec: bcm2712_iommu_of_xlate: MMU 1000005100.iommu
+Jun 05 17:36:36 MATIAS kernel: rpivid 1000800000.codec: bcm2712_iommu_probe_device: MMU 1000005100.iommu
+Jun 05 17:36:36 MATIAS kernel: rpivid 1000800000.codec: bcm2712_iommu_device_group: MMU 1000005100.iommu
+Jun 05 17:36:36 MATIAS kernel: rpivid 1000800000.codec: Adding to iommu group 0
+Jun 05 17:36:36 MATIAS kernel: rpivid 1000800000.codec: bcm2712_iommu_attach_dev: MMU 1000005100.iommu
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: input device node registered as /dev/video20
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: tdn_input device node registered as /dev/video21
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: stitch_input device node registered as /dev/video22
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: hog_output device node registered as /dev/video23
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: output0 device node registered as /dev/video24
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: output1 device node registered as /dev/video25
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: tdn_output device node registered as /dev/video26
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: stitch_output device node registered as /dev/video27
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: config device node registered as /dev/video28
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: Register nodes for group 1
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: input device node registered as /dev/video29
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: tdn_input device node registered as /dev/video30
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: stitch_input device node registered as /dev/video31
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: hog_output device node registered as /dev/video32
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: output0 device node registered as /dev/video33
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: output1 device node registered as /dev/video34
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: tdn_output device node registered as /dev/video35
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: stitch_output device node registered as /dev/video36
+Jun 05 17:36:36 MATIAS kernel: rpivid 1000800000.codec: Device registered as /dev/video19
+Jun 05 17:36:36 MATIAS kernel: pispbe 1000880000.pisp_be: config device node registered as /dev/video37
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: Using sensor ov5647 10-0036 for capture
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: Registered [rp1-cfe-csi2_ch0] node id 0 successfully as /dev/video0
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: Registered [rp1-cfe-embedded] node id 1 successfully as /dev/video1
+Jun 05 17:36:36 MATIAS kernel: brcmfmac: F1 signature read @0x18000000=0x15264345
+Jun 05 17:36:36 MATIAS kernel: brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43455-sdio for chip BCM4345/6
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: Registered [rp1-cfe-csi2_ch2] node id 2 successfully as /dev/video2
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: Registered [rp1-cfe-csi2_ch3] node id 3 successfully as /dev/video3
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI UART driver ver 2.3
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI UART protocol H4 registered
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI UART protocol BCSP registered
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: Registered [rp1-cfe-fe_image0] node id 4 successfully as /dev/video4
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI UART protocol LL registered
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI UART protocol ATH3K registered
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI UART protocol Three-wire (H5) registered
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI UART protocol Intel registered
+Jun 05 17:36:36 MATIAS kernel: usbcore: registered new interface driver brcmfmac
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: Registered [rp1-cfe-fe_image1] node id 5 successfully as /dev/video5
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: Registered [rp1-cfe-fe_stats] node id 6 successfully as /dev/video6
+Jun 05 17:36:36 MATIAS kernel: rp1-cfe 1f00110000.csi: Registered [rp1-cfe-fe_config] node id 7 successfully as /dev/video7
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI UART protocol Broadcom registered
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI UART protocol QCA registered
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI UART protocol AG6XX registered
+Jun 05 17:36:36 MATIAS kernel: Bluetooth: HCI UART protocol Marvell registered
+Jun 05 17:36:36 MATIAS kernel: hci_uart_bcm serial0-0: supply vbat not found, using dummy regulator
+Jun 05 17:36:36 MATIAS kernel: hci_uart_bcm serial0-0: supply vddio not found, using dummy regulator
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: bcm2712_iommu_of_xlate: MMU 1000005200.iommu
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: bcm2712_iommu_probe_device: MMU 1000005200.iommu
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: bcm2712_iommu_device_group: MMU 1000005200.iommu
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: Adding to iommu group 1
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: bcm2712_iommu_attach_dev: MMU 1000005200.iommu
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: bound 107c580000.hvs (ops vc4_hvs_ops [vc4])
+Jun 05 17:36:36 MATIAS kernel: Registered IR keymap rc-cec
+Jun 05 17:36:36 MATIAS kernel: rc rc0: vc4-hdmi-0 as /devices/platform/soc/107c701400.hdmi/rc/rc0
+Jun 05 17:36:36 MATIAS kernel: input: vc4-hdmi-0 as /devices/platform/soc/107c701400.hdmi/rc/rc0/input3
+Jun 05 17:36:36 MATIAS kernel: input: vc4-hdmi-0 HDMI Jack as /devices/platform/soc/107c701400.hdmi/sound/card0/input4
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: bound 107c701400.hdmi (ops vc4_hdmi_ops [vc4])
+Jun 05 17:36:36 MATIAS kernel: Registered IR keymap rc-cec
+Jun 05 17:36:36 MATIAS kernel: rc rc1: vc4-hdmi-1 as /devices/platform/soc/107c706400.hdmi/rc/rc1
+Jun 05 17:36:36 MATIAS kernel: input: vc4-hdmi-1 as /devices/platform/soc/107c706400.hdmi/rc/rc1/input5
+Jun 05 17:36:36 MATIAS kernel: input: vc4-hdmi-1 HDMI Jack as /devices/platform/soc/107c706400.hdmi/sound/card1/input6
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: bound 107c706400.hdmi (ops vc4_hdmi_ops [vc4])
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: bound 107c500000.mop (ops vc4_txp_ops [vc4])
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: bound 107c501000.moplet (ops vc4_txp_ops [vc4])
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: bound 107c410000.pixelvalve (ops vc4_crtc_ops [vc4])
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: bound 107c411000.pixelvalve (ops vc4_crtc_ops [vc4])
+Jun 05 17:36:36 MATIAS systemd-fsck[783]: fsck.fat 4.2 (2021-01-31)
+Jun 05 17:36:36 MATIAS systemd-fsck[783]: There are differences between boot sector and its backup.
+Jun 05 17:36:36 MATIAS systemd-fsck[783]: This is mostly harmless. Differences: (offset:original/backup)
+Jun 05 17:36:36 MATIAS systemd-fsck[783]:   65:01/00
+Jun 05 17:36:36 MATIAS systemd-fsck[783]:   Not automatically fixing this.
+Jun 05 17:36:36 MATIAS systemd-fsck[783]: Dirty bit is set. Fs was not properly unmounted and some data may be corrupt.
+Jun 05 17:36:36 MATIAS systemd-fsck[783]:  Automatically removing dirty bit.
+Jun 05 17:36:36 MATIAS systemd-fsck[783]: *** Filesystem was changed ***
+Jun 05 17:36:36 MATIAS systemd-fsck[783]: Writing changes.
+Jun 05 17:36:36 MATIAS systemd-fsck[783]: /dev/mmcblk0p1: 737 files, 384211/1032408 clusters
+Jun 05 17:36:36 MATIAS systemd[1]: Reached target sound.target - Sound Card.
+Jun 05 17:36:36 MATIAS systemd[1]: Finished systemd-fsck@dev-disk-by\x2dlabel-system\x2dboot.service - File System Check on /dev/disk/by-label/system-boot.
+Jun 05 17:36:36 MATIAS kernel: [drm] Initialized vc4 0.0.0 20140616 for axi:gpu on minor 1
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: [drm] Cannot find any crtc or sizes
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: [drm] Cannot find any crtc or sizes
+Jun 05 17:36:36 MATIAS kernel: vc4-drm axi:gpu: [drm] Cannot find any crtc or sizes
+Jun 05 17:36:36 MATIAS systemd[1]: Mounting boot-firmware.mount - /boot/firmware...
+Jun 05 17:36:36 MATIAS systemd[1]: Mounted boot-firmware.mount - /boot/firmware.
+Jun 05 17:36:36 MATIAS systemd[1]: Reached target local-fs.target - Local File Systems.
+Jun 05 17:36:36 MATIAS systemd[1]: Listening on systemd-sysext.socket - System Extension Image Management (Varlink).
+Jun 05 17:36:36 MATIAS systemd[1]: Starting apparmor.service - Load AppArmor profiles...
+Jun 05 17:36:36 MATIAS systemd[1]: Starting console-setup.service - Set console font and keymap...
+Jun 05 17:36:36 MATIAS systemd[1]: Starting finalrd.service - Create final runtime dir for shutdown pivot root...
+Jun 05 17:36:36 MATIAS systemd[1]: ldconfig.service - Rebuild Dynamic Linker Cache was skipped because no trigger condition checks were met.
+Jun 05 17:36:36 MATIAS apparmor.systemd[848]: Restarting AppArmor
+Jun 05 17:36:36 MATIAS systemd[1]: Starting plymouth-read-write.service - Tell Plymouth To Write Out Runtime Data...
+Jun 05 17:36:37 MATIAS apparmor.systemd[848]: /lib/apparmor/apparmor.systemd: 148: [: Illegal number: yes
+Jun 05 17:36:37 MATIAS apparmor.systemd[848]: Reloading AppArmor profiles
+Jun 05 17:36:37 MATIAS systemd[1]: Starting systemd-binfmt.service - Set Up Additional Binary Formats...
+Jun 05 17:36:37 MATIAS systemd[1]: Starting systemd-tmpfiles-setup.service - Create Volatile Files and Directories...
+Jun 05 17:36:37 MATIAS systemd[1]: Starting ufw.service - Uncomplicated firewall...
+Jun 05 17:36:37 MATIAS systemd[1]: Finished console-setup.service - Set console font and keymap.
+Jun 05 17:36:37 MATIAS systemd[1]: Finished finalrd.service - Create final runtime dir for shutdown pivot root.
+Jun 05 17:36:37 MATIAS systemd[1]: Finished plymouth-read-write.service - Tell Plymouth To Write Out Runtime Data.
+Jun 05 17:36:37 MATIAS systemd[1]: Finished ufw.service - Uncomplicated firewall.
+Jun 05 17:36:37 MATIAS systemd[1]: proc-sys-fs-binfmt_misc.automount: Got automount request for /proc/sys/fs/binfmt_misc, triggered by 860 (systemd-binfmt)
+Jun 05 17:36:37 MATIAS systemd[1]: Mounting proc-sys-fs-binfmt_misc.mount - Arbitrary Executable File Formats File System...
+Jun 05 17:36:37 MATIAS kernel: audit: type=1400 audit(1780673797.072:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="1password" pid=874 comm="apparmor_parser"
+Jun 05 17:36:37 MATIAS kernel: audit: type=1400 audit(1780673797.072:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name=4D6F6E676F444220436F6D70617373 pid=876 comm="apparmor_parser"
+Jun 05 17:36:37 MATIAS kernel: audit: type=1400 audit(1780673797.072:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="QtWebEngineProcess" pid=877 comm="apparmor_parser"
+Jun 05 17:36:37 MATIAS kernel: audit: type=1400 audit(1780673797.073:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="Discord" pid=875 comm="apparmor_parser"
+Jun 05 17:36:37 MATIAS kernel: audit: type=1400 audit(1780673797.078:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="brave" pid=879 comm="apparmor_parser"
+Jun 05 17:36:37 MATIAS kernel: audit: type=1400 audit(1780673797.078:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="balena-etcher" pid=878 comm="apparmor_parser"
+Jun 05 17:36:37 MATIAS kernel: audit: type=1400 audit(1780673797.078:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="buildah" pid=880 comm="apparmor_parser"
+Jun 05 17:36:37 MATIAS kernel: audit: type=1400 audit(1780673797.078:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="cam" pid=881 comm="apparmor_parser"
+Jun 05 17:36:37 MATIAS kernel: audit: type=1400 audit(1780673797.081:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="ch-checkns" pid=882 comm="apparmor_parser"
+Jun 05 17:36:37 MATIAS kernel: audit: type=1400 audit(1780673797.082:11): apparmor="STATUS" operation="profile_load" profile="unconfined" name="ch-run" pid=883 comm="apparmor_parser"
+Jun 05 17:36:37 MATIAS systemd[1]: Finished systemd-tmpfiles-setup.service - Create Volatile Files and Directories.
+Jun 05 17:36:37 MATIAS systemd[1]: systemd-firstboot.service - First Boot Wizard was skipped because of an unmet condition check (ConditionFirstBoot=yes).
+Jun 05 17:36:37 MATIAS systemd[1]: first-boot-complete.target - First Boot Complete was skipped because of an unmet condition check (ConditionFirstBoot=yes).
+Jun 05 17:36:37 MATIAS systemd[1]: systemd-journal-catalog-update.service - Rebuild Journal Catalog was skipped because of an unmet condition check (ConditionNeedsUpdate=/var).
+Jun 05 17:36:37 MATIAS systemd[1]: systemd-machine-id-commit.service - Commit a transient machine-id on disk was skipped because of an unmet condition check (ConditionPathIsMountPoint=/etc/machine-id).
+Jun 05 17:36:37 MATIAS systemd[1]: Starting systemd-resolved.service - Network Name Resolution...
+Jun 05 17:36:37 MATIAS systemd[1]: Starting systemd-timesyncd.service - Network Time Synchronization...
+Jun 05 17:36:37 MATIAS systemd[1]: systemd-update-done.service - Update is Completed was skipped because no trigger condition checks were met.
+Jun 05 17:36:37 MATIAS systemd[1]: Starting systemd-update-utmp.service - Record System Boot/Shutdown in UTMP...
+Jun 05 17:36:37 MATIAS kernel: brcmfmac: brcmf_c_process_txcap_blob: no txcap_blob available (err=-2)
+Jun 05 17:36:37 MATIAS kernel: brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM4345/6 wl0: Apr 15 2021 03:03:20 version 7.45.234 (4ca95bb CY) FWID 01-996384e2
+Jun 05 17:36:37 MATIAS systemd[1]: Starting systemd-rfkill.service - Load/Save RF Kill Switch Status...
+Jun 05 17:36:37 MATIAS systemd[1]: Mounted proc-sys-fs-binfmt_misc.mount - Arbitrary Executable File Formats File System.
+Jun 05 17:36:37 MATIAS systemd[1]: Finished systemd-binfmt.service - Set Up Additional Binary Formats.
+Jun 05 17:36:37 MATIAS systemd[1]: proc-sys-fs-binfmt_misc.automount: Got automount request for /proc/sys/fs/binfmt_misc, triggered by 919 ((resolved))
+Jun 05 17:36:37 MATIAS systemd[1]: proc-sys-fs-binfmt_misc.automount: Automount point already active?
+Jun 05 17:36:37 MATIAS systemd[1]: Started systemd-rfkill.service - Load/Save RF Kill Switch Status.
+Jun 05 17:36:37 MATIAS systemd[1]: Reached target bluetooth.target - Bluetooth Support.
+Jun 05 17:36:37 MATIAS systemd[1]: Finished systemd-update-utmp.service - Record System Boot/Shutdown in UTMP.
+Jun 05 17:36:37 MATIAS systemd-resolved[919]: Positive Trust Anchors:
+Jun 05 17:36:37 MATIAS systemd-resolved[919]: . IN DS 20326 8 2 e06d44b80b8f1d39a95c0b0d7c65d08458e880409bbc683457104237c7f8ec8d
+Jun 05 17:36:37 MATIAS systemd-resolved[919]: Negative trust anchors: home.arpa 10.in-addr.arpa 16.172.in-addr.arpa 17.172.in-addr.arpa 18.172.in-addr.arpa 19.172.in-addr.arpa 20.172.in-addr.arpa 21.172.in-addr.arpa 22.172.in-addr.arpa 23.172.in-addr.arpa 24.172.in-addr.arpa 25.172.in-addr.arpa 26.172.in-addr.arpa 27.172.in-addr.arpa 28.172.in-addr.arpa 29.172.in-addr.arpa 30.172.in-addr.arpa 31.172.in-addr.arpa 170.0.0.192.in-addr.arpa 171.0.0.192.in-addr.arpa 168.192.in-addr.arpa d.f.ip6.arpa ipv4only.arpa corp home internal intranet lan local private test
+Jun 20 15:48:04 MATIAS systemd-timesyncd[929]: System clock time unset or jumped backwards, restored from recorded timestamp: Sat 2026-06-20 15:48:04 CEST
+Jun 20 15:48:04 MATIAS systemd[1]: Started systemd-timesyncd.service - Network Time Synchronization.
+Jun 20 15:48:04 MATIAS systemd[1]: Reached target time-set.target - System Time Set.
+Jun 20 15:48:04 MATIAS kernel: Bluetooth: hci0: BCM: chip id 107
+Jun 20 15:48:04 MATIAS kernel: Bluetooth: hci0: BCM: features 0x2f
+Jun 20 15:48:04 MATIAS kernel: Bluetooth: hci0: BCM4345C0
+Jun 20 15:48:04 MATIAS kernel: Bluetooth: hci0: BCM4345C0 (003.001.025) build 0000
+Jun 20 15:48:04 MATIAS kernel: Bluetooth: hci0: BCM4345C0 'brcm/BCM4345C0.raspberrypi,5-model-b.hcd' Patch
+Jun 20 15:48:04 MATIAS systemd[1]: Finished apparmor.service - Load AppArmor profiles.
+Jun 20 15:48:04 MATIAS systemd[1]: Starting snapd.apparmor.service - Load AppArmor profiles managed internally by snapd...
+Jun 20 15:48:04 MATIAS systemd[1]: vgauth.service - Authentication service for virtual machines hosted on VMware was skipped because of an unmet condition check (ConditionVirtualization=vmware).
+Jun 20 15:48:04 MATIAS systemd[1]: open-vm-tools.service - Service for virtual machines hosted on VMware was skipped because of an unmet condition check (ConditionVirtualization=vmware).
+Jun 20 15:48:04 MATIAS systemd[1]: Starting cloud-init-local.service - Cloud-init: Local Stage (pre-network)...
+Jun 20 15:48:04 MATIAS snapd-apparmor[990]: main.go:146: Loading profiles [/var/lib/snapd/apparmor/profiles/snap-confine.snapd.26383 /var/lib/snapd/apparmor/profiles/snap-confine.snapd.26869 /var/lib/snapd/apparmor/profiles/snap-update-ns.network-manager /var/lib/snapd/apparmor/profiles/snap.network-manager.hook.configure /var/lib/snapd/apparmor/profiles/snap.network-manager.hook.remove /var/lib/snapd/apparmor/profiles/snap.network-manager.networkmanager /var/lib/snapd/apparmor/profiles/snap.network-manager.nmcli /var/lib/snapd/apparmor/profiles/snap.network-manager.nmtui /var/lib/snapd/apparmor/profiles/snap.network-manager.nmtui-connect /var/lib/snapd/apparmor/profiles/snap.network-manager.nmtui-edit /var/lib/snapd/apparmor/profiles/snap.network-manager.nmtui-hostname]
+Jun 20 15:48:04 MATIAS systemd-resolved[919]: Using system hostname 'MATIAS'.
+Jun 20 15:48:04 MATIAS systemd[1]: Started systemd-resolved.service - Network Name Resolution.
+Jun 20 15:48:04 MATIAS systemd[1]: Reached target nss-lookup.target - Host and Network Name Lookups.
+Jun 20 15:48:04 MATIAS systemd[1]: Finished snapd.apparmor.service - Load AppArmor profiles managed internally by snapd.
+Jun 20 15:48:04 MATIAS kernel: Bluetooth: hci0: BCM: features 0x2f
+Jun 20 15:48:04 MATIAS kernel: Bluetooth: hci0: BCM43455 37.4MHz Raspberry Pi 3+-0190
+Jun 20 15:48:04 MATIAS kernel: Bluetooth: hci0: BCM4345C0 (003.001.025) build 0382
+Jun 20 15:48:04 MATIAS kernel: Bluetooth: hci0: BCM: Using default device address (43:45:c0:00:1f:ac)
+Jun 20 15:48:05 MATIAS cloud-init[1014]: Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'init-local' at Sat, 20 Jun 2026 13:48:05 +0000. Up 8.85 seconds.
+Jun 20 15:48:05 MATIAS systemd[1]: Finished cloud-init-local.service - Cloud-init: Local Stage (pre-network).
+Jun 20 15:48:05 MATIAS systemd[1]: Reached target network-pre.target - Preparation for Network.
+Jun 20 15:48:05 MATIAS systemd[1]: Starting cloud-init.service - Cloud-init: Network Stage...
+Jun 20 15:48:05 MATIAS cloud-init[1027]: Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'init' at Sat, 20 Jun 2026 13:48:05 +0000. Up 9.44 seconds.
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: +++++++++++++++++++++++++++Net device info++++++++++++++++++++++++++++
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: +--------+-------+-----------+-----------+-------+-------------------+
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: | Device |   Up  |  Address  |    Mask   | Scope |     Hw-Address    |
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: +--------+-------+-----------+-----------+-------+-------------------+
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: |  eth0  | False |     .     |     .     |   .   | 2c:cf:67:5c:a0:ba |
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: |   lo   |  True | 127.0.0.1 | 255.0.0.0 |  host |         .         |
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: |   lo   |  True |  ::1/128  |     .     |  host |         .         |
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: | wlan0  | False |     .     |     .     |   .   | 2c:cf:67:5c:a0:bb |
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: +--------+-------+-----------+-----------+-------+-------------------+
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: +++++++++++++++++++Route IPv6 info+++++++++++++++++++
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: +-------+-------------+---------+-----------+-------+
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: | Route | Destination | Gateway | Interface | Flags |
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: +-------+-------------+---------+-----------+-------+
+Jun 20 15:48:05 MATIAS cloud-init[1027]: ci-info: +-------+-------------+---------+-----------+-------+
+Jun 20 15:48:05 MATIAS cloud-init[1027]: 2026-06-20 13:48:05,717 - schema.py[WARNING]: cloud-config failed schema validation! You may run 'sudo cloud-init schema --system' to check the details.
+Jun 20 15:48:05 MATIAS systemd[1]: Finished cloud-init.service - Cloud-init: Network Stage.
+Jun 20 15:48:05 MATIAS systemd[1]: Reached target cloud-config.target - Cloud-config availability.
+Jun 20 15:48:05 MATIAS systemd[1]: Reached target sysinit.target - System Initialization.
+Jun 20 15:48:05 MATIAS systemd[1]: apport-autoreport.path - Process error reports when automatic reporting is enabled (file watch) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+Jun 20 15:48:05 MATIAS systemd[1]: apport-autoreport.timer - Process error reports when automatic reporting is enabled (timer based) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+Jun 20 15:48:05 MATIAS systemd[1]: Started apt-daily.timer - Daily apt download activities.
+Jun 20 15:48:05 MATIAS systemd[1]: Started apt-daily-upgrade.timer - Daily apt upgrade and clean activities.
+Jun 20 15:48:05 MATIAS systemd[1]: Started dpkg-db-backup.timer - Daily dpkg database backup timer.
+Jun 20 15:48:05 MATIAS systemd[1]: Started e2scrub_all.timer - Periodic ext4 Online Metadata Check for All Filesystems.
+Jun 20 15:48:05 MATIAS systemd[1]: Started fstrim.timer - Discard unused filesystem blocks once a week.
+Jun 20 15:48:05 MATIAS systemd[1]: Started fwupd-refresh.timer - Refresh fwupd metadata regularly.
+Jun 20 15:48:05 MATIAS systemd[1]: Started logrotate.timer - Daily rotation of log files.
+Jun 20 15:48:05 MATIAS systemd[1]: Started man-db.timer - Daily man-db regeneration.
+Jun 20 15:48:05 MATIAS systemd[1]: Started motd-news.timer - Message of the Day.
+Jun 20 15:48:05 MATIAS systemd[1]: snapd.snap-repair.timer - Timer to automatically fetch and run repair assertions was skipped because no trigger condition checks were met.
+Jun 20 15:48:05 MATIAS systemd[1]: Started sysstat-collect.timer - Run system activity accounting tool every 10 minutes.
+Jun 20 15:48:05 MATIAS systemd[1]: Started sysstat-summary.timer - Generate summary of yesterday's process accounting.
+Jun 20 15:48:05 MATIAS systemd[1]: Started systemd-tmpfiles-clean.timer - Daily Cleanup of Temporary Directories.
+Jun 20 15:48:05 MATIAS systemd[1]: ua-timer.timer - Ubuntu Pro Timer for running repeated jobs was skipped because of an unmet condition check (ConditionPathExists=/var/lib/ubuntu-advantage/private/machine-token.json).
+Jun 20 15:48:05 MATIAS systemd[1]: Reached target paths.target - Path Units.
+Jun 20 15:48:05 MATIAS systemd[1]: apport-forward.socket - Unix socket for apport crash forwarding was skipped because of an unmet condition check (ConditionVirtualization=container).
+Jun 20 15:48:05 MATIAS systemd[1]: Listening on avahi-daemon.socket - Avahi mDNS/DNS-SD Stack Activation Socket.
+Jun 20 15:48:06 MATIAS systemd[1]: Listening on cloud-init-hotplugd.socket - cloud-init hotplug hook socket.
+Jun 20 15:48:06 MATIAS systemd[1]: Listening on dbus.socket - D-Bus System Message Bus Socket.
+Jun 20 15:48:06 MATIAS systemd[1]: Listening on iscsid.socket - Open-iSCSI iscsid Socket.
+Jun 20 15:48:06 MATIAS systemd[1]: Starting lxd-installer.socket - Helper to install lxd snap on demand...
+Jun 20 15:48:06 MATIAS systemd[1]: Starting snapd.socket - Socket activation for snappy daemon...
+Jun 20 15:48:06 MATIAS systemd[1]: Listening on ssh.socket - OpenBSD Secure Shell server socket.
+Jun 20 15:48:06 MATIAS systemd[1]: Listening on uuidd.socket - UUID daemon activation socket.
+Jun 20 15:48:06 MATIAS systemd[1]: systemd-pcrphase-sysinit.service - TPM2 PCR Barrier (Initialization) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+Jun 20 15:48:06 MATIAS systemd[1]: Listening on lxd-installer.socket - Helper to install lxd snap on demand.
+Jun 20 15:48:06 MATIAS systemd[1]: Listening on snapd.socket - Socket activation for snappy daemon.
+Jun 20 15:48:06 MATIAS systemd[1]: Reached target sockets.target - Socket Units.
+Jun 20 15:48:06 MATIAS systemd[1]: Reached target basic.target - Basic System.
+Jun 20 15:48:06 MATIAS systemd[1]: Starting avahi-daemon.service - Avahi mDNS/DNS-SD Stack...
+Jun 20 15:48:06 MATIAS systemd[1]: Starting dbus.service - D-Bus System Message Bus...
+Jun 20 15:48:06 MATIAS systemd[1]: Started dmesg.service - Save initial kernel messages after boot.
+Jun 20 15:48:06 MATIAS systemd[1]: Starting e2scrub_reap.service - Remove Stale Online ext4 Metadata Check Snapshots...
+Jun 20 15:48:06 MATIAS systemd[1]: getty-static.service - getty on tty2-tty6 if dbus and logind are not available was skipped because of an unmet condition check (ConditionPathExists=!/usr/bin/dbus-daemon).
+Jun 20 15:48:06 MATIAS systemd[1]: Started lttng-sessiond.service - LTTng session daemon.
+Jun 20 15:48:06 MATIAS (sessiond)[1063]: lttng-sessiond.service: Referenced but unset environment variable evaluates to an empty string: DAEMON_ARGS
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: Found user 'avahi' (UID 108) and group 'avahi' (GID 110).
+Jun 20 15:48:06 MATIAS systemd[1]: networkd-dispatcher.service - Dispatcher daemon for systemd-networkd was skipped because no trigger condition checks were met.
+Jun 20 15:48:06 MATIAS systemd[1]: Starting polkit.service - Authorization Manager...
+Jun 20 15:48:06 MATIAS systemd[1]: Starting rpi-eeprom-update.service - Check for Raspberry Pi EEPROM updates...
+Jun 20 15:48:06 MATIAS systemd[1]: Starting rsyslog.service - System Logging Service...
+Jun 20 15:48:06 MATIAS systemd[1]: secureboot-db.service - Secure Boot updates for DB and DBX was skipped because of an unmet condition check (ConditionPathExists=/sys/firmware/efi/efivars/db-d719b2cb-3d3a-4596-a3bc-dad00e67656f).
+Jun 20 15:48:06 MATIAS systemd[1]: Starting smartmontools.service - Self Monitoring and Reporting Technology (SMART) Daemon...
+Jun 20 15:48:06 MATIAS systemd[1]: snapd.core-fixup.service - Automatically repair incorrect owner/permissions on core devices was skipped because no trigger condition checks were met.
+Jun 20 15:48:06 MATIAS systemd[1]: snapd.recovery-chooser-trigger.service - Wait for the Ubuntu Core chooser trigger was skipped because of an unmet condition check (ConditionKernelCommandLine=snapd_recovery_mode).
+Jun 20 15:48:06 MATIAS systemd[1]: Reached target getty-pre.target - Preparation for Logins.
+Jun 20 15:48:06 MATIAS systemd[1]: Starting snapd.seeded.service - Wait until snapd is fully seeded...
+Jun 20 15:48:06 MATIAS systemd[1]: Starting snapd.service - Snap Daemon...
+Jun 20 15:48:06 MATIAS (smartd)[1067]: smartmontools.service: Referenced but unset environment variable evaluates to an empty string: smartd_opts
+Jun 20 15:48:06 MATIAS systemd[1]: Starting sysstat.service - Resets System Activity Logs...
+Jun 20 15:48:06 MATIAS systemd[1]: Starting systemd-logind.service - User Login Management...
+Jun 20 15:48:06 MATIAS systemd[1]: ua-reboot-cmds.service - Ubuntu Pro reboot cmds was skipped because of an unmet condition check (ConditionPathExists=/var/lib/ubuntu-advantage/private/machine-token.json).
+Jun 20 15:48:06 MATIAS systemd[1]: Starting udisks2.service - Disk Manager...
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: Successfully dropped root privileges.
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: avahi-daemon 0.8 starting up.
+Jun 20 15:48:06 MATIAS systemd-logind[1073]: New seat seat0.
+Jun 20 15:48:06 MATIAS systemd-logind[1073]: Watching system buttons on /dev/input/event0 (pwr_button)
+Jun 20 15:48:06 MATIAS systemd-logind[1073]: Watching system buttons on /dev/input/event1 (vc4-hdmi-0)
+Jun 20 15:48:06 MATIAS systemd-logind[1073]: Watching system buttons on /dev/input/event3 (vc4-hdmi-1)
+Jun 20 15:48:06 MATIAS systemd[1]: Started systemd-logind.service - User Login Management.
+Jun 20 15:48:06 MATIAS dbus-daemon[1060]: [system] AppArmor D-Bus mediation is enabled
+Jun 20 15:48:06 MATIAS systemd[1]: Started dbus.service - D-Bus System Message Bus.
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: Successfully called chroot().
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: Successfully dropped remaining capabilities.
+Jun 20 15:48:06 MATIAS dbus-daemon[1060]: [system] Successfully activated service 'org.freedesktop.systemd1'
+Jun 20 15:48:06 MATIAS systemd[1]: Starting wpa_supplicant.service - WPA supplicant...
+Jun 20 15:48:06 MATIAS systemd[1]: Started avahi-daemon.service - Avahi mDNS/DNS-SD Stack.
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: No service file found in /etc/avahi/services.
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: Joining mDNS multicast group on interface lo.IPv6 with address ::1.
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: New relevant interface lo.IPv6 for mDNS.
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: Joining mDNS multicast group on interface lo.IPv4 with address 127.0.0.1.
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: New relevant interface lo.IPv4 for mDNS.
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: Network interface enumeration completed.
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: Registering new address record for ::1 on lo.*.
+Jun 20 15:48:06 MATIAS avahi-daemon[1059]: Registering new address record for 127.0.0.1 on lo.IPv4.
+Jun 20 15:48:06 MATIAS polkitd[1064]: Started polkitd version 124
+Jun 20 15:48:06 MATIAS udisksd[1074]: udisks daemon version 2.10.1 starting
+Jun 20 15:48:06 MATIAS systemd[1]: Finished sysstat.service - Resets System Activity Logs.
+Jun 20 15:48:06 MATIAS lttng-sessiond[1063]: Error: Unable to load required module lttng-ring-buffer-client-discard
+Jun 20 15:48:06 MATIAS lttng-sessiond[1063]: Warning: No kernel tracer available
+Jun 20 15:48:06 MATIAS smartd[1067]: smartd 7.4 2023-08-01 r5530 [aarch64-linux-6.8.0-1057-raspi] (local build)
+Jun 20 15:48:06 MATIAS smartd[1067]: Opened configuration file /etc/smartd.conf
+Jun 20 15:48:06 MATIAS smartd[1067]: Drive: DEVICESCAN, implied '-a' Directive on line 18 of file /etc/smartd.conf
+Jun 20 15:48:06 MATIAS smartd[1067]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+Jun 20 15:48:06 MATIAS smartd[1067]: In the system's table of devices NO devices found to scan
+Jun 20 15:48:06 MATIAS smartd[1067]: Unable to monitor any SMART enabled devices. Exiting.
+Jun 20 15:48:06 MATIAS smartd[1067]: smartd is exiting (exit status 17)
+Jun 20 15:48:06 MATIAS systemd[1]: smartmontools.service: Main process exited, code=exited, status=17/n/a
+Jun 20 15:48:06 MATIAS systemd[1]: smartmontools.service: Failed with result 'exit-code'.
+Jun 20 15:48:06 MATIAS systemd[1]: Failed to start smartmontools.service - Self Monitoring and Reporting Technology (SMART) Daemon.
+Jun 20 15:48:06 MATIAS polkitd[1064]: Loading rules from directory /etc/polkit-1/rules.d
+Jun 20 15:48:06 MATIAS polkitd[1064]: Loading rules from directory /usr/share/polkit-1/rules.d
+Jun 20 15:48:06 MATIAS rsyslogd[1083]: imuxsock: Acquired UNIX socket '/run/systemd/journal/syslog' (fd 3) from systemd.  [v8.2312.0]
+Jun 20 15:48:06 MATIAS rsyslogd[1083]: rsyslogd's groupid changed to 104
+Jun 20 15:48:06 MATIAS systemd[1]: Started rsyslog.service - System Logging Service.
+Jun 20 15:48:06 MATIAS rsyslogd[1083]: rsyslogd's userid changed to 103
+Jun 20 15:48:06 MATIAS rsyslogd[1083]: [origin software="rsyslogd" swVersion="8.2312.0" x-pid="1083" x-info="https://www.rsyslog.com"] start
+Jun 20 15:48:06 MATIAS systemd[1]: Started wpa_supplicant.service - WPA supplicant.
+Jun 20 15:48:06 MATIAS systemd[1]: Reached target network.target - Network.
+Jun 20 15:48:06 MATIAS systemd[1]: Reached target network-online.target - Network is Online.
+Jun 20 15:48:06 MATIAS systemd[1]: Started update-notifier-download.timer - Download data for packages that failed at package install time.
+Jun 20 15:48:06 MATIAS systemd[1]: Started update-notifier-motd.timer - Check to see whether there is a new version of Ubuntu available.
+Jun 20 15:48:06 MATIAS systemd[1]: Reached target timers.target - Timer Units.
+Jun 20 15:48:06 MATIAS wpa_supplicant[1090]: Successfully initialized wpa_supplicant
+Jun 20 15:48:06 MATIAS systemd[1]: Starting cloud-config.service - Cloud-init: Config Stage...
+Jun 20 15:48:06 MATIAS systemd[1]: netplan-regdom.service - Netplan regulatory-domain configuration was skipped because of an unmet condition check (ConditionFileIsExecutable=/usr/sbin/iw).
+Jun 20 15:48:06 MATIAS polkitd[1064]: Finished loading, compiling and executing 6 rules
+Jun 20 15:48:06 MATIAS polkitd[1064]: Acquired the name org.freedesktop.PolicyKit1 on the system bus
+Jun 20 15:48:06 MATIAS systemd[1]: open-iscsi.service - Login to default iSCSI targets was skipped because no trigger condition checks were met.
+Jun 20 15:48:06 MATIAS systemd[1]: Reached target remote-fs-pre.target - Preparation for Remote File Systems.
+Jun 20 15:48:06 MATIAS systemd[1]: Reached target remote-fs.target - Remote File Systems.
+Jun 20 15:48:06 MATIAS systemd[1]: Starting apport.service - automatic crash report generation...
+Jun 20 15:48:06 MATIAS systemd[1]: Finished blk-availability.service - Availability of block devices.
+Jun 20 15:48:06 MATIAS rpi-eeprom-update[1065]: Skipping automatic bootloader upgrade. current 1762364238 >= min 1746713597
+Jun 20 15:48:06 MATIAS systemd[1]: Started cron.service - Regular background program processing daemon.
+Jun 20 15:48:06 MATIAS systemd[1]: pollinate.service - Pollinate to seed the pseudo random number generator was skipped because of an unmet condition check (ConditionPathExists=!/var/cache/pollinate/seeded).
+Jun 20 15:48:06 MATIAS (cron)[1158]: cron.service: Referenced but unset environment variable evaluates to an empty string: EXTRA_OPTS
+Jun 20 15:48:06 MATIAS systemd[1]: Started snap.network-manager.networkmanager.service - Service for snap application network-manager.networkmanager.
+Jun 20 15:48:06 MATIAS systemd[1]: systemd-pcrphase.service - TPM2 PCR Barrier (User) was skipped because of an unmet condition check (ConditionSecurity=measured-uki).
+Jun 20 15:48:06 MATIAS systemd[1]: Starting systemd-user-sessions.service - Permit User Sessions...
+Jun 20 15:48:06 MATIAS systemd[1]: ubuntu-advantage.service - Ubuntu Pro Background Auto Attach was skipped because no trigger condition checks were met.
+Jun 20 15:48:06 MATIAS systemd[1]: Started unattended-upgrades.service - Unattended Upgrades Shutdown.
+Jun 20 15:48:06 MATIAS systemd[1]: Started polkit.service - Authorization Manager.
+Jun 20 15:48:06 MATIAS systemd[1]: Starting ModemManager.service - Modem Manager...
+Jun 20 15:48:06 MATIAS cron[1158]: (CRON) INFO (pidfile fd = 3)
+Jun 20 15:48:06 MATIAS cron[1158]: (CRON) INFO (Running @reboot jobs)
+Jun 20 15:48:06 MATIAS systemd[1]: Finished systemd-user-sessions.service - Permit User Sessions.
+Jun 20 15:48:06 MATIAS systemd[1]: Starting plymouth-quit-wait.service - Hold until boot process finishes up...
+Jun 20 15:48:06 MATIAS systemd[1]: Starting plymouth-quit.service - Terminate Plymouth Boot Screen...
+Jun 20 15:48:06 MATIAS systemd[1]: Finished plymouth-quit-wait.service - Hold until boot process finishes up.
+Jun 20 15:48:06 MATIAS systemd[1]: Started serial-getty@ttyAMA0.service - Serial Getty on ttyAMA0.
+Jun 20 15:48:06 MATIAS systemd[1]: Starting setvtrgb.service - Set console scheme...
+Jun 20 15:48:06 MATIAS systemd[1]: Finished plymouth-quit.service - Terminate Plymouth Boot Screen.
+Jun 20 15:48:06 MATIAS systemd[1]: Finished setvtrgb.service - Set console scheme.
+Jun 20 15:48:06 MATIAS systemd[1]: Created slice system-getty.slice - Slice /system/getty.
+Jun 20 15:48:06 MATIAS systemd[1]: Started getty@tty1.service - Getty on tty1.
+Jun 20 15:48:06 MATIAS systemd[1]: Reached target getty.target - Login Prompts.
+Jun 20 15:48:06 MATIAS ModemManager[1166]: <msg> ModemManager (version 1.23.4) starting in system bus...
+Jun 20 15:48:07 MATIAS systemd[1]: Started udisks2.service - Disk Manager.
+Jun 20 15:48:07 MATIAS udisksd[1074]: Acquired the name org.freedesktop.UDisks2 on the system message bus
+Jun 20 15:48:07 MATIAS avahi-daemon[1059]: Server startup complete. Host name is MATIAS.local. Local service cookie is 3420488233.
+Jun 20 15:48:07 MATIAS cloud-init[1195]: Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'modules:config' at Sat, 20 Jun 2026 13:48:07 +0000. Up 10.96 seconds.
+Jun 20 15:48:07 MATIAS rpi-eeprom-update[1065]: BOOTLOADER: up to date
+Jun 20 15:48:07 MATIAS rpi-eeprom-update[1065]:    CURRENT: Wed Nov  5 17:37:18 UTC 2025 (1762364238)
+Jun 20 15:48:07 MATIAS rpi-eeprom-update[1065]:     LATEST: Mon Dec  8 19:29:54 UTC 2025 (1765222194)
+Jun 20 15:48:07 MATIAS rpi-eeprom-update[1065]:    RELEASE: default (/usr/lib/firmware/raspberrypi/bootloader-2712/default)
+Jun 20 15:48:07 MATIAS rpi-eeprom-update[1065]:             Use raspi-config to change the release.
+Jun 20 15:48:07 MATIAS systemd[1]: Finished rpi-eeprom-update.service - Check for Raspberry Pi EEPROM updates.
+Jun 20 15:48:07 MATIAS systemd[1]: Finished cloud-config.service - Cloud-init: Config Stage.
+Jun 20 15:48:07 MATIAS kernel: NET: Registered PF_QIPCRTR protocol family
+Jun 20 15:48:07 MATIAS systemd[1]: Started ModemManager.service - Modem Manager.
+Jun 20 15:48:07 MATIAS systemd[1]: Finished apport.service - automatic crash report generation.
+Jun 20 15:48:07 MATIAS systemd[1]: tmp-snap.rootfs_PDtJpD.mount: Deactivated successfully.
+Jun 20 15:48:07 MATIAS snapd[1069]: overlord.go:309: Acquiring state lock file
+Jun 20 15:48:07 MATIAS snapd[1069]: overlord.go:314: Acquired state lock file
+Jun 20 15:48:07 MATIAS snapd[1069]: daemon.go:276: started snapd/2.75.2+ubuntu24.04 (series 16; classic) ubuntu/24.04 (arm64) linux/6.8.0-1057-raspi.
+Jun 20 15:48:07 MATIAS kernel: loop4: detected capacity change from 0 to 8
+Jun 20 15:48:07 MATIAS systemd[1]: tmp-syscheck\x2dmountpoint\x2d2934015163.mount: Deactivated successfully.
+Jun 20 15:48:07 MATIAS snapd[1069]: daemon.go:370: adjusting startup timeout by 45s (pessimistic estimate of 30s plus 5s per snap)
+Jun 20 15:48:07 MATIAS snapd[1069]: backends.go:70: AppArmor status: apparmor is enabled and all features are available
+Jun 20 15:48:07 MATIAS snapd[1069]: backend.go:145: reloading profiles for snap-confine
+Jun 20 15:48:07 MATIAS systemd[1]: e2scrub_reap.service: Deactivated successfully.
+Jun 20 15:48:07 MATIAS systemd[1]: Finished e2scrub_reap.service - Remove Stale Online ext4 Metadata Check Snapshots.
+Jun 20 15:48:07 MATIAS snapd[1069]: standby.go:95: will consider standby after: 5s
+Jun 20 15:48:07 MATIAS systemd[1]: Started snapd.service - Snap Daemon.
+Jun 20 15:48:07 MATIAS dbus-daemon[1060]: [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.10' (uid=0 pid=1069 comm="/usr/lib/snapd/snapd" label="unconfined")
+Jun 20 15:48:07 MATIAS systemd[1]: Starting systemd-timedated.service - Time & Date Service...
+Jun 20 15:48:07 MATIAS dbus-daemon[1060]: [system] Successfully activated service 'org.freedesktop.timedate1'
+Jun 20 15:48:07 MATIAS systemd[1]: Started systemd-timedated.service - Time & Date Service.
+Jun 20 15:48:07 MATIAS systemd[1]: Finished snapd.seeded.service - Wait until snapd is fully seeded.
+Jun 20 15:48:07 MATIAS systemd[1]: snapd.autoimport.service - Auto import assertions from block devices was skipped because no trigger condition checks were met.
+Jun 20 15:48:07 MATIAS systemd[1]: Reached target multi-user.target - Multi-User System.
+Jun 20 15:48:07 MATIAS systemd[1]: Reached target graphical.target - Graphical Interface.
+Jun 20 15:48:07 MATIAS systemd[1]: Starting cloud-final.service - Cloud-init: Final Stage...
+Jun 20 15:48:07 MATIAS systemd[1]: Starting systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP...
+Jun 20 15:48:07 MATIAS snapd[1069]: snapmgr.go:1661: performing periodic snap downloads cache cleanup
+Jun 20 15:48:07 MATIAS snapd[1069]: cache.go:243: removed 0 entries/    0 from downloads cache
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + mkdir -p /var/snap/network-manager/1024/conf/system-connections
+Jun 20 15:48:08 MATIAS systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+Jun 20 15:48:08 MATIAS systemd[1]: Finished systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP.
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + mkdir -p /var/snap/network-manager/1024/run
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + mkdir -p /run/NetworkManager/dhcp
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + mkdir -p /var/snap/network-manager/1024/conf.d
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + mkdir -p /var/snap/network-manager/1024/state
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + mkdir -p /var/snap/network-manager/1024/state/dhcp
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + mkdir -p /var/snap/network-manager/1024/var/lib/misc
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + mkdir -p /var/snap/network-manager/1024/etc
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + mkdir -p /var/snap/network-manager/1024/var/run
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + . /snap/network-manager/1024/bin/snap-config.sh
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + . /snap/network-manager/1024/bin/snap-prop.sh
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + apply_snap_config
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1301]: + get_wifi_powersave
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1302]: + snapctl get wifi.powersave
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1301]: + value=disabled
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1301]: + [ -z disabled ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1301]: + echo disabled
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + _switch_wifi_powersave disabled
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + path=/var/snap/network-manager/1024/conf.d/wifi-powersave.conf
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1307]: + printf [connection]\nwifi.powersave = 2
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + content=[connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: wifi.powersave = 2
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + _replace_file_if_diff /var/snap/network-manager/1024/conf.d/wifi-powersave.conf [connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: wifi.powersave = 2
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + old_content=
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ -e /var/snap/network-manager/1024/conf.d/wifi-powersave.conf ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1308]: + cat /var/snap/network-manager/1024/conf.d/wifi-powersave.conf
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + old_content=[connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: wifi.powersave = 2
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ [connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: wifi.powersave = 2 != [connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: wifi.powersave = 2 ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1309]: + get_wifi_wake_on_wlan
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1310]: + snapctl get wifi.wake-on-wlan
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1309]: + value=disabled
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1309]: + [ -z disabled ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1309]: + echo disabled
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1315]: + get_wifi_wake_on_password
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1315]: + snapctl get wifi.wake-on-wlan-password
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + _switch_wifi_wake_on_wlan disabled
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + value=0
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + value=0
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + password=
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + path=/var/snap/network-manager/1024/conf.d/wifi-wowlan.conf
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1321]: + printf [connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + content=[connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ -n 0 ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1322]: + printf %s\nwifi.wake-on-wlan=%s [connection] 0
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + content=[connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: wifi.wake-on-wlan=0
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ -n  ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + _replace_file_if_diff /var/snap/network-manager/1024/conf.d/wifi-wowlan.conf [connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: wifi.wake-on-wlan=0
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + old_content=
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ -e /var/snap/network-manager/1024/conf.d/wifi-wowlan.conf ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1323]: + cat /var/snap/network-manager/1024/conf.d/wifi-wowlan.conf
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + old_content=[connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: wifi.wake-on-wlan=0
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ [connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: wifi.wake-on-wlan=0 != [connection]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: wifi.wake-on-wlan=0 ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1324]: + get_debug_enable
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1325]: + snapctl get debug.enable
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1324]: + value=false
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1324]: + [ -z false ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1324]: + echo false
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + _switch_debug_enable false
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + DEBUG_FILE=/var/snap/network-manager/1024/.debug_enabled
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ false = true ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + rm -f /var/snap/network-manager/1024/.debug_enabled
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1330]: + get_property connectivity.uri
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1330]: + snapctl get connectivity.uri
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1337]: + get_property connectivity.interval
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1337]: + snapctl get connectivity.interval
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1344]: + get_property connectivity.response
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1344]: + snapctl get connectivity.response
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + _switch_connectivity_check
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + path=/var/snap/network-manager/1024/conf.d/connectivity.conf
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ -z  ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + rm -f /var/snap/network-manager/1024/conf.d/connectivity.conf
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + return
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1351]: + get_defaultrenderer
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1352]: + snapctl get defaultrenderer
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1351]: + value=true
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1351]: + [ -z true ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1351]: + echo true
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + _switch_defaultrenderer true
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + path=/etc/netplan/00-default-nm-renderer.yaml
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + rm -f /var/snap/network-manager/1024/conf.d/disable-ethernet.conf
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ true = true ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ ! -f /etc/netplan/00-default-nm-renderer.yaml ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1358]: + get_plugins
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1359]: + snapctl get plugins
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1358]: + value=keyfile
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1358]: + [ -z keyfile ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1358]: + [ keyfile = netplan ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1358]: + echo keyfile
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + _switch_plugins keyfile
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ ! -f /var/snap/network-manager/1024/NetworkManager.conf ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + sed -i s/^plugins=.*/plugins=keyfile/ /var/snap/network-manager/1024/NetworkManager.conf
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + NM_CONF=/snap/network-manager/1024/etc/NetworkManager/NetworkManager.conf
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ -e /var/snap/network-manager/1024/NetworkManager.conf ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + NM_CONF=/var/snap/network-manager/1024/NetworkManager.conf
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + . /snap/network-manager/1024/bin/utils.sh
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + . /etc/lsb-release
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + DISTRIB_ID=Ubuntu
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + DISTRIB_RELEASE=24.04
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + DISTRIB_CODENAME=noble
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + DISTRIB_DESCRIPTION=Ubuntu 24.04.4 LTS
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + dns_conf_file=/var/snap/network-manager/1024/conf.d/10-dns.conf
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1365]: + get_series_major_version
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1365]: + printf %s\n 24
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ 24 = 16 ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + printf [main]\ndns=systemd-resolved\nrc-manager=symlink\n
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + LOG_LEVEL=INFO
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ -f /var/snap/network-manager/1024/.debug_enabled ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + [ -x /snap/network-manager/1024/startup-hooks/99-wol-by-default.sh ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + /bin/sh -x /snap/network-manager/1024/startup-hooks/99-wol-by-default.sh
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1366]: + [ ! -e /var/snap/network-manager/1024/conf.d/enable-wol.conf ]
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + export NM_OPENVPN_USER= NM_OPENVPN_GROUP=
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + export LD_LIBRARY_PATH=/var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/snap/network-manager/1024/usr/lib:/snap/network-manager/1024/usr/lib/aarch64-linux-gnu:/snap/network-manager/1024/usr/lib/NetworkManager
+Jun 20 15:48:08 MATIAS network-manager.networkmanager[1161]: + exec /snap/network-manager/1024/usr/sbin/NetworkManager --config-dir=/var/snap/network-manager/1024/conf.d/ --config=/var/snap/network-manager/1024/NetworkManager.conf --log-level=INFO --no-daemon
+Jun 20 15:48:08 MATIAS cloud-init[1370]: Cloud-init v. 26.1-0ubuntu1~24.04.1 running 'modules:final' at Sat, 20 Jun 2026 13:48:08 +0000. Up 12.27 seconds.
+Jun 20 15:48:08 MATIAS cloud-init[1370]: Cloud-init v. 26.1-0ubuntu1~24.04.1 finished at Sat, 20 Jun 2026 13:48:08 +0000. Datasource DataSourceNoCloud [seed=/dev/mmcblk0p1].  Up 12.36 seconds
+Jun 20 15:48:08 MATIAS systemd[1]: Finished cloud-final.service - Cloud-init: Final Stage.
+Jun 20 15:48:08 MATIAS systemd[1]: Reached target cloud-init.target - Cloud-init target.
+Jun 20 15:48:08 MATIAS systemd[1]: Startup finished in 5.225s (kernel) + 7.332s (userspace) = 12.558s.
+Jun 20 15:48:09 MATIAS systemd[1]: systemd-rfkill.service: Deactivated successfully.
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.1747] NetworkManager (version 1.46.0) is starting... (boot:a0988447-265b-46f1-8fe8-4635d31abb95)
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.1832] Read config: /var/snap/network-manager/1024/NetworkManager.conf (run: 10-globally-managed-devices.conf, netplan.conf) (etc: 10-dns.conf, enable-wol.conf, wifi-powersave.conf, wifi-wowlan.conf)
+Jun 20 15:48:09 MATIAS kernel: kauditd_printk_skb: 120 callbacks suppressed
+Jun 20 15:48:09 MATIAS kernel: audit: type=1400 audit(1781963289.193:132): apparmor="DENIED" operation="capable" class="cap" profile="snap.network-manager.networkmanager" pid=1161 comm="NetworkManager" capability=1  capname="dac_override"
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.2279] manager[0xaaaae80cda50]: monitoring kernel firmware directory '/lib/firmware'.
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.2279] monitoring ifupdown state file '/run/network/ifstate'.
+Jun 20 15:48:09 MATIAS dbus-daemon[1060]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.12' (uid=0 pid=1161 comm="/snap/network-manager/1024/usr/sbin/NetworkManager" label="snap.network-manager.networkmanager (enforce)")
+Jun 20 15:48:09 MATIAS systemd[1]: Starting systemd-hostnamed.service - Hostname Service...
+Jun 20 15:48:09 MATIAS dbus-daemon[1060]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jun 20 15:48:09 MATIAS systemd[1]: Started systemd-hostnamed.service - Hostname Service.
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.2961] hostname: hostname: using hostnamed
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.2962] hostname: static hostname changed from (none) to "MATIAS"
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.2965] dns-mgr: init: dns=systemd-resolved rc-manager=symlink, plugin=systemd-resolved
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.2994] rfkill1: found Wi-Fi radio killswitch (at /sys/devices/platform/axi/1001100000.mmc/mmc_host/mmc1/mmc1:0001/mmc1:0001:1/ieee80211/phy0/rfkill1) (driver brcmfmac)
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.2999] manager[0xaaaae80cda50]: rfkill: Wi-Fi hardware radio set enabled
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.2999] manager[0xaaaae80cda50]: rfkill: WWAN hardware radio set enabled
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.3435] Loaded device plugin: NMTeamFactory (/usr/lib/NetworkManager/1.46.0/libnm-device-plugin-team.so)
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.3505] Loaded device plugin: NMWifiFactory (/usr/lib/NetworkManager/1.46.0/libnm-device-plugin-wifi.so)
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.3734] Loaded device plugin: NMWwanFactory (/usr/lib/NetworkManager/1.46.0/libnm-device-plugin-wwan.so)
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.3736] manager: rfkill: Wi-Fi enabled by radio killswitch; enabled by state file
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.3738] manager: rfkill: WWAN enabled by radio killswitch; enabled by state file
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.3738] manager: Networking is enabled by state file
+Jun 20 15:48:09 MATIAS NetworkManager[1161]: <info>  [1781963289.3818] settings: Loaded settings plugin: keyfile (internal)
+Jun 20 15:48:09 MATIAS systemd[1]: dmesg.service: Deactivated successfully.
+Jun 20 15:48:10 MATIAS dbus-daemon[1060]: [system] Activating service name='io.netplan.Netplan' requested by ':1.14' (uid=0 pid=1408 comm="/usr/bin/busctl call --quiet --system io.netplan.N" label="snap.network-manager.networkmanager (enforce)") (using servicehelper)
+Jun 20 15:48:10 MATIAS dbus-daemon[1060]: [system] Successfully activated service 'io.netplan.Netplan'
+Jun 20 15:48:10 MATIAS systemd[1]: Reloading requested from client PID 1415 ('systemctl') (unit dbus.service)...
+Jun 20 15:48:10 MATIAS systemd[1]: Reloading...
+Jun 20 15:48:10 MATIAS systemd[1]: Reloading finished in 443 ms.
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0018] dhcp: init: Using DHCP client 'internal'
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0020] manager: (lo): new Loopback device (/org/freedesktop/NetworkManager/Devices/1)
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0044] manager: (eth0): new Ethernet device (/org/freedesktop/NetworkManager/Devices/2)
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0047] device (eth0): state change: unmanaged -> unavailable (reason 'managed', sys-iface-state: 'external')
+Jun 20 15:48:11 MATIAS kernel: macb 1f00100000.ethernet eth0: PHY [1f00100000.ethernet-ffffffff:01] driver [Broadcom BCM54213PE] (irq=POLL)
+Jun 20 15:48:11 MATIAS kernel: macb 1f00100000.ethernet eth0: configuring for phy/rgmii-id link mode
+Jun 20 15:48:11 MATIAS kernel: macb 1f00100000.ethernet: gem-ptp-timer ptp clock registered.
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0185] device (wlan0): driver supports Access Point (AP) mode
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0193] manager: (wlan0): new 802.11 Wi-Fi device (/org/freedesktop/NetworkManager/Devices/3)
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0196] device (wlan0): state change: unmanaged -> unavailable (reason 'managed', sys-iface-state: 'external')
+Jun 20 15:48:11 MATIAS kernel: brcmfmac: brcmf_cfg80211_set_power_mgmt: power save enabled
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0252] failed to open /run/network/ifstate
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0259] bus-manager: acquired D-Bus service "org.freedesktop.NetworkManager"
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0399] modem-manager: ModemManager available
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0994] device (wlan0): supplicant interface state: internal-starting -> disconnected
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0995] Wi-Fi P2P device controlled by interface wlan0 created
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.0998] manager: (p2p-dev-wlan0): new 802.11 Wi-Fi P2P device (/org/freedesktop/NetworkManager/Devices/4)
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.1001] device (p2p-dev-wlan0): state change: unmanaged -> unavailable (reason 'managed', sys-iface-state: 'external')
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.1004] device (wlan0): state change: unavailable -> disconnected (reason 'supplicant-available', sys-iface-state: 'managed')
+Jun 20 15:48:11 MATIAS NetworkManager[1161]: <info>  [1781963291.1010] device (p2p-dev-wlan0): state change: unavailable -> disconnected (reason 'none', sys-iface-state: 'managed')
+Jun 20 15:48:11 MATIAS ModemManager[1166]: <msg> [base-manager] couldn't check support for device '/sys/devices/platform/axi/1000120000.pcie/1f00100000.ethernet': not supported by any plugin
+Jun 20 15:48:11 MATIAS ModemManager[1166]: <msg> [base-manager] couldn't check support for device '/sys/devices/platform/axi/1001100000.mmc/mmc_host/mmc1/mmc1:0001/mmc1:0001:1': not supported by any plugin
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9715] policy: auto-activating connection 'movil' (940e94ef-0d1a-4523-8b52-2d8e48ab18af)
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9721] device (wlan0): Activation: starting connection 'movil' (940e94ef-0d1a-4523-8b52-2d8e48ab18af)
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9722] device (wlan0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9724] manager: NetworkManager state is now CONNECTING
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9726] device (wlan0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9729] device (wlan0): Activation: (wifi) access point 'movil' has security, but secrets are required.
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9729] device (wlan0): state change: config -> need-auth (reason 'none', sys-iface-state: 'managed')
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9736] device (wlan0): state change: need-auth -> prepare (reason 'none', sys-iface-state: 'managed')
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9738] device (wlan0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <warn>  [1781963296.9741] device (wlan0): Cannot configure WoWLAN.
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9741] device (wlan0): Activation: (wifi) connection 'movil' has security, and secrets exist.  No new secrets needed.
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9746] Config: added 'ssid' value 'Pixel_5005'
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9746] Config: added 'scan_ssid' value '1'
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9746] Config: added 'bgscan' value 'simple:30:-65:300'
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9746] Config: added 'key_mgmt' value 'WPA-PSK WPA-PSK-SHA256 FT-PSK'
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9746] Config: added 'psk' value '<hidden>'
+Jun 20 15:48:16 MATIAS kernel: brcmfmac: brcmf_cfg80211_set_power_mgmt: power save disabled
+Jun 20 15:48:16 MATIAS wpa_supplicant[1090]: wlan0: Trying to associate with SSID 'Pixel_5005'
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9856] device (wlan0): supplicant interface state: disconnected -> associating
+Jun 20 15:48:16 MATIAS NetworkManager[1161]: <info>  [1781963296.9856] device (p2p-dev-wlan0): supplicant management interface state: disconnected -> associating
+Jun 20 15:48:17 MATIAS wpa_supplicant[1090]: wlan0: Associated with 7e:27:0e:a2:c2:e4
+Jun 20 15:48:17 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-CONNECTED - Connection to 7e:27:0e:a2:c2:e4 completed [id=0 id_str=]
+Jun 20 15:48:17 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Jun 20 15:48:17 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=COUNTRY_IE type=COUNTRY alpha2=ES
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.1520] device (wlan0): supplicant interface state: associating -> completed
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.1521] device (wlan0): Activation: (wifi) Stage 2 of 5 (Device Configure) successful. Connected to wireless network "Pixel_5005"
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.1521] device (p2p-dev-wlan0): supplicant management interface state: associating -> completed
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.1522] device (wlan0): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.1527] dhcp4 (wlan0): activation: beginning transaction (timeout in 45 seconds)
+Jun 20 15:48:17 MATIAS avahi-daemon[1059]: Joining mDNS multicast group on interface wlan0.IPv6 with address fe80::e43e:4f3b:8327:4360.
+Jun 20 15:48:17 MATIAS avahi-daemon[1059]: New relevant interface wlan0.IPv6 for mDNS.
+Jun 20 15:48:17 MATIAS avahi-daemon[1059]: Registering new address record for fe80::e43e:4f3b:8327:4360 on wlan0.*.
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.1904] dhcp4 (wlan0): state changed new lease, address=10.142.20.25, acd pending
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.3621] dhcp4 (wlan0): state changed new lease, address=10.142.20.25
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.3624] policy: set 'movil' (wlan0) as default for IPv4 routing and DNS
+Jun 20 15:48:17 MATIAS avahi-daemon[1059]: Joining mDNS multicast group on interface wlan0.IPv4 with address 10.142.20.25.
+Jun 20 15:48:17 MATIAS systemd-resolved[919]: wlan0: Bus client set default route setting: yes
+Jun 20 15:48:17 MATIAS systemd-resolved[919]: wlan0: Bus client set DNS server list to: 10.142.20.141
+Jun 20 15:48:17 MATIAS avahi-daemon[1059]: New relevant interface wlan0.IPv4 for mDNS.
+Jun 20 15:48:17 MATIAS avahi-daemon[1059]: Registering new address record for 10.142.20.25 on wlan0.IPv4.
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.3788] device (wlan0): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.3798] device (wlan0): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.3799] device (wlan0): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.3803] manager: NetworkManager state is now CONNECTED_SITE
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.3820] device (wlan0): Activation: successful, device activated.
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.3825] manager: NetworkManager state is now CONNECTED_GLOBAL
+Jun 20 15:48:17 MATIAS NetworkManager[1161]: <info>  [1781963297.3827] manager: startup complete
+Jun 20 15:48:18 MATIAS NetworkManager[1161]: <warn>  [1781963298.7488] ndisc[0xaaaae8165530,"wlan0"]: solicit: failure sending router solicitation: Address family not supported by protocol (97)
+Jun 20 15:48:33 MATIAS systemd[1]: systemd-fsckd.service: Deactivated successfully.
+Jun 20 16:48:36 MATIAS systemd-resolved[919]: Clock change detected. Flushing caches.
+Jun 20 16:48:36 MATIAS systemd-timesyncd[929]: Contacted time server 185.125.190.56:123 (ntp.ubuntu.com).
+Jun 20 16:48:36 MATIAS systemd-timesyncd[929]: Initial clock synchronization to Sat 2026-06-20 16:48:36.464372 CEST.
+Jun 20 16:48:36 MATIAS systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+Jun 20 16:48:36 MATIAS systemd[1]: sysstat-collect.service: Deactivated successfully.
+Jun 20 16:48:36 MATIAS systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+Jun 20 16:48:40 MATIAS systemd[1]: systemd-timedated.service: Deactivated successfully.
+Jun 20 16:48:41 MATIAS systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Jun 20 16:49:12 MATIAS systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Jun 20 16:49:12 MATIAS sshd[1477]: Server listening on 0.0.0.0 port 22.
+Jun 20 16:49:12 MATIAS sshd[1477]: Server listening on :: port 22.
+Jun 20 16:49:12 MATIAS systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Jun 20 16:49:14 MATIAS sshd[1478]: Accepted password for matias from 10.142.20.204 port 42231 ssh2
+Jun 20 16:49:14 MATIAS sshd[1478]: pam_unix(sshd:session): session opened for user matias(uid=1000) by matias(uid=0)
+Jun 20 16:49:14 MATIAS systemd[1]: Created slice user-1000.slice - User Slice of UID 1000.
+Jun 20 16:49:14 MATIAS systemd[1]: Starting user-runtime-dir@1000.service - User Runtime Directory /run/user/1000...
+Jun 20 16:49:14 MATIAS systemd-logind[1073]: New session 1 of user matias.
+Jun 20 16:49:14 MATIAS systemd[1]: Finished user-runtime-dir@1000.service - User Runtime Directory /run/user/1000.
+Jun 20 16:49:14 MATIAS systemd[1]: Starting user@1000.service - User Manager for UID 1000...
+Jun 20 16:49:14 MATIAS (systemd)[1483]: pam_unix(systemd-user:session): session opened for user matias(uid=1000) by matias(uid=0)
+Jun 20 16:49:14 MATIAS systemd[1483]: Queued start job for default target default.target.
+Jun 20 16:49:14 MATIAS systemd-journald[494]: /var/log/journal/aff1ae4007d7428283f0e8f3e411e76d/user-1000.journal: Journal file uses a different sequence number ID, rotating.
+Jun 20 16:49:14 MATIAS systemd[1483]: Created slice app.slice - User Application Slice.
+Jun 20 16:49:14 MATIAS systemd[1483]: Started launchpadlib-cache-clean.timer - Clean up old files in the Launchpadlib cache.
+Jun 20 16:49:14 MATIAS systemd[1483]: Reached target paths.target - Paths.
+Jun 20 16:49:14 MATIAS systemd[1483]: Reached target timers.target - Timers.
+Jun 20 16:49:14 MATIAS systemd[1483]: Starting dbus.socket - D-Bus User Message Bus Socket...
+Jun 20 16:49:14 MATIAS systemd[1483]: Listening on dirmngr.socket - GnuPG network certificate management daemon.
+Jun 20 16:49:14 MATIAS systemd[1483]: Listening on gpg-agent-browser.socket - GnuPG cryptographic agent and passphrase cache (access for web browsers).
+Jun 20 16:49:14 MATIAS systemd[1483]: Listening on gpg-agent-extra.socket - GnuPG cryptographic agent and passphrase cache (restricted).
+Jun 20 16:49:14 MATIAS systemd[1483]: Starting gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation)...
+Jun 20 16:49:14 MATIAS systemd[1483]: Listening on gpg-agent.socket - GnuPG cryptographic agent and passphrase cache.
+Jun 20 16:49:14 MATIAS systemd[1483]: Listening on keyboxd.socket - GnuPG public key management service.
+Jun 20 16:49:14 MATIAS systemd[1483]: Listening on pk-debconf-helper.socket - debconf communication socket.
+Jun 20 16:49:14 MATIAS systemd[1483]: Listening on snapd.session-agent.socket - REST API socket for snapd user session agent.
+Jun 20 16:49:14 MATIAS systemd[1483]: Listening on dbus.socket - D-Bus User Message Bus Socket.
+Jun 20 16:49:14 MATIAS systemd[1483]: Listening on gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation).
+Jun 20 16:49:14 MATIAS systemd[1483]: Reached target sockets.target - Sockets.
+Jun 20 16:49:14 MATIAS systemd[1483]: Reached target basic.target - Basic System.
+Jun 20 16:49:14 MATIAS systemd[1483]: Reached target default.target - Main User Target.
+Jun 20 16:49:14 MATIAS systemd[1483]: Startup finished in 396ms.
+Jun 20 16:49:14 MATIAS systemd[1]: Started user@1000.service - User Manager for UID 1000.
+Jun 20 16:49:14 MATIAS systemd[1]: Started session-1.scope - Session 1 of User matias.
+Jun 20 16:49:19 MATIAS sshd[1599]: Accepted password for matias from 10.142.20.204 port 15750 ssh2
+Jun 20 16:49:19 MATIAS sshd[1599]: pam_unix(sshd:session): session opened for user matias(uid=1000) by matias(uid=0)
+Jun 20 16:49:19 MATIAS systemd-logind[1073]: New session 3 of user matias.
+Jun 20 16:49:19 MATIAS systemd[1]: Started session-3.scope - Session 3 of User matias.
+Jun 20 16:50:12 MATIAS systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+Jun 20 16:50:12 MATIAS systemd[1]: sysstat-collect.service: Deactivated successfully.
+Jun 20 16:50:12 MATIAS systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+Jun 20 16:50:33 MATIAS kernel: source of link 'rp1-cfe-fe_config':0->'pisp-fe':1 is not a V4L2 sub-device, driver bug!
+Jun 20 16:50:33 MATIAS kernel: v4l2_get_link_freq: Link frequency estimated using pixel rate: result might be inaccurate
+Jun 20 16:50:33 MATIAS kernel: v4l2_get_link_freq: Consider implementing support for V4L2_CID_LINK_FREQ in the transmitter driver
+Jun 20 16:50:33 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 16:50:39 MATIAS sshd[1756]: Accepted password for matias from 10.142.20.204 port 27166 ssh2
+Jun 20 16:50:39 MATIAS sshd[1756]: pam_unix(sshd:session): session opened for user matias(uid=1000) by matias(uid=0)
+Jun 20 16:50:39 MATIAS systemd-logind[1073]: New session 4 of user matias.
+Jun 20 16:50:39 MATIAS systemd[1]: Started session-4.scope - Session 4 of User matias.
+Jun 20 16:51:48 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 16:52:09 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 16:52:26 MATIAS systemd[1]: Starting fwupd-refresh.service - Refresh fwupd metadata and update motd...
+Jun 20 16:52:27 MATIAS dbus-daemon[1060]: [system] Activating via systemd: service name='org.freedesktop.fwupd' unit='fwupd.service' requested by ':1.21' (uid=990 pid=1954 comm="/usr/bin/fwupdmgr refresh" label="unconfined")
+Jun 20 16:52:27 MATIAS systemd[1]: Starting modprobe@sd_mod.service - Load Kernel Module sd_mod...
+Jun 20 16:52:27 MATIAS systemd[1]: modprobe@sd_mod.service: Deactivated successfully.
+Jun 20 16:52:27 MATIAS systemd[1]: Finished modprobe@sd_mod.service - Load Kernel Module sd_mod.
+Jun 20 16:52:27 MATIAS systemd[1]: Starting fwupd.service - Firmware update daemon...
+Jun 20 16:52:27 MATIAS fwupd[1961]: 14:52:27.625 FuPluginFlashrom     linux_spi_init: failed to open /dev/spidev10.0: Operation not permitted
+Jun 20 16:52:27 MATIAS fwupd[1961]: 14:52:27.703 FuMain               fwupd 2.0.20 ready for requests (locale C.UTF-8)
+Jun 20 16:52:27 MATIAS dbus-daemon[1060]: [system] Successfully activated service 'org.freedesktop.fwupd'
+Jun 20 16:52:27 MATIAS systemd[1]: Started fwupd.service - Firmware update daemon.
+Jun 20 16:52:27 MATIAS systemd[1]: fwupd-refresh.service: Deactivated successfully.
+Jun 20 16:52:27 MATIAS systemd[1]: Finished fwupd-refresh.service - Refresh fwupd metadata and update motd.
+Jun 20 16:52:49 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 16:53:09 MATIAS systemd[1]: Starting update-notifier-download.service - Download data for packages that failed at package install time...
+Jun 20 16:53:10 MATIAS systemd[1]: update-notifier-download.service: Deactivated successfully.
+Jun 20 16:53:10 MATIAS systemd[1]: Finished update-notifier-download.service - Download data for packages that failed at package install time.
+Jun 20 16:53:10 MATIAS dbus-daemon[1060]: [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.10' (uid=0 pid=1069 comm="/usr/lib/snapd/snapd" label="unconfined")
+Jun 20 16:53:10 MATIAS systemd[1]: Starting systemd-timedated.service - Time & Date Service...
+Jun 20 16:53:10 MATIAS dbus-daemon[1060]: [system] Successfully activated service 'org.freedesktop.timedate1'
+Jun 20 16:53:10 MATIAS systemd[1]: Started systemd-timedated.service - Time & Date Service.
+Jun 20 16:53:34 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 16:53:40 MATIAS systemd[1]: systemd-timedated.service: Deactivated successfully.
+Jun 20 16:53:48 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 16:54:26 MATIAS systemd[1483]: launchpadlib-cache-clean.service - Clean up old files in the Launchpadlib cache was skipped because of an unmet condition check (ConditionPathExists=/home/matias/.launchpadlib/api.launchpad.net/cache).
+Jun 20 16:55:01 MATIAS CRON[2132]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jun 20 16:55:01 MATIAS CRON[2133]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jun 20 16:55:01 MATIAS CRON[2132]: pam_unix(cron:session): session closed for user root
+Jun 20 16:55:24 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 17:00:16 MATIAS systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+Jun 20 17:00:16 MATIAS systemd[1]: sysstat-collect.service: Deactivated successfully.
+Jun 20 17:00:16 MATIAS systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+Jun 20 17:01:12 MATIAS sshd[1599]: pam_unix(sshd:session): session closed for user matias
+Jun 20 17:01:12 MATIAS sshd[1478]: pam_unix(sshd:session): session closed for user matias
+Jun 20 17:01:12 MATIAS sshd[1756]: pam_unix(sshd:session): session closed for user matias
+Jun 20 17:01:12 MATIAS systemd[1]: Starting motd-news.service - Message of the Day...
+Jun 20 17:01:12 MATIAS systemd[1]: session-4.scope: Deactivated successfully.
+Jun 20 17:01:12 MATIAS systemd[1]: session-4.scope: Consumed 1.381s CPU time.
+Jun 20 17:01:12 MATIAS systemd[1]: session-1.scope: Deactivated successfully.
+Jun 20 17:01:12 MATIAS systemd[1]: session-1.scope: Consumed 16.841s CPU time.
+Jun 20 17:01:12 MATIAS systemd-logind[1073]: Session 3 logged out. Waiting for processes to exit.
+Jun 20 17:01:12 MATIAS systemd-logind[1073]: Session 1 logged out. Waiting for processes to exit.
+Jun 20 17:01:12 MATIAS systemd-logind[1073]: Session 4 logged out. Waiting for processes to exit.
+Jun 20 17:01:12 MATIAS systemd[1]: session-3.scope: Deactivated successfully.
+Jun 20 17:01:12 MATIAS systemd[1]: session-3.scope: Consumed 4min 5.870s CPU time.
+Jun 20 17:01:12 MATIAS systemd-logind[1073]: Removed session 4.
+Jun 20 17:01:12 MATIAS systemd-logind[1073]: Removed session 1.
+Jun 20 17:01:12 MATIAS systemd-logind[1073]: Removed session 3.
+Jun 20 17:01:13 MATIAS 50-motd-news[2351]:  * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+Jun 20 17:01:13 MATIAS 50-motd-news[2351]:    just raised the bar for easy, resilient and secure K8s cluster deployment.
+Jun 20 17:01:13 MATIAS 50-motd-news[2351]:    https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Jun 20 17:01:13 MATIAS systemd[1]: motd-news.service: Deactivated successfully.
+Jun 20 17:01:13 MATIAS systemd[1]: Finished motd-news.service - Message of the Day.
+Jun 20 17:01:22 MATIAS systemd[1]: Stopping user@1000.service - User Manager for UID 1000...
+Jun 20 17:01:22 MATIAS systemd[1483]: Activating special unit exit.target...
+Jun 20 17:01:22 MATIAS systemd[1483]: Stopped target default.target - Main User Target.
+Jun 20 17:01:22 MATIAS systemd[1483]: Stopped target basic.target - Basic System.
+Jun 20 17:01:22 MATIAS systemd[1483]: Stopped target paths.target - Paths.
+Jun 20 17:01:22 MATIAS systemd[1483]: Stopped target sockets.target - Sockets.
+Jun 20 17:01:22 MATIAS systemd[1483]: Stopped target timers.target - Timers.
+Jun 20 17:01:22 MATIAS systemd[1483]: Stopped launchpadlib-cache-clean.timer - Clean up old files in the Launchpadlib cache.
+Jun 20 17:01:22 MATIAS systemd[1483]: Closed dbus.socket - D-Bus User Message Bus Socket.
+Jun 20 17:01:22 MATIAS systemd[1483]: Closed dirmngr.socket - GnuPG network certificate management daemon.
+Jun 20 17:01:22 MATIAS systemd[1483]: Closed gpg-agent-browser.socket - GnuPG cryptographic agent and passphrase cache (access for web browsers).
+Jun 20 17:01:22 MATIAS systemd[1483]: Closed gpg-agent-extra.socket - GnuPG cryptographic agent and passphrase cache (restricted).
+Jun 20 17:01:22 MATIAS systemd[1483]: Stopping gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation)...
+Jun 20 17:01:22 MATIAS systemd[1483]: Closed gpg-agent.socket - GnuPG cryptographic agent and passphrase cache.
+Jun 20 17:01:22 MATIAS systemd[1483]: Closed keyboxd.socket - GnuPG public key management service.
+Jun 20 17:01:22 MATIAS systemd[1483]: Closed pk-debconf-helper.socket - debconf communication socket.
+Jun 20 17:01:22 MATIAS systemd[1483]: Closed snapd.session-agent.socket - REST API socket for snapd user session agent.
+Jun 20 17:01:22 MATIAS systemd[1483]: Closed gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation).
+Jun 20 17:01:22 MATIAS systemd[1483]: Removed slice app.slice - User Application Slice.
+Jun 20 17:01:22 MATIAS systemd[1483]: Reached target shutdown.target - Shutdown.
+Jun 20 17:01:22 MATIAS systemd[1483]: Finished systemd-exit.service - Exit the Session.
+Jun 20 17:01:22 MATIAS systemd[1483]: Reached target exit.target - Exit the Session.
+Jun 20 17:01:22 MATIAS (sd-pam)[1484]: pam_unix(systemd-user:session): session closed for user matias
+Jun 20 17:01:22 MATIAS systemd[1]: user@1000.service: Deactivated successfully.
+Jun 20 17:01:22 MATIAS systemd[1]: Stopped user@1000.service - User Manager for UID 1000.
+Jun 20 17:01:22 MATIAS systemd[1]: Stopping user-runtime-dir@1000.service - User Runtime Directory /run/user/1000...
+Jun 20 17:01:22 MATIAS systemd[1]: run-user-1000.mount: Deactivated successfully.
+Jun 20 17:01:22 MATIAS systemd[1]: user-runtime-dir@1000.service: Deactivated successfully.
+Jun 20 17:01:22 MATIAS systemd[1]: Stopped user-runtime-dir@1000.service - User Runtime Directory /run/user/1000.
+Jun 20 17:01:22 MATIAS systemd[1]: Removed slice user-1000.slice - User Slice of UID 1000.
+Jun 20 17:01:22 MATIAS systemd[1]: user-1000.slice: Consumed 4min 24.545s CPU time.
+Jun 20 17:03:09 MATIAS systemd[1]: Starting systemd-tmpfiles-clean.service - Cleanup of Temporary Directories...
+Jun 20 17:03:09 MATIAS systemd[1]: systemd-tmpfiles-clean.service: Deactivated successfully.
+Jun 20 17:03:09 MATIAS systemd[1]: Finished systemd-tmpfiles-clean.service - Cleanup of Temporary Directories.
+Jun 20 17:03:17 MATIAS sshd[2371]: Accepted password for matias from 10.142.20.204 port 57322 ssh2
+Jun 20 17:03:17 MATIAS sshd[2371]: pam_unix(sshd:session): session opened for user matias(uid=1000) by matias(uid=0)
+Jun 20 17:03:17 MATIAS systemd[1]: Created slice user-1000.slice - User Slice of UID 1000.
+Jun 20 17:03:17 MATIAS systemd[1]: Starting user-runtime-dir@1000.service - User Runtime Directory /run/user/1000...
+Jun 20 17:03:17 MATIAS systemd-logind[1073]: New session 6 of user matias.
+Jun 20 17:03:17 MATIAS systemd[1]: Finished user-runtime-dir@1000.service - User Runtime Directory /run/user/1000.
+Jun 20 17:03:17 MATIAS systemd[1]: Starting user@1000.service - User Manager for UID 1000...
+Jun 20 17:03:17 MATIAS (systemd)[2376]: pam_unix(systemd-user:session): session opened for user matias(uid=1000) by matias(uid=0)
+Jun 20 17:03:17 MATIAS systemd[2376]: Queued start job for default target default.target.
+Jun 20 17:03:17 MATIAS systemd[2376]: Created slice app.slice - User Application Slice.
+Jun 20 17:03:17 MATIAS systemd[2376]: Started launchpadlib-cache-clean.timer - Clean up old files in the Launchpadlib cache.
+Jun 20 17:03:17 MATIAS systemd[2376]: Reached target paths.target - Paths.
+Jun 20 17:03:17 MATIAS systemd[2376]: Reached target timers.target - Timers.
+Jun 20 17:03:17 MATIAS systemd[2376]: Starting dbus.socket - D-Bus User Message Bus Socket...
+Jun 20 17:03:17 MATIAS systemd[2376]: Listening on dirmngr.socket - GnuPG network certificate management daemon.
+Jun 20 17:03:17 MATIAS systemd[2376]: Listening on gpg-agent-browser.socket - GnuPG cryptographic agent and passphrase cache (access for web browsers).
+Jun 20 17:03:17 MATIAS systemd[2376]: Listening on gpg-agent-extra.socket - GnuPG cryptographic agent and passphrase cache (restricted).
+Jun 20 17:03:17 MATIAS systemd[2376]: Starting gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation)...
+Jun 20 17:03:17 MATIAS systemd[2376]: Listening on gpg-agent.socket - GnuPG cryptographic agent and passphrase cache.
+Jun 20 17:03:17 MATIAS systemd[2376]: Listening on keyboxd.socket - GnuPG public key management service.
+Jun 20 17:03:17 MATIAS systemd[2376]: Listening on pk-debconf-helper.socket - debconf communication socket.
+Jun 20 17:03:17 MATIAS systemd[2376]: Listening on snapd.session-agent.socket - REST API socket for snapd user session agent.
+Jun 20 17:03:17 MATIAS systemd[2376]: Listening on dbus.socket - D-Bus User Message Bus Socket.
+Jun 20 17:03:17 MATIAS systemd[2376]: Listening on gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation).
+Jun 20 17:03:17 MATIAS systemd[2376]: Reached target sockets.target - Sockets.
+Jun 20 17:03:17 MATIAS systemd[2376]: Reached target basic.target - Basic System.
+Jun 20 17:03:17 MATIAS systemd[2376]: Reached target default.target - Main User Target.
+Jun 20 17:03:17 MATIAS systemd[2376]: Startup finished in 354ms.
+Jun 20 17:03:17 MATIAS systemd[1]: Started user@1000.service - User Manager for UID 1000.
+Jun 20 17:03:17 MATIAS systemd[1]: Started session-6.scope - Session 6 of User matias.
+Jun 20 17:03:24 MATIAS sshd[2468]: Accepted password for matias from 10.142.20.204 port 8669 ssh2
+Jun 20 17:03:24 MATIAS sshd[2468]: pam_unix(sshd:session): session opened for user matias(uid=1000) by matias(uid=0)
+Jun 20 17:03:24 MATIAS systemd-logind[1073]: New session 8 of user matias.
+Jun 20 17:03:24 MATIAS systemd[1]: Started session-8.scope - Session 8 of User matias.
+Jun 20 17:03:54 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 17:05:01 MATIAS CRON[2610]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jun 20 17:05:01 MATIAS CRON[2611]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jun 20 17:05:01 MATIAS CRON[2610]: pam_unix(cron:session): session closed for user root
+Jun 20 17:05:07 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 17:08:26 MATIAS systemd[2376]: launchpadlib-cache-clean.service - Clean up old files in the Launchpadlib cache was skipped because of an unmet condition check (ConditionPathExists=/home/matias/.launchpadlib/api.launchpad.net/cache).
+Jun 20 17:09:56 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 17:10:03 MATIAS systemd[1]: Starting sysstat-collect.service - system activity accounting tool...
+Jun 20 17:10:03 MATIAS systemd[1]: sysstat-collect.service: Deactivated successfully.
+Jun 20 17:10:03 MATIAS systemd[1]: Finished sysstat-collect.service - system activity accounting tool.
+Jun 20 17:10:39 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 17:11:10 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 17:11:26 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 17:11:42 MATIAS kernel: rp1-cfe 1f00110000.csi: Using a link rate of 275 Mbps
+Jun 20 17:12:12 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-DISCONNECTED bssid=7e:27:0e:a2:c2:e4 reason=0 locally_generated=1
+Jun 20 17:12:12 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Jun 20 17:12:12 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=ES
+Jun 20 17:12:12 MATIAS NetworkManager[1161]: <info>  [1781968332.9885] device (wlan0): supplicant interface state: completed -> disconnected
+Jun 20 17:12:12 MATIAS NetworkManager[1161]: <info>  [1781968332.9886] device (p2p-dev-wlan0): supplicant management interface state: completed -> disconnected
+Jun 20 17:12:13 MATIAS NetworkManager[1161]: <info>  [1781968333.0864] device (wlan0): supplicant interface state: disconnected -> scanning
+Jun 20 17:12:13 MATIAS NetworkManager[1161]: <info>  [1781968333.0865] device (p2p-dev-wlan0): supplicant management interface state: disconnected -> scanning
+Jun 20 17:12:17 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+Jun 20 17:12:17 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+Jun 20 17:12:17 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+Jun 20 17:12:17 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+Jun 20 17:12:19 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd090 fail, reason -52
+Jun 20 17:12:19 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd095 fail, reason -52
+Jun 20 17:12:19 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd099 fail, reason -52
+Jun 20 17:12:19 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd09d fail, reason -52
+Jun 20 17:12:19 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a1 fail, reason -52
+Jun 20 17:12:19 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a5 fail, reason -52
+Jun 20 17:12:28 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+Jun 20 17:12:28 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+Jun 20 17:12:28 MATIAS NetworkManager[1161]: <warn>  [1781968348.1413] device (wlan0): link timed out.
+Jun 20 17:12:28 MATIAS NetworkManager[1161]: <info>  [1781968348.1414] device (wlan0): state change: activated -> failed (reason 'ssid-not-found', sys-iface-state: 'managed')
+Jun 20 17:12:28 MATIAS NetworkManager[1161]: <info>  [1781968348.1419] manager: NetworkManager state is now DISCONNECTED
+Jun 20 17:12:28 MATIAS NetworkManager[1161]: <warn>  [1781968348.1425] device (wlan0): Activation: failed for connection 'movil'
+Jun 20 17:12:28 MATIAS NetworkManager[1161]: <info>  [1781968348.1438] device (wlan0): state change: failed -> disconnected (reason 'none', sys-iface-state: 'managed')
+Jun 20 17:12:28 MATIAS avahi-daemon[1059]: Withdrawing address record for fe80::e43e:4f3b:8327:4360 on wlan0.
+Jun 20 17:12:28 MATIAS avahi-daemon[1059]: Leaving mDNS multicast group on interface wlan0.IPv6 with address fe80::e43e:4f3b:8327:4360.
+Jun 20 17:12:28 MATIAS NetworkManager[1161]: <info>  [1781968348.1443] dhcp4 (wlan0): canceled DHCP transaction
+Jun 20 17:12:28 MATIAS avahi-daemon[1059]: Interface wlan0.IPv6 no longer relevant for mDNS.
+Jun 20 17:12:28 MATIAS NetworkManager[1161]: <info>  [1781968348.1443] dhcp4 (wlan0): activation: beginning transaction (timeout in 45 seconds)
+Jun 20 17:12:28 MATIAS NetworkManager[1161]: <info>  [1781968348.1443] dhcp4 (wlan0): state changed no lease
+Jun 20 17:12:28 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+Jun 20 17:12:28 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+Jun 20 17:12:30 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd090 fail, reason -52
+Jun 20 17:12:30 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd095 fail, reason -52
+Jun 20 17:12:30 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd099 fail, reason -52
+Jun 20 17:12:30 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd09d fail, reason -52
+Jun 20 17:12:30 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a1 fail, reason -52
+Jun 20 17:12:30 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a5 fail, reason -52
+Jun 20 17:12:30 MATIAS avahi-daemon[1059]: Withdrawing address record for 10.142.20.25 on wlan0.
+Jun 20 17:12:30 MATIAS avahi-daemon[1059]: Leaving mDNS multicast group on interface wlan0.IPv4 with address 10.142.20.25.
+Jun 20 17:12:30 MATIAS systemd-resolved[919]: wlan0: Bus client set default route setting: no
+Jun 20 17:12:30 MATIAS systemd-resolved[919]: wlan0: Bus client reset DNS server list.
+Jun 20 17:12:30 MATIAS avahi-daemon[1059]: Interface wlan0.IPv4 no longer relevant for mDNS.
+Jun 20 17:12:33 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+Jun 20 17:12:34 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+Jun 20 17:12:34 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+Jun 20 17:12:34 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+Jun 20 17:12:36 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd090 fail, reason -52
+Jun 20 17:12:36 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd095 fail, reason -52
+Jun 20 17:12:36 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd099 fail, reason -52
+Jun 20 17:12:36 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd09d fail, reason -52
+Jun 20 17:12:36 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a1 fail, reason -52
+Jun 20 17:12:36 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a5 fail, reason -52
+Jun 20 17:12:36 MATIAS NetworkManager[1161]: <info>  [1781968356.0364] device (wlan0): supplicant interface state: scanning -> inactive
+Jun 20 17:12:36 MATIAS NetworkManager[1161]: <info>  [1781968356.0365] device (p2p-dev-wlan0): supplicant management interface state: scanning -> inactive
+Jun 20 17:12:40 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+Jun 20 17:12:40 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+Jun 20 17:12:40 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+Jun 20 17:12:40 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+Jun 20 17:12:42 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd090 fail, reason -52
+Jun 20 17:12:42 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd095 fail, reason -52
+Jun 20 17:12:42 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd099 fail, reason -52
+Jun 20 17:12:42 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd09d fail, reason -52
+Jun 20 17:12:42 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a1 fail, reason -52
+Jun 20 17:12:42 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a5 fail, reason -52
+Jun 20 17:12:46 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+Jun 20 17:12:46 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+Jun 20 17:12:46 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+Jun 20 17:12:46 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+Jun 20 17:12:48 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd090 fail, reason -52
+Jun 20 17:12:48 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd095 fail, reason -52
+Jun 20 17:12:48 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd099 fail, reason -52
+Jun 20 17:12:48 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd09d fail, reason -52
+Jun 20 17:12:48 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a1 fail, reason -52
+Jun 20 17:12:48 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a5 fail, reason -52
+Jun 20 17:12:52 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+Jun 20 17:12:52 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+Jun 20 17:12:52 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+Jun 20 17:12:52 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+Jun 20 17:12:54 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd090 fail, reason -52
+Jun 20 17:12:54 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd095 fail, reason -52
+Jun 20 17:12:54 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd099 fail, reason -52
+Jun 20 17:12:54 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd09d fail, reason -52
+Jun 20 17:12:54 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a1 fail, reason -52
+Jun 20 17:12:54 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a5 fail, reason -52
+Jun 20 17:12:58 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+Jun 20 17:12:58 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+Jun 20 17:12:58 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+Jun 20 17:12:59 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+Jun 20 17:13:00 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd090 fail, reason -52
+Jun 20 17:13:00 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd095 fail, reason -52
+Jun 20 17:13:00 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd099 fail, reason -52
+Jun 20 17:13:00 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd09d fail, reason -52
+Jun 20 17:13:00 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a1 fail, reason -52
+Jun 20 17:13:00 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a5 fail, reason -52
+Jun 20 17:13:08 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+Jun 20 17:13:08 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+Jun 20 17:13:08 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+Jun 20 17:13:08 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+Jun 20 17:13:10 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd090 fail, reason -52
+Jun 20 17:13:10 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd095 fail, reason -52
+Jun 20 17:13:10 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd099 fail, reason -52
+Jun 20 17:13:10 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd09d fail, reason -52
+Jun 20 17:13:10 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a1 fail, reason -52
+Jun 20 17:13:10 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a5 fail, reason -52
+Jun 20 17:13:21 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+Jun 20 17:13:21 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+Jun 20 17:13:21 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+Jun 20 17:13:21 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+Jun 20 17:13:23 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd090 fail, reason -52
+Jun 20 17:13:23 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd095 fail, reason -52
+Jun 20 17:13:23 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd099 fail, reason -52
+Jun 20 17:13:23 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd09d fail, reason -52
+Jun 20 17:13:23 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a1 fail, reason -52
+Jun 20 17:13:23 MATIAS kernel: brcmfmac: brcmf_set_channel: set chanspec 0xd0a5 fail, reason -52
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1411] policy: auto-activating connection 'movil' (940e94ef-0d1a-4523-8b52-2d8e48ab18af)
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1417] device (wlan0): Activation: starting connection 'movil' (940e94ef-0d1a-4523-8b52-2d8e48ab18af)
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1418] device (wlan0): state change: disconnected -> prepare (reason 'none', sys-iface-state: 'managed')
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1420] manager: NetworkManager state is now CONNECTING
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1423] device (wlan0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1426] device (wlan0): Activation: (wifi) access point 'movil' has security, but secrets are required.
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1426] device (wlan0): state change: config -> need-auth (reason 'none', sys-iface-state: 'managed')
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1435] device (wlan0): state change: need-auth -> prepare (reason 'none', sys-iface-state: 'managed')
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1437] device (wlan0): state change: prepare -> config (reason 'none', sys-iface-state: 'managed')
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <warn>  [1781968403.1440] device (wlan0): Cannot configure WoWLAN.
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1441] device (wlan0): Activation: (wifi) connection 'movil' has security, and secrets exist.  No new secrets needed.
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1441] Config: added 'ssid' value 'Pixel_5005'
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1441] Config: added 'scan_ssid' value '1'
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1441] Config: added 'bgscan' value 'simple:30:-65:300'
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1442] Config: added 'key_mgmt' value 'WPA-PSK WPA-PSK-SHA256 FT-PSK'
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1442] Config: added 'psk' value '<hidden>'
+Jun 20 17:13:23 MATIAS wpa_supplicant[1090]: wlan0: Trying to associate with SSID 'Pixel_5005'
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1569] device (wlan0): supplicant interface state: inactive -> associating
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.1570] device (p2p-dev-wlan0): supplicant management interface state: inactive -> associating
+Jun 20 17:13:23 MATIAS wpa_supplicant[1090]: wlan0: Associated with 7e:27:0e:a2:c2:e4
+Jun 20 17:13:23 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-CONNECTED - Connection to 7e:27:0e:a2:c2:e4 completed [id=0 id_str=]
+Jun 20 17:13:23 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Jun 20 17:13:23 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=COUNTRY_IE type=COUNTRY alpha2=ES
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.4187] device (wlan0): supplicant interface state: associating -> completed
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.4188] device (wlan0): Activation: (wifi) Stage 2 of 5 (Device Configure) successful. Connected to wireless network "Pixel_5005"
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.4188] device (p2p-dev-wlan0): supplicant management interface state: associating -> completed
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.4191] device (wlan0): state change: config -> ip-config (reason 'none', sys-iface-state: 'managed')
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.4198] dhcp4 (wlan0): activation: beginning transaction (timeout in 45 seconds)
+Jun 20 17:13:23 MATIAS avahi-daemon[1059]: Joining mDNS multicast group on interface wlan0.IPv6 with address fe80::e43e:4f3b:8327:4360.
+Jun 20 17:13:23 MATIAS avahi-daemon[1059]: New relevant interface wlan0.IPv6 for mDNS.
+Jun 20 17:13:23 MATIAS avahi-daemon[1059]: Registering new address record for fe80::e43e:4f3b:8327:4360 on wlan0.*.
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.4485] dhcp4 (wlan0): state changed new lease, address=10.142.20.25, acd pending
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.6143] dhcp4 (wlan0): state changed new lease, address=10.142.20.25
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.6149] policy: set 'movil' (wlan0) as default for IPv4 routing and DNS
+Jun 20 17:13:23 MATIAS avahi-daemon[1059]: Joining mDNS multicast group on interface wlan0.IPv4 with address 10.142.20.25.
+Jun 20 17:13:23 MATIAS systemd-resolved[919]: wlan0: Bus client set default route setting: yes
+Jun 20 17:13:23 MATIAS systemd-resolved[919]: wlan0: Bus client set DNS server list to: 10.142.20.141
+Jun 20 17:13:23 MATIAS avahi-daemon[1059]: New relevant interface wlan0.IPv4 for mDNS.
+Jun 20 17:13:23 MATIAS avahi-daemon[1059]: Registering new address record for 10.142.20.25 on wlan0.IPv4.
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.6334] device (wlan0): state change: ip-config -> ip-check (reason 'none', sys-iface-state: 'managed')
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.6350] device (wlan0): state change: ip-check -> secondaries (reason 'none', sys-iface-state: 'managed')
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.6352] device (wlan0): state change: secondaries -> activated (reason 'none', sys-iface-state: 'managed')
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.6355] manager: NetworkManager state is now CONNECTED_SITE
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.6373] device (wlan0): Activation: successful, device activated.
+Jun 20 17:13:23 MATIAS NetworkManager[1161]: <info>  [1781968403.6378] manager: NetworkManager state is now CONNECTED_GLOBAL
+Jun 20 17:13:24 MATIAS NetworkManager[1161]: <warn>  [1781968404.7952] ndisc[0xaaaae8161340,"wlan0"]: solicit: failure sending router solicitation: Address family not supported by protocol (97)
+Jun 20 17:15:01 MATIAS CRON[2874]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Jun 20 17:15:01 MATIAS CRON[2875]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jun 20 17:15:01 MATIAS CRON[2874]: pam_unix(cron:session): session closed for user root
+Jun 20 17:15:26 MATIAS systemd[1]: Starting fwupd-refresh.service - Refresh fwupd metadata and update motd...
+Jun 20 17:15:26 MATIAS systemd[1]: fwupd-refresh.service: Deactivated successfully.
+Jun 20 17:15:26 MATIAS systemd[1]: Finished fwupd-refresh.service - Refresh fwupd metadata and update motd.
+Jun 20 17:15:33 MATIAS sshd[2884]: Accepted password for matias from 10.142.20.204 port 48566 ssh2
+Jun 20 17:15:33 MATIAS sshd[2884]: pam_unix(sshd:session): session opened for user matias(uid=1000) by matias(uid=0)
+Jun 20 17:15:33 MATIAS systemd-logind[1073]: New session 11 of user matias.
+Jun 20 17:15:33 MATIAS systemd[1]: Started session-11.scope - Session 11 of User matias.
+Jun 20 17:16:14 MATIAS sshd[3016]: Accepted password for matias from 10.142.20.204 port 46796 ssh2
+Jun 20 17:16:14 MATIAS sshd[3016]: pam_unix(sshd:session): session opened for user matias(uid=1000) by matias(uid=0)
+Jun 20 17:16:14 MATIAS systemd-logind[1073]: New session 12 of user matias.
+Jun 20 17:16:14 MATIAS systemd[1]: Started session-12.scope - Session 12 of User matias.
+Jun 20 17:16:51 MATIAS sudo[3138]:   matias : TTY=pts/3 ; PWD=/home/matias ; USER=root ; COMMAND=/usr/sbin/reboot now
+Jun 20 17:16:51 MATIAS sudo[3138]: pam_unix(sudo:session): session opened for user root(uid=0) by matias(uid=1000)
+Jun 20 17:16:51 MATIAS systemd-logind[1073]: The system will reboot now!
+Jun 20 17:16:51 MATIAS kernel: audit: type=1107 audit(1781968611.988:133): pid=1060 uid=102 auid=4294967295 ses=4294967295 subj=unconfined msg='apparmor="DENIED" operation="dbus_signal"  bus="system" path="/org/freedesktop/login1" interface="org.freedesktop.login1.Manager" member="PrepareForShutdownWithMetadata" name=":1.2" mask="receive" pid=1161 label="snap.network-manager.networkmanager" peer_pid=1073 peer_label="unconfined"
+                                exe="/usr/bin/dbus-daemon" sauid=102 hostname=? addr=? terminal=?'
+Jun 20 17:16:51 MATIAS kernel: audit: type=1107 audit(1781968611.988:134): pid=1060 uid=102 auid=4294967295 ses=4294967295 subj=unconfined msg='apparmor="DENIED" operation="dbus_signal"  bus="system" path="/org/freedesktop/login1" interface="org.freedesktop.login1.Manager" member="PrepareForShutdown" name=":1.2" mask="receive" pid=1161 label="snap.network-manager.networkmanager" peer_pid=1073 peer_label="unconfined"
+                                exe="/usr/bin/dbus-daemon" sauid=102 hostname=? addr=? terminal=?'
+Jun 20 17:16:51 MATIAS sudo[3138]: pam_unix(sudo:session): session closed for user root
+Jun 20 17:16:52 MATIAS systemd-logind[1073]: System is rebooting.
+Jun 20 17:16:52 MATIAS systemd[1]: unattended-upgrades.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping session-11.scope - Session 11 of User matias...
+Jun 20 17:16:52 MATIAS sshd[2884]: pam_unix(sshd:session): session closed for user matias
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping session-12.scope - Session 12 of User matias...
+Jun 20 17:16:52 MATIAS sshd[3016]: pam_unix(sshd:session): session closed for user matias
+Jun 20 17:16:52 MATIAS sshd[2371]: pam_unix(sshd:session): session closed for user matias
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping session-6.scope - Session 6 of User matias...
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping session-8.scope - Session 8 of User matias...
+Jun 20 17:16:52 MATIAS systemd[1]: Removed slice system-modprobe.slice - Slice /system/modprobe.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target bluetooth.target - Bluetooth Support.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target cloud-init.target - Cloud-init target.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target graphical.target - Graphical Interface.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target nss-lookup.target - Host and Network Name Lookups.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target sound.target - Sound Card.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target timers.target - Timer Units.
+Jun 20 17:16:52 MATIAS systemd[1]: apt-daily-upgrade.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped apt-daily-upgrade.timer - Daily apt upgrade and clean activities.
+Jun 20 17:16:52 MATIAS systemd[1]: apt-daily.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS sshd[2468]: pam_unix(sshd:session): session closed for user matias
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped apt-daily.timer - Daily apt download activities.
+Jun 20 17:16:52 MATIAS systemd[1]: dpkg-db-backup.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped dpkg-db-backup.timer - Daily dpkg database backup timer.
+Jun 20 17:16:52 MATIAS systemd[1]: e2scrub_all.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped e2scrub_all.timer - Periodic ext4 Online Metadata Check for All Filesystems.
+Jun 20 17:16:52 MATIAS systemd[1]: fstrim.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped fstrim.timer - Discard unused filesystem blocks once a week.
+Jun 20 17:16:52 MATIAS systemd[1]: fwupd-refresh.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped fwupd-refresh.timer - Refresh fwupd metadata regularly.
+Jun 20 17:16:52 MATIAS systemd[1]: logrotate.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped logrotate.timer - Daily rotation of log files.
+Jun 20 17:16:52 MATIAS systemd[1]: man-db.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped man-db.timer - Daily man-db regeneration.
+Jun 20 17:16:52 MATIAS systemd[1]: motd-news.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped motd-news.timer - Message of the Day.
+Jun 20 17:16:52 MATIAS systemd[1]: sysstat-collect.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped sysstat-collect.timer - Run system activity accounting tool every 10 minutes.
+Jun 20 17:16:52 MATIAS systemd[1]: sysstat-summary.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped sysstat-summary.timer - Generate summary of yesterday's process accounting.
+Jun 20 17:16:52 MATIAS systemd[1]: systemd-tmpfiles-clean.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped systemd-tmpfiles-clean.timer - Daily Cleanup of Temporary Directories.
+Jun 20 17:16:52 MATIAS systemd[1]: update-notifier-download.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped update-notifier-download.timer - Download data for packages that failed at package install time.
+Jun 20 17:16:52 MATIAS systemd[1]: update-notifier-motd.timer: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped update-notifier-motd.timer - Check to see whether there is a new version of Ubuntu available.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target usb-gadget.target - Hardware activated USB gadget.
+Jun 20 17:16:52 MATIAS systemd[1]: cloud-init-hotplugd.socket: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Closed cloud-init-hotplugd.socket - cloud-init hotplug hook socket.
+Jun 20 17:16:52 MATIAS systemd[1]: lvm2-lvmpolld.socket: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Closed lvm2-lvmpolld.socket - LVM2 poll daemon socket.
+Jun 20 17:16:52 MATIAS systemd[1]: systemd-rfkill.socket: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Closed systemd-rfkill.socket - Load/Save RF Kill Switch Status /dev/rfkill Watch.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping blk-availability.service - Availability of block devices...
+Jun 20 17:16:52 MATIAS systemd[1]: cloud-final.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped cloud-final.service - Cloud-init: Final Stage.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target multi-user.target - Multi-User System.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target getty.target - Login Prompts.
+Jun 20 17:16:52 MATIAS ModemManager[1166]: <msg> caught signal, shutting down...
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping ModemManager.service - Modem Manager...
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping apport.service - automatic crash report generation...
+Jun 20 17:16:52 MATIAS avahi-daemon[1059]: Got SIGTERM, quitting.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping avahi-daemon.service - Avahi mDNS/DNS-SD Stack...
+Jun 20 17:16:52 MATIAS avahi-daemon[1059]: Leaving mDNS multicast group on interface wlan0.IPv6 with address fe80::e43e:4f3b:8327:4360.
+Jun 20 17:16:52 MATIAS systemd[1]: cloud-config.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS avahi-daemon[1059]: Leaving mDNS multicast group on interface wlan0.IPv4 with address 10.142.20.25.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped cloud-config.service - Cloud-init: Config Stage.
+Jun 20 17:16:52 MATIAS avahi-daemon[1059]: Leaving mDNS multicast group on interface lo.IPv6 with address ::1.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target cloud-config.target - Cloud-config availability.
+Jun 20 17:16:52 MATIAS avahi-daemon[1059]: Leaving mDNS multicast group on interface lo.IPv4 with address 127.0.0.1.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target network-online.target - Network is Online.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping cron.service - Regular background program processing daemon...
+Jun 20 17:16:52 MATIAS avahi-daemon[1059]: avahi-daemon 0.8 exiting.
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <info>  [1781968612.0856] modem-manager: ModemManager no longer available
+Jun 20 17:16:52 MATIAS ModemManager[1166]: <msg> ModemManager is shut down
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping finalrd.service - Create final runtime dir for shutdown pivot root...
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping fwupd.service - Firmware update daemon...
+Jun 20 17:16:52 MATIAS fwupd[1961]: 15:16:52.094 FuMain               Received SIGTERM
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping getty@tty1.service - Getty on tty1...
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping lttng-sessiond.service - LTTng session daemon...
+Jun 20 17:16:52 MATIAS systemd[1]: plymouth-quit.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped plymouth-quit.service - Terminate Plymouth Boot Screen.
+Jun 20 17:16:52 MATIAS systemd[1]: rpi-eeprom-update.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped rpi-eeprom-update.service - Check for Raspberry Pi EEPROM updates.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping rsyslog.service - System Logging Service...
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping serial-getty@ttyAMA0.service - Serial Getty on ttyAMA0...
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <info>  [1781968612.0976] caught SIGTERM, shutting down normally.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping snap.network-manager.networkmanager.service - Service for snap application network-manager.networkmanager...
+Jun 20 17:16:52 MATIAS systemd[1]: snapd.seeded.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped snapd.seeded.service - Wait until snapd is fully seeded.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping snapd.service - Snap Daemon...
+Jun 20 17:16:52 MATIAS sshd[1477]: Received signal 15; terminating.
+Jun 20 17:16:52 MATIAS systemd[1]: snapd.system-shutdown.service - Ubuntu core (all-snaps) system shutdown helper setup service was skipped because of an unmet condition check (ConditionPathExists=!/usr/bin/finalrd).
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Jun 20 17:16:52 MATIAS snapd[1069]: main.go:168: Exiting on terminated signal.
+Jun 20 17:16:52 MATIAS rsyslogd[1083]: [origin software="rsyslogd" swVersion="8.2312.0" x-pid="1083" x-info="https://www.rsyslog.com"] exiting on signal 15.
+Jun 20 17:16:52 MATIAS systemd[1]: sysstat.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped sysstat.service - Resets System Activity Logs.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping systemd-random-seed.service - Load/Save OS Random Seed...
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping udisks2.service - Disk Manager...
+Jun 20 17:16:52 MATIAS systemd[1]: avahi-daemon.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped avahi-daemon.service - Avahi mDNS/DNS-SD Stack.
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <info>  [1781968612.1268] device (wlan0): state change: activated -> deactivating (reason 'unmanaged', sys-iface-state: 'managed')
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <info>  [1781968612.1271] manager: NetworkManager state is now DISCONNECTING
+Jun 20 17:16:52 MATIAS systemd[1]: rsyslog.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped rsyslog.service - System Logging Service.
+Jun 20 17:16:52 MATIAS systemd[1]: cron.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped cron.service - Regular background program processing daemon.
+Jun 20 17:16:52 MATIAS systemd[1]: ModemManager.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped ModemManager.service - Modem Manager.
+Jun 20 17:16:52 MATIAS systemd[1]: serial-getty@ttyAMA0.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped serial-getty@ttyAMA0.service - Serial Getty on ttyAMA0.
+Jun 20 17:16:52 MATIAS udisksd[1074]: udisks daemon version 2.10.1 exiting
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <warn>  [1781968612.1437] dispatcher: (16) failed (after 0.016 sec): The name org.freedesktop.nm_dispatcher was not provided by any .service files
+Jun 20 17:16:52 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-DISCONNECTED bssid=7e:27:0e:a2:c2:e4 reason=3 locally_generated=1
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <info>  [1781968612.1451] device (wlan0): state change: deactivating -> unmanaged (reason 'removed', sys-iface-state: 'managed')
+Jun 20 17:16:52 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <info>  [1781968612.1453] dhcp4 (wlan0): canceled DHCP transaction
+Jun 20 17:16:52 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <info>  [1781968612.1453] dhcp4 (wlan0): activation: beginning transaction (timeout in 45 seconds)
+Jun 20 17:16:52 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=USER type=COUNTRY alpha2=ES
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <info>  [1781968612.1453] dhcp4 (wlan0): state changed no lease
+Jun 20 17:16:52 MATIAS systemd-resolved[919]: wlan0: Bus client set default route setting: no
+Jun 20 17:16:52 MATIAS systemd-resolved[919]: wlan0: Bus client reset DNS server list.
+Jun 20 17:16:52 MATIAS systemd[1]: getty@tty1.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped getty@tty1.service - Getty on tty1.
+Jun 20 17:16:52 MATIAS systemd[1]: ssh.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+Jun 20 17:16:52 MATIAS systemd[1]: ssh.service: Consumed 1.064s CPU time.
+Jun 20 17:16:52 MATIAS systemd[1]: fwupd.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped fwupd.service - Firmware update daemon.
+Jun 20 17:16:52 MATIAS systemd[1]: udisks2.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped udisks2.service - Disk Manager.
+Jun 20 17:16:52 MATIAS systemd[1]: lttng-sessiond.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped lttng-sessiond.service - LTTng session daemon.
+Jun 20 17:16:52 MATIAS systemd[1]: session-6.scope: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped session-6.scope - Session 6 of User matias.
+Jun 20 17:16:52 MATIAS systemd[1]: session-6.scope: Consumed 3min 56.301s CPU time.
+Jun 20 17:16:52 MATIAS systemd[1]: session-12.scope: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped session-12.scope - Session 12 of User matias.
+Jun 20 17:16:52 MATIAS systemd[1]: session-12.scope: Consumed 4.402s CPU time.
+Jun 20 17:16:52 MATIAS systemd[1]: session-11.scope: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped session-11.scope - Session 11 of User matias.
+Jun 20 17:16:52 MATIAS systemd[1]: session-11.scope: Consumed 5.282s CPU time.
+Jun 20 17:16:52 MATIAS systemd-logind[1073]: Session 6 logged out. Waiting for processes to exit.
+Jun 20 17:16:52 MATIAS systemd[1]: Removed slice system-getty.slice - Slice /system/getty.
+Jun 20 17:16:52 MATIAS systemd[1]: Removed slice system-serial\x2dgetty.slice - Slice /system/serial-getty.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target getty-pre.target - Preparation for Logins.
+Jun 20 17:16:52 MATIAS systemd-logind[1073]: Session 11 logged out. Waiting for processes to exit.
+Jun 20 17:16:52 MATIAS systemd[1]: plymouth-quit-wait.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped plymouth-quit-wait.service - Hold until boot process finishes up.
+Jun 20 17:16:52 MATIAS systemd[1]: plymouth-reboot.service - Show Plymouth Reboot Screen was skipped because of an unmet condition check (ConditionKernelCommandLine=splash).
+Jun 20 17:16:52 MATIAS systemd[1]: plymouth-switch-root-initramfs.service - Tell Plymouth To Jump To initramfs was skipped because no trigger condition checks were met.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping polkit.service - Authorization Manager...
+Jun 20 17:16:52 MATIAS systemd[1]: systemd-random-seed.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped systemd-random-seed.service - Load/Save OS Random Seed.
+Jun 20 17:16:52 MATIAS systemd-logind[1073]: Session 12 logged out. Waiting for processes to exit.
+Jun 20 17:16:52 MATIAS systemd-logind[1073]: Removed session 6.
+Jun 20 17:16:52 MATIAS systemd-logind[1073]: Removed session 12.
+Jun 20 17:16:52 MATIAS systemd-logind[1073]: Removed session 11.
+Jun 20 17:16:52 MATIAS blkdeactivate[3145]: Deactivating block devices:
+Jun 20 17:16:52 MATIAS systemd[1]: blk-availability.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped blk-availability.service - Availability of block devices.
+Jun 20 17:16:52 MATIAS systemd[1]: polkit.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped polkit.service - Authorization Manager.
+Jun 20 17:16:52 MATIAS systemd-tmpfiles[3271]: /run/finalrd-libs.conf:8: Duplicate line for path "/run/initramfs/lib", ignoring.
+Jun 20 17:16:52 MATIAS systemd[1]: apport.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped apport.service - automatic crash report generation.
+Jun 20 17:16:52 MATIAS finalrd[3273]: run-parts: executing /usr/share/finalrd/mdadm.finalrd setup
+Jun 20 17:16:52 MATIAS finalrd[3273]: run-parts: executing /usr/share/finalrd/open-iscsi.finalrd setup
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <info>  [1781968612.6774] manager: NetworkManager state is now DISCONNECTED
+Jun 20 17:16:52 MATIAS systemd[1]: session-8.scope: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped session-8.scope - Session 8 of User matias.
+Jun 20 17:16:52 MATIAS systemd[1]: session-8.scope: Consumed 2.318s CPU time.
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <info>  [1781968612.6798] device (p2p-dev-wlan0): state change: disconnected -> unmanaged (reason 'removed', sys-iface-state: 'removed')
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping systemd-logind.service - User Login Management...
+Jun 20 17:16:52 MATIAS wpa_supplicant[1090]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping user@1000.service - User Manager for UID 1000...
+Jun 20 17:16:52 MATIAS systemd-logind[1073]: Session 8 logged out. Waiting for processes to exit.
+Jun 20 17:16:52 MATIAS systemd[2376]: Activating special unit exit.target...
+Jun 20 17:16:52 MATIAS systemd[2376]: Stopped target default.target - Main User Target.
+Jun 20 17:16:52 MATIAS systemd[2376]: Stopped target basic.target - Basic System.
+Jun 20 17:16:52 MATIAS wpa_supplicant[1090]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 20 17:16:52 MATIAS systemd[2376]: Stopped target paths.target - Paths.
+Jun 20 17:16:52 MATIAS wpa_supplicant[1090]: nl80211: deinit ifname=p2p-dev-wlan0 disabled_11b_rates=0
+Jun 20 17:16:52 MATIAS systemd[2376]: Stopped target sockets.target - Sockets.
+Jun 20 17:16:52 MATIAS systemd[2376]: Stopped target timers.target - Timers.
+Jun 20 17:16:52 MATIAS systemd[2376]: Stopped launchpadlib-cache-clean.timer - Clean up old files in the Launchpadlib cache.
+Jun 20 17:16:52 MATIAS systemd[2376]: Closed dbus.socket - D-Bus User Message Bus Socket.
+Jun 20 17:16:52 MATIAS systemd[2376]: Closed dirmngr.socket - GnuPG network certificate management daemon.
+Jun 20 17:16:52 MATIAS systemd[2376]: Closed gpg-agent-browser.socket - GnuPG cryptographic agent and passphrase cache (access for web browsers).
+Jun 20 17:16:52 MATIAS systemd[2376]: Closed gpg-agent-extra.socket - GnuPG cryptographic agent and passphrase cache (restricted).
+Jun 20 17:16:52 MATIAS systemd[2376]: Stopping gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation)...
+Jun 20 17:16:52 MATIAS systemd[2376]: Closed gpg-agent.socket - GnuPG cryptographic agent and passphrase cache.
+Jun 20 17:16:52 MATIAS systemd[2376]: Closed keyboxd.socket - GnuPG public key management service.
+Jun 20 17:16:52 MATIAS systemd[2376]: Closed pk-debconf-helper.socket - debconf communication socket.
+Jun 20 17:16:52 MATIAS systemd[2376]: Closed snapd.session-agent.socket - REST API socket for snapd user session agent.
+Jun 20 17:16:52 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 20 17:16:52 MATIAS systemd[1]: systemd-logind.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped systemd-logind.service - User Login Management.
+Jun 20 17:16:52 MATIAS NetworkManager[1161]: <info>  [1781968612.7079] exiting (success)
+Jun 20 17:16:52 MATIAS wpa_supplicant[1090]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 20 17:16:52 MATIAS wpa_supplicant[1090]: nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+Jun 20 17:16:52 MATIAS systemd[1]: snap.network-manager.networkmanager.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped snap.network-manager.networkmanager.service - Service for snap application network-manager.networkmanager.
+Jun 20 17:16:52 MATIAS systemd[2376]: Closed gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation).
+Jun 20 17:16:52 MATIAS systemd[1]: snap.network-manager.networkmanager.service: Consumed 2.356s CPU time, 95.0M memory peak, 0B memory swap peak.
+Jun 20 17:16:52 MATIAS systemd[2376]: Removed slice app.slice - User Application Slice.
+Jun 20 17:16:52 MATIAS systemd[2376]: Reached target shutdown.target - Shutdown.
+Jun 20 17:16:52 MATIAS systemd[2376]: Finished systemd-exit.service - Exit the Session.
+Jun 20 17:16:52 MATIAS systemd[2376]: Reached target exit.target - Exit the Session.
+Jun 20 17:16:52 MATIAS (sd-pam)[2377]: pam_unix(systemd-user:session): session closed for user matias
+Jun 20 17:16:52 MATIAS systemd[1]: user@1000.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped user@1000.service - User Manager for UID 1000.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping systemd-user-sessions.service - Permit User Sessions...
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping user-runtime-dir@1000.service - User Runtime Directory /run/user/1000...
+Jun 20 17:16:52 MATIAS systemd[1]: systemd-user-sessions.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped systemd-user-sessions.service - Permit User Sessions.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target network.target - Network.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target network-pre.target - Preparation for Network.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target remote-fs.target - Remote File Systems.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped target remote-fs-pre.target - Preparation for Remote File Systems.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopping wpa_supplicant.service - WPA supplicant...
+Jun 20 17:16:52 MATIAS systemd[1]: wpa_supplicant.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped wpa_supplicant.service - WPA supplicant.
+Jun 20 17:16:52 MATIAS systemd[1]: run-user-1000.mount: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Unmounted run-user-1000.mount - /run/user/1000.
+Jun 20 17:16:52 MATIAS systemd[1]: user-runtime-dir@1000.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped user-runtime-dir@1000.service - User Runtime Directory /run/user/1000.
+Jun 20 17:16:52 MATIAS systemd[1]: Removed slice user-1000.slice - User Slice of UID 1000.
+Jun 20 17:16:52 MATIAS systemd[1]: user-1000.slice: Consumed 4min 8.765s CPU time.
+Jun 20 17:16:52 MATIAS systemd[1]: finalrd.service: Deactivated successfully.
+Jun 20 17:16:52 MATIAS systemd[1]: Stopped finalrd.service - Create final runtime dir for shutdown pivot root.
+Jun 20 17:16:55 MATIAS snapd[1069]: standby.go:121: standby monitoring stop requested
+Jun 20 17:16:55 MATIAS snapd[1069]: overlord.go:558: Released state lock file
+Jun 20 17:16:55 MATIAS systemd[1]: snapd.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped snapd.service - Snap Daemon.
+Jun 20 17:16:55 MATIAS systemd[1]: snapd.service: Consumed 1.359s CPU time, 47.4M memory peak, 0B memory swap peak.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target basic.target - Basic System.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target paths.target - Path Units.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target slices.target - Slice Units.
+Jun 20 17:16:55 MATIAS systemd[1]: Removed slice user.slice - User and Session Slice.
+Jun 20 17:16:55 MATIAS systemd[1]: user.slice: Consumed 8min 33.310s CPU time, 0B memory peak, 0B memory swap peak.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target sockets.target - Socket Units.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target time-set.target - System Time Set.
+Jun 20 17:16:55 MATIAS systemd[1]: avahi-daemon.socket: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Closed avahi-daemon.socket - Avahi mDNS/DNS-SD Stack Activation Socket.
+Jun 20 17:16:55 MATIAS systemd[1]: iscsid.socket: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Closed iscsid.socket - Open-iSCSI iscsid Socket.
+Jun 20 17:16:55 MATIAS systemd[1]: lxd-installer.socket: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Closed lxd-installer.socket - Helper to install lxd snap on demand.
+Jun 20 17:16:55 MATIAS systemd[1]: snapd.socket: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Closed snapd.socket - Socket activation for snappy daemon.
+Jun 20 17:16:55 MATIAS systemd[1]: ssh.socket: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Closed ssh.socket - OpenBSD Secure Shell server socket.
+Jun 20 17:16:55 MATIAS systemd[1]: syslog.socket: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Closed syslog.socket - Syslog Socket.
+Jun 20 17:16:55 MATIAS systemd[1]: uuidd.socket: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Closed uuidd.socket - UUID daemon activation socket.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target sysinit.target - System Initialization.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target cryptsetup.target - Local Encrypted Volumes.
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-ask-password-console.path: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-ask-password-console.path - Dispatch Password Requests to Console Directory Watch.
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-ask-password-wall.path: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target integritysetup.target - Local Integrity Protected Volumes.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target veritysetup.target - Local Verity Protected Volumes.
+Jun 20 17:16:55 MATIAS systemd[1]: cloud-init.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped cloud-init.service - Cloud-init: Network Stage.
+Jun 20 17:16:55 MATIAS systemd[1]: cloud-init-local.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped cloud-init-local.service - Cloud-init: Local Stage (pre-network).
+Jun 20 17:16:55 MATIAS systemd[1]: Stopping systemd-binfmt.service - Set Up Additional Binary Formats...
+Jun 20 17:16:55 MATIAS systemd[1]: Stopping systemd-resolved.service - Network Name Resolution...
+Jun 20 17:16:55 MATIAS systemd[1]: Stopping systemd-timesyncd.service - Network Time Synchronization...
+Jun 20 17:16:55 MATIAS systemd[1]: Stopping systemd-update-utmp.service - Record System Boot/Shutdown in UTMP...
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-binfmt.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-binfmt.service - Set Up Additional Binary Formats.
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-resolved.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-resolved.service - Network Name Resolution.
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-timesyncd.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-timesyncd.service - Network Time Synchronization.
+Jun 20 17:16:55 MATIAS systemd[1]: proc-sys-fs-binfmt_misc.automount: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Unset automount proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point.
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-sysctl.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-sysctl.service - Apply Kernel Variables.
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-modules-load.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-modules-load.service - Load Kernel Modules.
+Jun 20 17:16:55 MATIAS systemd[1]: proc-sys-fs-binfmt_misc.mount: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-update-utmp.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-update-utmp.service - Record System Boot/Shutdown in UTMP.
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-tmpfiles-setup.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-tmpfiles-setup.service - Create Volatile Files and Directories.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target local-fs.target - Local File Systems.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target snapd.mounts.target - Mounted snaps.
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounting boot-firmware.mount - /boot/firmware...
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounting run-snapd-ns-network\x2dmanager.mnt.mount - /run/snapd/ns/network-manager.mnt...
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounting snap-core24-1644.mount - Mount unit for core24, revision 1644...
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounting snap-network\x2dmanager-1024.mount - Mount unit for network-manager, revision 1024...
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounting snap-snapd-26383.mount - Mount unit for snapd, revision 26383...
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounting snap-snapd-26869.mount - Mount unit for snapd, revision 26869...
+Jun 20 17:16:55 MATIAS systemd[1]: snap-core24-1644.mount: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounted snap-core24-1644.mount - Mount unit for core24, revision 1644.
+Jun 20 17:16:55 MATIAS systemd[1]: boot-firmware.mount: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounted boot-firmware.mount - /boot/firmware.
+Jun 20 17:16:55 MATIAS systemd[1]: snap-network\x2dmanager-1024.mount: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounted snap-network\x2dmanager-1024.mount - Mount unit for network-manager, revision 1024.
+Jun 20 17:16:55 MATIAS systemd[1]: snap-snapd-26383.mount: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounted snap-snapd-26383.mount - Mount unit for snapd, revision 26383.
+Jun 20 17:16:55 MATIAS systemd[1]: snap-snapd-26869.mount: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounted snap-snapd-26869.mount - Mount unit for snapd, revision 26869.
+Jun 20 17:16:55 MATIAS systemd[1]: run-snapd-ns-network\x2dmanager.mnt.mount: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounted run-snapd-ns-network\x2dmanager.mnt.mount - /run/snapd/ns/network-manager.mnt.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target snapd.mounts-pre.target - Mounting snaps.
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounting run-snapd-ns.mount - /run/snapd/ns...
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-fsck@dev-disk-by\x2dlabel-system\x2dboot.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-fsck@dev-disk-by\x2dlabel-system\x2dboot.service - File System Check on /dev/disk/by-label/system-boot.
+Jun 20 17:16:55 MATIAS systemd[1]: Removed slice system-systemd\x2dfsck.slice - Slice /system/systemd-fsck.
+Jun 20 17:16:55 MATIAS systemd[1]: run-snapd-ns.mount: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Unmounted run-snapd-ns.mount - /run/snapd/ns.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target local-fs-pre.target - Preparation for Local File Systems.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped target swap.target - Swaps.
+Jun 20 17:16:55 MATIAS systemd[1]: Reached target umount.target - Unmount All Filesystems.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopping lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-remount-fs.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-remount-fs.service - Remount Root and Kernel File Systems.
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-tmpfiles-setup-dev.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev.
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-tmpfiles-setup-dev-early.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully.
+Jun 20 17:16:55 MATIAS systemd[1]: lvm2-monitor.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Stopped lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling.
+Jun 20 17:16:55 MATIAS systemd[1]: Reached target shutdown.target - System Shutdown.
+Jun 20 17:16:55 MATIAS systemd[1]: Reached target final.target - Late Shutdown Services.
+Jun 20 17:16:55 MATIAS systemd[1]: systemd-reboot.service: Deactivated successfully.
+Jun 20 17:16:55 MATIAS systemd[1]: Finished systemd-reboot.service - System Reboot.
+Jun 20 17:16:55 MATIAS systemd[1]: Reached target reboot.target - System Reboot.
+Jun 20 17:16:55 MATIAS systemd[1]: Shutting down.
+Jun 20 17:16:55 MATIAS systemd[1]: Using hardware watchdog 'Broadcom BCM2835 Watchdog timer', version 0, device /dev/watchdog0
+Jun 20 17:16:55 MATIAS systemd[1]: Watchdog running with a timeout of 10min.
+Jun 20 17:16:55 MATIAS kernel: watchdog: watchdog0: watchdog did not stop!
+Jun 20 17:16:55 MATIAS systemd-shutdown[1]: Using hardware watchdog 'Broadcom BCM2835 Watchdog timer', version 0, device /dev/watchdog0
+Jun 20 17:16:55 MATIAS systemd-shutdown[1]: Watchdog running with a timeout of 10min.
+Jun 20 17:16:55 MATIAS systemd-shutdown[1]: Syncing filesystems and block devices.
+Jun 20 17:16:55 MATIAS systemd-shutdown[1]: Sending SIGTERM to remaining processes...
+Jun 20 17:16:55 MATIAS systemd-journald[494]: Journal stopped

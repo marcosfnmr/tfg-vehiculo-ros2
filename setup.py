@@ -25,6 +25,8 @@ setup(
             'test_pub          = matias_control.test_publisher:main',
 	    'nodo_linea        = matias_control.nodo_linea:main',
             'nodo_canny	       = matias_control.nodo_canny:main',
+            'nodo_hough        = matias_control.nodo_hough:main',
+            'nodo_pid          = matias_control.nodo_pid:main',
             'control_teclado   = matias_control.control_teclado:main',
         ],
     },
